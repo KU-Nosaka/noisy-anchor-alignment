@@ -1,0 +1,17 @@
+{
+  "attempts": 2,
+  "completed": true,
+  "completed_records": 200,
+  "completed_records_before_attempt": 0,
+  "expected_run_ids_hash": "de76aad6398361020f31b84ad077801b",
+  "first_started_at_utc": "2026-07-20T23:32:41.627016Z",
+  "latest_attempt_completed_at_utc": "2026-07-21T03:29:36.726564Z",
+  "latest_attempt_started_at_utc": "2026-07-21T02:35:38.909696Z",
+  "latest_attempt_wall_seconds": 3237.8072132099996,
+  "mode": "p010-supplemental-noise",
+  "p": 10,
+  "phase": "completed",
+  "planned_records": 200,
+  "schema_version": 3,
+  "summed_fit_runtime_seconds": 7143.868345365996
+}

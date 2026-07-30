@@ -1,0 +1,45 @@
+{
+  "anchor_v_observed_range": [
+    0.0030198899145832403,
+    0.19801562677951656
+  ],
+  "combined_csv_path": "/content/drive/MyDrive/I-GDP-PA/MNIST_GRP_h100_unit_isometric_anchor_results_v2/supplemental_noise_ranges_v2/mnist_combined_609_results.csv",
+  "combined_json_path": "/content/drive/MyDrive/I-GDP-PA/MNIST_GRP_h100_unit_isometric_anchor_results_v2/supplemental_noise_ranges_v2/mnist_combined_609_results.json",
+  "combined_record_hash": "3701179511b1f29bdabf602f61020671",
+  "elapsed_seconds_latest_session": 22360.208912839,
+  "manifest_path": "/content/drive/MyDrive/I-GDP-PA/MNIST_GRP_h100_unit_isometric_anchor_results_v2/supplemental_noise_ranges_v2/supplemental_run_manifest.json",
+  "output_dir": "/content/drive/MyDrive/I-GDP-PA/MNIST_GRP_h100_unit_isometric_anchor_results_v2/supplemental_noise_ranges_v2",
+  "private_sigma_observed_range": [
+    35.256506902231,
+    49.9838746584426
+  ],
+  "reviewed_module_sha256": {
+    "core_protocols": "337c8ce88ddaeb5aa6a9bf27d421ac95612dccd3eb8b4b79e0b6cda1a3d6093c",
+    "mnist_orchestrator": "beace43e488bd7b0a1afd28ead806c6c2ddd6694f69136f3595153db3d8de1d5",
+    "mnist_runner": "17c864bd9316b18eea8c0710e6f9d6b4e15b5fcc3b89ec3fd7de5e931b52c3d7"
+  },
+  "schedule_version": "mnist-paired-noise-ranges-300-fits-v1",
+  "schema_version": 1,
+  "source_artifact_sha256": {
+    "anchor_manifest": "aeb2ba6d18e0d0571a51428d88bc7406fa58125bc0b9aceb964b5bbb72847f2c",
+    "anchor_tensor": "d7de5a9db4899efa25b24ca1545296a4feccf6d74b0a66404dba8920b862c492",
+    "auditor_checkpoint": "831910212075c85d034cb24e18e1248975eb31cb07d96357259796f7e5dac22a",
+    "auditor_metrics": "e07716398496e19f1f9b5d596a249d47dfcdcea272f6de7c64edcff13e728d72",
+    "config": "219aace94ce6d2e831738b925dcf855cf24bf1d7f6e51f19fbe8f5519d22bcbf",
+    "data_manifest": "98d6f91cce8aa87e206bccc7ebdb73c06a5912506c4dd33dcb81a1907acaf025",
+    "linkage_manifest": "310c337a4bcb10e487e71fbd7610c1146147e589e8a378343c6b50dcfdc6635c",
+    "noise_manifest": "29a8c76357046461affa5429355dab7090b4ff33f4195ebfaced55f18bdc20d6",
+    "pilot_manifest": "28d2104b53414b86420a7f93f9708551beaa86a45ee88ed2999a800db10cdff3",
+    "results": "a7fd5a6494de446aa8fc29e307a3de987c613d350f51d2784cbf4f4a3a7bf93f",
+    "run_manifest": "d4a5e0bb51d4eb90f662600cad500b233b11ad599066a064c6e0edcd8c24c475",
+    "summary": "b20522fc3aa03c671d1abdc5e3e0a4c44cea9a5fbfcea36d9217e9dcf4de19d6"
+  },
+  "source_record_hash": "b43eee632bea87048e3679eb6807cc8e",
+  "status": {
+    "completed": 300,
+    "planned": 300
+  },
+  "supplemental_csv_path": "/content/drive/MyDrive/I-GDP-PA/MNIST_GRP_h100_unit_isometric_anchor_results_v2/supplemental_noise_ranges_v2/mnist_supplemental_noise_results.csv",
+  "supplemental_json_path": "/content/drive/MyDrive/I-GDP-PA/MNIST_GRP_h100_unit_isometric_anchor_results_v2/supplemental_noise_ranges_v2/mnist_supplemental_noise_results.json",
+  "supplemental_record_hash": "fee03a95d74fdc2c1bf6d048a36dd690"
+}

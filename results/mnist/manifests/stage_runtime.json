@@ -1,0 +1,11 @@
+{
+  "completed": 300,
+  "cuda_version": "12.8",
+  "device": "cuda",
+  "elapsed_seconds_latest_session": 22360.232322281,
+  "gpu_name": "Tesla T4",
+  "phase": "completed",
+  "planned": 300,
+  "runtime_session_id": "88ffcc20c78299ae",
+  "torch_version": "2.11.0+cu128"
+}

@@ -1,0 +1,18 @@
+{
+  "cuda": "12.8",
+  "cudnn": 91900,
+  "deterministic": true,
+  "gdp_parameter_generation": "frozen_cpu_float64_gdp_parameters_v1",
+  "gpu": "NVIDIA A100-SXM4-40GB",
+  "module_sha256": {
+    "celeba_public_svd_identity100_p_sweep_runner.py": "4bf79812d28664082d5c87a09d0c22ec5c7804821af36727f4d76969c198f7a3",
+    "celeba_public_svd_identity100_runner.py": "b5fc9fe16d77b05f3365188743b61502bff7067ecb3208b1620f65f411037324",
+    "celeba_public_svd_identity100_unit_isometric_runner.py": "94324f04c922e332542a144796749719b55cc58284b32880037103745dc243ce",
+    "core_protocols.py": "31e5e47837fa8cc02d3263b9a5f3c1d345baff88e5ac7e2d2a8aeaf6f20aca28"
+  },
+  "noise_rng": "torch_cpu_standard_normal_seeded_v1",
+  "python_major_minor": "3.12",
+  "resolved_device_type": "cuda",
+  "schema_version": 3,
+  "torch": "2.11.0+cu128"
+}

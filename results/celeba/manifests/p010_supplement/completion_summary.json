@@ -1,0 +1,97 @@
+{
+  "anchor_v_observed_range": [
+    0.0005240345995540908,
+    0.0495594628249745
+  ],
+  "combined_csv_path": "/content/drive/MyDrive/I-GDP-PA/CelebA_PublicSVD_h400_identity100_p10to90_anchor_sweep_v3/p010/supplemental_noise_ranges_v1/celeba_p010_combined_407_results.csv",
+  "combined_json_path": "/content/drive/MyDrive/I-GDP-PA/CelebA_PublicSVD_h400_identity100_p10to90_anchor_sweep_v3/p010/supplemental_noise_ranges_v1/celeba_p010_combined_407_results.json",
+  "combined_record_hash": "9ecc3d4088b4dc7198cbcddd2b488c4f",
+  "csv_path": "/content/drive/MyDrive/I-GDP-PA/CelebA_PublicSVD_h400_identity100_p10to90_anchor_sweep_v3/p010/supplemental_noise_ranges_v1/celeba_supplemental_noise_results.csv",
+  "json_path": "/content/drive/MyDrive/I-GDP-PA/CelebA_PublicSVD_h400_identity100_p10to90_anchor_sweep_v3/p010/supplemental_noise_ranges_v1/celeba_supplemental_noise_results.json",
+  "manifest_path": "/content/drive/MyDrive/I-GDP-PA/CelebA_PublicSVD_h400_identity100_p10to90_anchor_sweep_v3/p010/supplemental_noise_ranges_v1/supplemental_run_manifest.json",
+  "mode": "p010-supplemental-noise",
+  "output_dir": "/content/drive/MyDrive/I-GDP-PA/CelebA_PublicSVD_h400_identity100_p10to90_anchor_sweep_v3/p010/supplemental_noise_ranges_v1",
+  "p": 10,
+  "private_sigma_observed_range": [
+    1.522746867231176,
+    2.9799961105677326
+  ],
+  "provenance": {
+    "active_assignment_hash": "a5faff342a2f8d5e58892b8a78dc913a",
+    "basis_matrix_sha256": "bb5024105e7433edca3c0bddf81b4cd83246e2e457aac1540ab2aa289dc1d844",
+    "config_hash": "15a0d756df83479b641e0abf1813f9c5",
+    "core_completion_sha256": "2c33ddf95845e489d42685cc08462c156c00b26b4c7570cb2245c225ea529f2c",
+    "core_config_sha256": "6889165ea1c25cb4eb86d5badc8741ee5d4a43e7662984211a60f8020b82a71d",
+    "core_manifest_sha256": "337bbc6ed7991f4e06f54ad0e74911e84a2e8cdc430e25b9715c7139280e65e9",
+    "core_record_hash": "65028f0344fbd973ee86b514feee94ff",
+    "linkage_manifest_hash": "ea80bfc38fafea1bb6a293acfc8db6a8",
+    "master_manifest_hash": "283a126810469864cb7ff66418687871",
+    "reviewed_module_sha256": {
+      "celeba_public_svd_identity100_p_sweep_runner.py": "4bf79812d28664082d5c87a09d0c22ec5c7804821af36727f4d76969c198f7a3",
+      "celeba_public_svd_identity100_runner.py": "b5fc9fe16d77b05f3365188743b61502bff7067ecb3208b1620f65f411037324",
+      "celeba_public_svd_identity100_unit_isometric_runner.py": "94324f04c922e332542a144796749719b55cc58284b32880037103745dc243ce",
+      "core_protocols.py": "31e5e47837fa8cc02d3263b9a5f3c1d345baff88e5ac7e2d2a8aeaf6f20aca28"
+    },
+    "runtime_environment_hash": "627cb56cbd5228b29495f6f706bb9b8b",
+    "shared_anchor": {
+      "alpha": 1.0,
+      "condition_number": 1.0000000000000027,
+      "design": "centered_unit_isometric_v2",
+      "dimension": 400,
+      "entrywise_rms": 0.025,
+      "gram_relative_error": 5.825539161016825e-16,
+      "mean_residual_l2": 1.30025225458928e-17,
+      "noise_parameterization": "absolute_v",
+      "outer": 0,
+      "rows": 1600,
+      "scale_rule": "unit_singular_values",
+      "seed": 4028866855320025547,
+      "sigma_max": 1.000000000000001,
+      "sigma_min": 0.9999999999999984,
+      "tensor_file_sha256": "18b106213bd20453214b8460ca4bbeb0d33f57b3aae07ed48694a2eb4883a463",
+      "tensor_path": "/content/drive/MyDrive/I-GDP-PA/CelebA_PublicSVD_h400_identity100_p10to90_anchor_sweep_v3/shared/anchors/anchor_outer0.pt",
+      "tensor_sha256_float64_c_order": "b0e6fe305579175c80a9b9e5ec33f0969b461814a93886541147b25fb69347a5"
+    },
+    "shared_deployment": {
+      "active_participants": 10,
+      "active_rotations_sha256_float64_c_order": "3cb43b93ccc3eb0412d88405264da96d36a5d3e377e16e0dd46a67a405bc34a0",
+      "active_translations_sha256_float64_c_order": "8f40bef1ecf75e9945a846f870c4529eaeeeb914b221dd72086c7f24ee9b35be",
+      "bank_participants": 90,
+      "design": "frozen_cpu_float64_gdp_parameters_v1",
+      "dimension": 400,
+      "max_rotation_orthogonality_error": 1.1360982432153631e-15,
+      "outer": 0,
+      "participants": 10,
+      "prefix_invariant": true,
+      "rotations_sha256_float64_c_order": "15b5e864f37bd5dcc112d16da179ecd497816ff6f1e821c2e4698336b2abc806",
+      "seed": 3722761782450628345,
+      "tensor_file_sha256": "50ddd94ed0aed196a616339690433823938d5284c508b0744ef127309cbd8929",
+      "tensor_path": "/content/drive/MyDrive/I-GDP-PA/CelebA_PublicSVD_h400_identity100_p10to90_anchor_sweep_v3/shared/deployment/gdp_parameters_outer0.pt",
+      "translations_sha256_float64_c_order": "b0edc5b8773eeda9bb6558c1556a8686915872a342b7a61c15560c898c604935"
+    },
+    "supplemental_module_sha256": "38c2ee0b75a280ad7797571cb3102238db847ecda5db1da3692a934ad2dd5368"
+  },
+  "record_hash": "a6fa943fca265b49301345ee4351d219",
+  "stage_runtime": {
+    "attempts": 2,
+    "completed": true,
+    "completed_records": 200,
+    "completed_records_before_attempt": 0,
+    "expected_run_ids_hash": "de76aad6398361020f31b84ad077801b",
+    "first_started_at_utc": "2026-07-20T23:32:41.627016Z",
+    "latest_attempt_completed_at_utc": "2026-07-21T03:29:36.726564Z",
+    "latest_attempt_started_at_utc": "2026-07-21T02:35:38.909696Z",
+    "latest_attempt_wall_seconds": 3237.8072132099996,
+    "mode": "p010-supplemental-noise",
+    "p": 10,
+    "phase": "completed",
+    "planned_records": 200,
+    "schema_version": 3,
+    "summed_fit_runtime_seconds": 7143.868345365996
+  },
+  "stage_runtime_path": "/content/drive/MyDrive/I-GDP-PA/CelebA_PublicSVD_h400_identity100_p10to90_anchor_sweep_v3/p010/supplemental_noise_ranges_v1/stage_runtime.json",
+  "status": {
+    "completed": 200,
+    "planned": 200
+  }
+}

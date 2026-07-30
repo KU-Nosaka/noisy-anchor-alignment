@@ -1,0 +1,20 @@
+# Generated artifacts
+build/
+
+# Downloaded datasets, models, and checkpoints
+data/
+cache/
+checkpoints/
+weights/
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Editors and operating systems
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

@@ -1,0 +1,453 @@
+{
+  "schema_version": 1,
+  "artifact": "Anchor-Side Perturbation reproducibility repository",
+  "file_count": 89,
+  "total_bytes": 34495008,
+  "files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 153,
+      "sha256": "9f0857de63af872d3d354919187d3a8ddf81816aadd83caf1b66d319cda4a8b5"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 241,
+      "sha256": "1dc7b064ec53c7191ce774147d808a02cf8ca36597ff22078f35fedb82630fe3"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4847,
+      "sha256": "81a85a28c400a3519d2ecbee8e44736af37e4214820c94de8c7942cf947f0220"
+    },
+    {
+      "path": "docs/EXPERIMENTS.md",
+      "bytes": 3851,
+      "sha256": "1a0509387023df749eef807c9ca9dbd4b94013d5f2062df4e2aeef3b704a3f3b"
+    },
+    {
+      "path": "docs/FIGURES.md",
+      "bytes": 1787,
+      "sha256": "1e494776c15ac217a9be72c15f15dda3e69269489adc405c81a8df7737b5fe84"
+    },
+    {
+      "path": "docs/PROVENANCE.md",
+      "bytes": 3195,
+      "sha256": "2aeb2e7ae9bbf6120c157a6574be8891cd544fbf68e1c6f0945b2a55e959f009"
+    },
+    {
+      "path": "figure_inputs/README.md",
+      "bytes": 831,
+      "sha256": "8aebebacdb394149800b3f45de742c63fd6083fdf4a6d3d401f0e64f58fd6bc6"
+    },
+    {
+      "path": "figure_inputs/celeba_identity_reconstructions.zip",
+      "bytes": 6042520,
+      "sha256": "dacb22ae4be53e0aa5d732dc615d29dd5f1b71a8a87b8ef969ab68aa2a2503a5"
+    },
+    {
+      "path": "figure_inputs/celeba_mixed_reconstructions.zip",
+      "bytes": 676155,
+      "sha256": "014690442d08d0609fdf27013312157a5d5b2baff173c05a8ee4584563d03d7b"
+    },
+    {
+      "path": "figure_inputs/mnist_reconstruction_cells.zip",
+      "bytes": 1258900,
+      "sha256": "11935913762ab5732860803aa928480188e5c45ade9a0a7e2ae4d3fe85c9701d"
+    },
+    {
+      "path": "figures/render_celeba_p010_quantitative.py",
+      "bytes": 62763,
+      "sha256": "1f3a90a2d0cef9d0f591e71b13f6eeb988eba27098a187ef1a40175bbb42cf0d"
+    },
+    {
+      "path": "figures/render_celeba_participant_count.py",
+      "bytes": 33925,
+      "sha256": "3169bdc88164e8b9c091ee6722366b46ee122a2176f3fd585e9c459f27cc5ade"
+    },
+    {
+      "path": "figures/render_celeba_reconstructions.py",
+      "bytes": 57034,
+      "sha256": "289217974de3b8c0868a4e3d0b354a780fe8b54d1cba54a36c8ad6f934763df2"
+    },
+    {
+      "path": "figures/render_mnist_quantitative.py",
+      "bytes": 49838,
+      "sha256": "c62c0cc9a86e72d202c7e42bf8cfccb9e0d0abb8e74420912d35b443a47295a9"
+    },
+    {
+      "path": "figures/render_mnist_reconstructions.py",
+      "bytes": 11881,
+      "sha256": "cd5bea97e5cf4a9800a94436f3d860451fc19e8ce326a509af927dda876c659b"
+    },
+    {
+      "path": "figures/render_mnist_utility.py",
+      "bytes": 36530,
+      "sha256": "fef76a6a4800357c7f636631f7015044ca89f64bac7d5ef07bc914df0a593546"
+    },
+    {
+      "path": "notebooks/01_mnist_main.ipynb",
+      "bytes": 334706,
+      "sha256": "a4574361fabe15c8c2fa2eff5997428d5cb70e5658749b2e598b429df728ab26"
+    },
+    {
+      "path": "notebooks/02_mnist_supplemental_noise.ipynb",
+      "bytes": 368995,
+      "sha256": "4c0cffc67758d61d34018f73cf7fb0fe4fcd9bd5460dfc071a7fed847a1ac16d"
+    },
+    {
+      "path": "notebooks/03_celeba_participant_sweep.ipynb",
+      "bytes": 358937,
+      "sha256": "a82d3dc612902597c4a3680417ffe63efc3e74578a3420baeec6831348e315dc"
+    },
+    {
+      "path": "notebooks/04_celeba_p010_supplemental_noise.ipynb",
+      "bytes": 387814,
+      "sha256": "68e6b9caaa8da9e8c31725dd8314f37baa9948b2974bc76ed4e6d00409654f24"
+    },
+    {
+      "path": "notebooks/05_celeba_p030_p050_low_v.ipynb",
+      "bytes": 392410,
+      "sha256": "52f21e8a14da0254cce62e5e925d47c644b167a2e0fe10ddb513c675b5b78829"
+    },
+    {
+      "path": "notebooks/06_celeba_p010_reconstruction_replay.ipynb",
+      "bytes": 500648,
+      "sha256": "a0228bc75804d5c25084003d1adc7b55c5a99c181de7069ffdcdf10d9854c304"
+    },
+    {
+      "path": "notebooks/README.md",
+      "bytes": 2935,
+      "sha256": "637bd82e5abf131c0f4723564a3d974d2a528c49f5c2e7fad86a197aa396ebc9"
+    },
+    {
+      "path": "requirements-figures.txt",
+      "bytes": 47,
+      "sha256": "2c589f060c5fb89c25f0188fe57fe1817736b7fb30d9adf28a41dff2abf73233"
+    },
+    {
+      "path": "results/README.md",
+      "bytes": 1334,
+      "sha256": "70312a0d9c248fc05c23542a379ed0fd2c4f732d8c25e68bb2e78b7f62cd1a27"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/completion_summary.json",
+      "bytes": 10212,
+      "sha256": "2c33ddf95845e489d42685cc08462c156c00b26b4c7570cb2245c225ea529f2c"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/config.json",
+      "bytes": 2557,
+      "sha256": "6889165ea1c25cb4eb86d5badc8741ee5d4a43e7662984211a60f8020b82a71d"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/data_manifest.json",
+      "bytes": 36235,
+      "sha256": "2a4c7d613184947a765e369b85554874544765d3ba3977cdedd5ae6a509c14d6"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/face_embedder_manifest.json",
+      "bytes": 380,
+      "sha256": "dd30d9442d737e52ae76d3e7e28f67232b5fb5149d772d6fc6b72796ad3d5d25"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/face_linkage_manifest.json",
+      "bytes": 1219510,
+      "sha256": "5fac01c20a49420142390a5eee8963708b108b2e671aff87c0fc8b09e853e512"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/full_run_manifest.json",
+      "bytes": 40022,
+      "sha256": "337bbc6ed7991f4e06f54ad0e74911e84a2e8cdc430e25b9715c7139280e65e9"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/original_image_control.json",
+      "bytes": 3372,
+      "sha256": "e9310625965fe4e0e14c0f14e3d581c3cf3b135fed5828b4768420a0e58553c3"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/public_svd_floor_control.json",
+      "bytes": 3707,
+      "sha256": "bccce3483bb238e3250f9746526d0c908c00a8a89178c3da002301d4b83e9e7a"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/runtime_environment_lock.json",
+      "bytes": 824,
+      "sha256": "8a428698f547e32598620a3b471093e17a0a9d7adf085ffb23fba4030158a983"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/stage_runtime.json",
+      "bytes": 603,
+      "sha256": "61ce7a99d1ea3bf3025ad13d13c6964df68d914e6686465b42945e2e6226d34d"
+    },
+    {
+      "path": "results/celeba/manifests/p010_main/summary.json",
+      "bytes": 42655,
+      "sha256": "cbd8cca414f0247a9370cd4a5fdf05d76d6851a1271cc30bf71cf4b9e98a3e15"
+    },
+    {
+      "path": "results/celeba/manifests/p010_supplement/completion_summary.json",
+      "bytes": 5609,
+      "sha256": "021bd7e3b837188817c420fdaadfa0f65cd81cfb79cdee5dad2f12f558fbebc4"
+    },
+    {
+      "path": "results/celeba/manifests/p010_supplement/config.json",
+      "bytes": 2581,
+      "sha256": "f2d872b5b83296f8349bbd58fc23d912b8d7084d2028349929ea87a364c597c6"
+    },
+    {
+      "path": "results/celeba/manifests/p010_supplement/data_manifest.json",
+      "bytes": 36235,
+      "sha256": "2a4c7d613184947a765e369b85554874544765d3ba3977cdedd5ae6a509c14d6"
+    },
+    {
+      "path": "results/celeba/manifests/p010_supplement/face_embedder_manifest.json",
+      "bytes": 380,
+      "sha256": "dd30d9442d737e52ae76d3e7e28f67232b5fb5149d772d6fc6b72796ad3d5d25"
+    },
+    {
+      "path": "results/celeba/manifests/p010_supplement/face_linkage_manifest.json",
+      "bytes": 1219510,
+      "sha256": "5fac01c20a49420142390a5eee8963708b108b2e671aff87c0fc8b09e853e512"
+    },
+    {
+      "path": "results/celeba/manifests/p010_supplement/original_image_control.json",
+      "bytes": 3372,
+      "sha256": "e9310625965fe4e0e14c0f14e3d581c3cf3b135fed5828b4768420a0e58553c3"
+    },
+    {
+      "path": "results/celeba/manifests/p010_supplement/public_svd_floor_control.json",
+      "bytes": 3707,
+      "sha256": "bccce3483bb238e3250f9746526d0c908c00a8a89178c3da002301d4b83e9e7a"
+    },
+    {
+      "path": "results/celeba/manifests/p010_supplement/runtime_environment_lock.json",
+      "bytes": 824,
+      "sha256": "8a428698f547e32598620a3b471093e17a0a9d7adf085ffb23fba4030158a983"
+    },
+    {
+      "path": "results/celeba/manifests/p010_supplement/stage_runtime.json",
+      "bytes": 589,
+      "sha256": "816416bdd0e28199164e09383e1ac14e96fcd72064e990debcef581f2f0ec07d"
+    },
+    {
+      "path": "results/celeba/manifests/p010_supplement/supplemental_run_manifest.json",
+      "bytes": 121472,
+      "sha256": "9292d05b423b6699cfb1fd187fb47e6abb5db3f08f195e8659e12bfa028bd5b0"
+    },
+    {
+      "path": "results/celeba/manifests/p030_low_v/completion_summary.json",
+      "bytes": 5637,
+      "sha256": "e4764ba62c4d9ba57e6951a17e5163d380db07d56dce71a9fb4d36f116a974d9"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/completion_summary.json",
+      "bytes": 10214,
+      "sha256": "20203c1bacf4604916a782dda336b5a625fcd64d2b2ebbe3c6538e5d8b903a97"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/config.json",
+      "bytes": 2557,
+      "sha256": "09060d465a575fa05099776a9280fe0dee7913a8151eda856178ddf0f5cf1bfd"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/data_manifest.json",
+      "bytes": 65827,
+      "sha256": "3d9c78cbb3887489933a2e2a5dab706f134d511ed7203b59a40a612fd5beab36"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/face_embedder_manifest.json",
+      "bytes": 380,
+      "sha256": "dd30d9442d737e52ae76d3e7e28f67232b5fb5149d772d6fc6b72796ad3d5d25"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/face_linkage_manifest.json",
+      "bytes": 1219544,
+      "sha256": "77273014004a628984832b8f447e8731e1a9ff94543e56a251d6e7233e255e67"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/full_run_manifest.json",
+      "bytes": 40022,
+      "sha256": "1a1549683472728d2e78782ddad0593bb48d7420aa0209e98021bc7cfeb2795f"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/original_image_control.json",
+      "bytes": 3360,
+      "sha256": "64d58f9f608fbd3f826e39da5f1d052750220434e94a745f426d6f3bbf678418"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/public_svd_floor_control.json",
+      "bytes": 3710,
+      "sha256": "6a76fd050c3c4e44a83cd6220637a6d2296a90386e05a2320472baa998d58628"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/runtime_environment_lock.json",
+      "bytes": 824,
+      "sha256": "8a428698f547e32598620a3b471093e17a0a9d7adf085ffb23fba4030158a983"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/stage_runtime.json",
+      "bytes": 605,
+      "sha256": "c4b091add8911a30277b01ae0444d40ea8c2f7a6616321a2ad0d1d39ad30127c"
+    },
+    {
+      "path": "results/celeba/manifests/p030_main/summary.json",
+      "bytes": 42655,
+      "sha256": "0a47b01722aea3a13baa638ee2db7a36f7fac9f3c1ba9e6af1fb9980a7c73bdd"
+    },
+    {
+      "path": "results/celeba/manifests/p050_low_v/completion_summary.json",
+      "bytes": 5639,
+      "sha256": "6d766288a786269402a4347fd8c4326826b5b55b64d63f50b8dac06e9ffe1098"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/completion_summary.json",
+      "bytes": 10211,
+      "sha256": "30e313c99b9d8452abfb79c6e9ef0be66e591c78bffac54f83e9eff80f8a3107"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/config.json",
+      "bytes": 2557,
+      "sha256": "e2616afe7c39d09e3cd6900b8aa55aa9e089bce820576aa80f70d93f3a42516e"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/data_manifest.json",
+      "bytes": 95293,
+      "sha256": "46affb89676a835b516e4dc959ace2e3ba959e14b9e9cfdfb20db4a6f876c2bf"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/face_embedder_manifest.json",
+      "bytes": 380,
+      "sha256": "dd30d9442d737e52ae76d3e7e28f67232b5fb5149d772d6fc6b72796ad3d5d25"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/face_linkage_manifest.json",
+      "bytes": 1219402,
+      "sha256": "d9cfed40709f40248e9a98defd444cf73658602252bc7c6ce1e458cf5f9c8a3c"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/full_run_manifest.json",
+      "bytes": 40022,
+      "sha256": "3c2ea046313516b4a714bdb415a3078b603068f46c656ade8d6147b39ca45d41"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/original_image_control.json",
+      "bytes": 3360,
+      "sha256": "b07aac9348cdf20a21381eeed6767f8577ea086a7d903f73ff9dec3f68c0f254"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/public_svd_floor_control.json",
+      "bytes": 3683,
+      "sha256": "57be6a58ddff4004ce51a87e0cac2b458718c3a5e76496b0ef87751e966794f0"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/runtime_environment_lock.json",
+      "bytes": 824,
+      "sha256": "8a428698f547e32598620a3b471093e17a0a9d7adf085ffb23fba4030158a983"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/stage_runtime.json",
+      "bytes": 602,
+      "sha256": "f9bf4afea980f82a55acb36665f70091ec268d88209aedca1769d01eebf9525f"
+    },
+    {
+      "path": "results/celeba/manifests/p050_main/summary.json",
+      "bytes": 42655,
+      "sha256": "8d3b5181b33f631c38a8d8d6233895524026b1ebb5ad5a24e60dbe0c070a80b6"
+    },
+    {
+      "path": "results/celeba/p010_combined_407_results.json.gz",
+      "bytes": 3226051,
+      "sha256": "3f1f064848a98c9a6aa336a92ca546ffde81d8354471b8d1146f65d878c6d1eb"
+    },
+    {
+      "path": "results/celeba/p030_core_207_results.json.gz",
+      "bytes": 1877950,
+      "sha256": "e5da422afcf7edf875a3d49ca9d7817f90207937519243d88f8d97333c7606e7"
+    },
+    {
+      "path": "results/celeba/p030_low_v_100_results.json.gz",
+      "bytes": 712068,
+      "sha256": "4a33009618ff0ef69f9e227ba8689a9727aeef3c669b5ba314ed6ec6bda52b4e"
+    },
+    {
+      "path": "results/celeba/p050_core_207_results.json.gz",
+      "bytes": 1879593,
+      "sha256": "d0ecf0b62c040bccf77d500769ea6294f2750142558cb63a709537ce253943d1"
+    },
+    {
+      "path": "results/celeba/p050_low_v_100_results.json.gz",
+      "bytes": 674033,
+      "sha256": "1faddda40113ea1a22fff756cf74ac912cfe7d17cf804f5ab4c7bb45e2ffcc8e"
+    },
+    {
+      "path": "results/mnist/manifests/auditor_metrics.json",
+      "bytes": 4286,
+      "sha256": "e07716398496e19f1f9b5d596a249d47dfcdcea272f6de7c64edcff13e728d72"
+    },
+    {
+      "path": "results/mnist/manifests/completion_summary.json",
+      "bytes": 2940,
+      "sha256": "4b4966d24431551d869f580591c82d1e2b524167dfc7a3cb34e9b8f139fa602d"
+    },
+    {
+      "path": "results/mnist/manifests/config.json",
+      "bytes": 2145,
+      "sha256": "219aace94ce6d2e831738b925dcf855cf24bf1d7f6e51f19fbe8f5519d22bcbf"
+    },
+    {
+      "path": "results/mnist/manifests/data_manifest.json",
+      "bytes": 4268,
+      "sha256": "98d6f91cce8aa87e206bccc7ebdb73c06a5912506c4dd33dcb81a1907acaf025"
+    },
+    {
+      "path": "results/mnist/manifests/full_run_manifest.json",
+      "bytes": 103198,
+      "sha256": "d4a5e0bb51d4eb90f662600cad500b233b11ad599066a064c6e0edcd8c24c475"
+    },
+    {
+      "path": "results/mnist/manifests/grp_floor_control.json",
+      "bytes": 2574,
+      "sha256": "d8121a900af76092801a593ebe05c5668e7c4e5cf2a1a211e97af1275625e93f"
+    },
+    {
+      "path": "results/mnist/manifests/linkage_manifest.json",
+      "bytes": 130016,
+      "sha256": "310c337a4bcb10e487e71fbd7610c1146147e589e8a378343c6b50dcfdc6635c"
+    },
+    {
+      "path": "results/mnist/manifests/noise_manifest.json",
+      "bytes": 357,
+      "sha256": "29a8c76357046461affa5429355dab7090b4ff33f4195ebfaced55f18bdc20d6"
+    },
+    {
+      "path": "results/mnist/manifests/stage_runtime.json",
+      "bytes": 269,
+      "sha256": "84345ff18c42be0c424021143cf97035816d9265a670453323f2dc86dc3fd588"
+    },
+    {
+      "path": "results/mnist/manifests/supplemental_run_manifest.json",
+      "bytes": 145492,
+      "sha256": "d9a5076b5fd855775a0f69e3ab68889476ad6800bc2049d5365d3015fe72b9cc"
+    },
+    {
+      "path": "results/mnist/mnist_combined_609_results.json.gz",
+      "bytes": 9547477,
+      "sha256": "3ff21cb4d799696048ef1329794c06dc31c456628b57723dfbb15fe2af43fb54"
+    },
+    {
+      "path": "scripts/regenerate_artifact_manifest.py",
+      "bytes": 1715,
+      "sha256": "8199264ded5fd7d2c0ffab3b3545b90d8490c82b9d1387d9fff963806070a756"
+    },
+    {
+      "path": "scripts/reproduce_figures.py",
+      "bytes": 7801,
+      "sha256": "7fb8ac878d049f4fe683c04639468d8e606fea57fc78978387bad43f39cec04c"
+    },
+    {
+      "path": "scripts/validate_repository.py",
+      "bytes": 6179,
+      "sha256": "858e3aaea6e3f3257a0864cdea98b2430bd9c958c06f3250de87fc32d63fb141"
+    }
+  ]
+}

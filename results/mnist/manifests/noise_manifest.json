@@ -1,0 +1,30 @@
+{
+  "base_seed": 5295211841606809479,
+  "draws_per_seed": 102,
+  "manifest_hash": "c2a2d928f139335e39611c06d8ac05ac",
+  "outer_seeds": [
+    0
+  ],
+  "participants": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "roles": [
+    "private",
+    "anchor"
+  ],
+  "splits": [
+    "train",
+    "val",
+    "test",
+    "anchor"
+  ]
+}
