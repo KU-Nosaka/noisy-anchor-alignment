@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "artifact": "Anchor-Side Perturbation reproducibility repository",
-  "file_count": 89,
-  "total_bytes": 34495008,
+  "file_count": 93,
+  "total_bytes": 34500452,
   "files": [
     {
       "path": ".gitattributes",
@@ -15,9 +15,29 @@
       "sha256": "1dc7b064ec53c7191ce774147d808a02cf8ca36597ff22078f35fedb82630fe3"
     },
     {
+      "path": "CITATION.cff",
+      "bytes": 1015,
+      "sha256": "7d437b1fb338fc3da37a4a903f8b88ad12990ebf77d04a35926e9a616974d295"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1120,
+      "sha256": "bc5e176b505e47a1f4c36fa4903fdea1b215736633e11af687d44b654ac2d296"
+    },
+    {
+      "path": "LICENSE-DATA.md",
+      "bytes": 1130,
+      "sha256": "4c115ae20c4011e624741f4b5dd76c38e7a1d73f5dcf994e0ed05e1c56bf6520"
+    },
+    {
       "path": "README.md",
-      "bytes": 4847,
-      "sha256": "81a85a28c400a3519d2ecbee8e44736af37e4214820c94de8c7942cf947f0220"
+      "bytes": 5392,
+      "sha256": "2401fdc2e3c227d3173c1d3cd19335a28794611cdba3860986d924ea3ca214c7"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 1634,
+      "sha256": "7f4033ded752def754abd8ce03665f3359e36af05961875bdc8c77f266ce2bc5"
     },
     {
       "path": "docs/EXPERIMENTS.md",

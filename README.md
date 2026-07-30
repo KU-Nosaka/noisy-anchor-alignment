@@ -73,4 +73,16 @@ The frozen tables are the authoritative source for the values and figures report
 
 Source-snapshot limitations affecting one MNIST supplemental runner and the historical CelebA qualitative replay code are documented transparently in [docs/PROVENANCE.md](docs/PROVENANCE.md). They do not affect regeneration of the reported figures from the frozen records and frozen qualitative inputs.
 
-No distribution license is selected in this archival copy. Choose and add an appropriate code/content license before publishing the repository.
+## Citation
+
+Citation metadata for this reproducibility package are provided in [`CITATION.cff`](CITATION.cff). GitHub's **Cite this repository** control can export the citation in common formats.
+
+## Licensing
+
+This is a mixed-license repository:
+
+- original source code and notebooks are licensed under the [MIT License](LICENSE);
+- documentation and generated numerical results are licensed under [CC BY 4.0](LICENSE-DATA.md); and
+- dataset-derived image tiles, pretrained model assets, and other third-party materials are excluded from those grants and remain subject to their original terms.
+
+See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) for the scope and reuse restrictions.
