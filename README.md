@@ -33,14 +33,21 @@ The source observations, spline coordinates, and renderer metadata are retained 
 
 ## Full experiment reproduction
 
-Upload the notebooks in `notebooks/` to Colab and follow the stage-specific controls in [notebooks/README.md](notebooks/README.md). The numerical order is:
+Upload the notebooks in `notebooks/` to Colab and follow the stage-specific controls in [notebooks/README.md](notebooks/README.md). The primary experiment order is:
 
 1. `01_mnist_main.ipynb`
 2. `02_mnist_supplemental_noise.ipynb`
-3. `03_celeba_participant_sweep.ipynb`
+3. `03_celeba_p010_main.ipynb`
 4. `04_celeba_p010_supplemental_noise.ipynb`
-5. `05_celeba_p030_p050_low_v.ipynb`
-6. `06_celeba_p010_reconstruction_replay.ipynb`
+5. `05_celeba_p010_reconstruction_replay.ipynb`
+
+The revised Section 5.3.3 participant-count replay is split into three independent notebooks that may run in parallel:
+
+6. `06_celeba_participant_replay_p050.ipynb`
+7. `07_celeba_participant_replay_p002_p020.ipynb`
+8. `08_celeba_participant_replay_p005_p010.ipynb`
+
+Together they evaluate \(p\in\{2,5,10,20,50\}\), with 100 paired draws per participant count and \(v\sim\mathrm{Uniform}(0,0.1)\). Only the corrected `p005_p010` shard is distributed; the failed pre-correction attempt is not part of this repository.
 
 The notebooks mount Google Drive and use atomic stage/checkpoint files. Set each notebook's result root to a new, empty Drive directory for an independent rerun. The CelebA stages are intended for a high-memory A100 runtime; interrupted stages can be resumed on a different runtime without discarding completed fits.
 
@@ -69,7 +76,7 @@ The source datasets, model weights, and caches are not redistributed. The three 
 
 ## Scope and provenance
 
-The frozen tables are the authoritative source for the values and figures reported in the paper. They contain 609 MNIST records, 407 CelebA records for the \(p=10\) analysis, 207 core records each for \(p=30\) and \(p=50\), and 100 focused low-anchor-noise records for each of \(p=30\) and \(p=50\).
+The frozen tables are the authoritative source for the values and figures reported in the paper. They contain 609 MNIST records, 407 CelebA records for the primary \(p=10\) analysis, and 103 records for each of \(p\in\{2,5,10,20,50\}\) in the revised participant-count replay. Each replay condition consists of 100 anchor-noise observations and three deterministic controls.
 
 Source-snapshot limitations affecting one MNIST supplemental runner and the historical CelebA qualitative replay code are documented transparently in [docs/PROVENANCE.md](docs/PROVENANCE.md). They do not affect regeneration of the reported figures from the frozen records and frozen qualitative inputs.
 

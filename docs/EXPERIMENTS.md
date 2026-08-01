@@ -26,7 +26,7 @@ Utility is held-out digit-classification balanced accuracy. Privacy is ten-way e
 
 The recorded deployment reserves 10,000 public CelebA images for fitting a common truncated-SVD reducer to \(h=400\). Participant data are partitioned by identity, with 100 identities per participant and identity-disjoint training, validation, and test allocations. One image per eligible identity is reserved as a linkage query, and a different image of the same identity is used in the ten-way gallery.
 
-The core notebook uses one frozen 90-participant master allocation and executes the \(p=10,30,50\) prefixes used in the paper. Each participant-count stage contains:
+The primary \(p=10\) experiment contains:
 
 - two clean controls: C-GDP and I-GDP;
 - 100 C-GDP private-noise draws;
@@ -34,7 +34,15 @@ The core notebook uses one frozen 90-participant master allocation and executes 
 - four deterministic zero/upper-endpoint controls;
 - one high-\(v\) I-GDP-equivalence diagnostic.
 
-This gives 207 records per participant count. The \(p=10\) supplemental stage adds 100 private-noise observations over \(1.5<\sigma\leq3.0\) and 100 focused anchor-noise observations over \(0<v<0.05\). The \(p=30\) and \(p=50\) supplemental notebook adds 100 focused \(0<v<0.05\) anchor-noise observations to each condition. The participant-count comparison therefore uses 200 anchor-noise observations for each of \(p=10,30,50\).
+This gives 207 records. The \(p=10\) supplemental stage adds 100 private-noise observations over \(1.5<\sigma\leq3.0\) and 100 focused anchor-noise observations over \(0<v<0.05\), producing the 407-record table used for the primary CelebA figures.
+
+Section 5.3.3 uses a separate standalone replay. It freezes one deterministic 50-participant allocation, GDP-parameter bank, centered unit-isometric anchor, public-SVD reducer, model procedure, and face auditor. The three independent Colab shards evaluate
+
+\[
+p\in\{2,5,10,20,50\}.
+\]
+
+For each participant count, the replay contains 100 anchor-noise observations with paired scales \(v\sim\mathrm{Uniform}(0,0.1)\), plus noiseless C-GDP, I-GDP, and AA-I-GDP controls. Thus, each condition contains 103 records and the complete participant-count study contains 515 records. Draw index \(k\) uses the same scalar \(v_k\) across all five conditions, while participant data and GDP parameters are nested prefixes of the frozen 50-participant deployment. The corrected \(p=5,10\) shard reuses the self-hashed frozen master allocation; the failed earlier shard is excluded.
 
 Utility is held-out balanced accuracy for the Smiling attribute. Privacy is ten-way cross-image identity linkage using normalized 512-dimensional embeddings from a frozen InceptionResnetV1 auditor pretrained on VGGFace2.
 
