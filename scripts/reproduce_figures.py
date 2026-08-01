@@ -173,8 +173,6 @@ def main() -> None:
                 / f"celeba_reconstructions_identity_{slot:02d}.pdf"
             for slot in range(1, 11)
         },
-        "celeba_participant_gpm_stopping.pdf":
-            celeba_count / "figures" / "celeba_participant_gpm_stopping.pdf",
     }
 
     for name, source in main_files.items():

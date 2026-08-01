@@ -10,8 +10,7 @@ The files in this directory are the complete result records used by the current 
 ## CelebA
 
 - `celeba/p010_combined_407_results.json.gz`: 207 core records plus 200 supplemental records.
-- `celeba/p030_core_207_results.json.gz` and `celeba/p050_core_207_results.json.gz`: the completed participant-count core stages.
-- `celeba/p030_low_v_100_results.json.gz` and `celeba/p050_low_v_100_results.json.gz`: focused \(0<v<0.05\) anchor-noise stages.
-- `celeba/manifests/`: the locally retained participant-count-specific configuration, allocation, linkage, completion, and environment records. The focused \(p=30,50\) low-\(v\) stages retain completion summaries but not separate run manifests or runtime locks; see `docs/PROVENANCE.md`.
+- `celeba/participant_replay/p002_results.csv.gz` through `p050_results.csv.gz`: the revised Section 5.3.3 replay for \(p\in\{2,5,10,20,50\}\). Each file contains 100 paired anchor-noise observations with \(v\sim\mathrm{Uniform}(0,0.1)\) and three deterministic controls.
+- `celeba/manifests/`: the locally retained configuration, allocation, linkage, completion, and environment records for the primary \(p=10\) experiment.
 
 The result tables include deterministic controls that are retained for provenance but excluded from the random-draw spline fits, bootstrap resampling, and quantitative scatter plots.

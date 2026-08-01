@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "artifact": "Anchor-Side Perturbation reproducibility repository",
-  "file_count": 93,
-  "total_bytes": 34500452,
+  "file_count": 74,
+  "total_bytes": 31894266,
   "files": [
     {
       "path": ".gitattributes",
@@ -31,8 +31,8 @@
     },
     {
       "path": "README.md",
-      "bytes": 5392,
-      "sha256": "2401fdc2e3c227d3173c1d3cd19335a28794611cdba3860986d924ea3ca214c7"
+      "bytes": 5948,
+      "sha256": "4df012fb34c6a1a730543c99a0a095cced6eee73fc792b0d8eeaf0e30f7ba125"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -41,18 +41,18 @@
     },
     {
       "path": "docs/EXPERIMENTS.md",
-      "bytes": 3851,
-      "sha256": "1a0509387023df749eef807c9ca9dbd4b94013d5f2062df4e2aeef3b704a3f3b"
+      "bytes": 4414,
+      "sha256": "66129f2dd17690084713e4799a91eb2c607b592d1bb818df426d0dc551d6ad30"
     },
     {
       "path": "docs/FIGURES.md",
-      "bytes": 1787,
-      "sha256": "1e494776c15ac217a9be72c15f15dda3e69269489adc405c81a8df7737b5fe84"
+      "bytes": 1800,
+      "sha256": "19572f77912859b6dcd1a5d4d79435d10b261728588362a774b1d4a4f79e6e49"
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 3195,
-      "sha256": "2aeb2e7ae9bbf6120c157a6574be8891cd544fbf68e1c6f0945b2a55e959f009"
+      "bytes": 3605,
+      "sha256": "f09374bf3efb2d1aeddae8dd8c5091fcc30a074876199a180fb94e41dd8bfd49"
     },
     {
       "path": "figure_inputs/README.md",
@@ -81,8 +81,8 @@
     },
     {
       "path": "figures/render_celeba_participant_count.py",
-      "bytes": 33925,
-      "sha256": "3169bdc88164e8b9c091ee6722366b46ee122a2176f3fd585e9c459f27cc5ade"
+      "bytes": 24855,
+      "sha256": "37dc9994fcd4276e2622d0ce96e96562bc808724de0dcafa791a20f4f02ab3de"
     },
     {
       "path": "figures/render_celeba_reconstructions.py",
@@ -115,9 +115,9 @@
       "sha256": "4c0cffc67758d61d34018f73cf7fb0fe4fcd9bd5460dfc071a7fed847a1ac16d"
     },
     {
-      "path": "notebooks/03_celeba_participant_sweep.ipynb",
-      "bytes": 358937,
-      "sha256": "a82d3dc612902597c4a3680417ffe63efc3e74578a3420baeec6831348e315dc"
+      "path": "notebooks/03_celeba_p010_main.ipynb",
+      "bytes": 356078,
+      "sha256": "b11bd024353f3fbcb443ef6999c13f9f47cb1804ab4d2d346cdc8313a1ab1303"
     },
     {
       "path": "notebooks/04_celeba_p010_supplemental_noise.ipynb",
@@ -125,19 +125,29 @@
       "sha256": "68e6b9caaa8da9e8c31725dd8314f37baa9948b2974bc76ed4e6d00409654f24"
     },
     {
-      "path": "notebooks/05_celeba_p030_p050_low_v.ipynb",
-      "bytes": 392410,
-      "sha256": "52f21e8a14da0254cce62e5e925d47c644b167a2e0fe10ddb513c675b5b78829"
-    },
-    {
-      "path": "notebooks/06_celeba_p010_reconstruction_replay.ipynb",
+      "path": "notebooks/05_celeba_p010_reconstruction_replay.ipynb",
       "bytes": 500648,
       "sha256": "a0228bc75804d5c25084003d1adc7b55c5a99c181de7069ffdcdf10d9854c304"
     },
     {
+      "path": "notebooks/06_celeba_participant_replay_p050.ipynb",
+      "bytes": 316610,
+      "sha256": "9777f536dc0300f4c688a84a91f33e61306b0b8dcf789794443a0a7ee2e4d03d"
+    },
+    {
+      "path": "notebooks/07_celeba_participant_replay_p002_p020.ipynb",
+      "bytes": 316629,
+      "sha256": "0429cb715b253eb93bf6f81acfdf661e03df1ff7578118b261d5ff412a7c4157"
+    },
+    {
+      "path": "notebooks/08_celeba_participant_replay_p005_p010.ipynb",
+      "bytes": 316635,
+      "sha256": "11c39ebab30e842dc7fdb0de4cab24ee91b10fdc20a03acfe06f5a584e6bb4c8"
+    },
+    {
       "path": "notebooks/README.md",
-      "bytes": 2935,
-      "sha256": "637bd82e5abf131c0f4723564a3d974d2a528c49f5c2e7fad86a197aa396ebc9"
+      "bytes": 3600,
+      "sha256": "1dbfa8cf40fab3d71a3ec0c12b1a3e70663d5bc7964e56a687a39f1ede0e0a62"
     },
     {
       "path": "requirements-figures.txt",
@@ -146,8 +156,8 @@
     },
     {
       "path": "results/README.md",
-      "bytes": 1334,
-      "sha256": "70312a0d9c248fc05c23542a379ed0fd2c4f732d8c25e68bb2e78b7f62cd1a27"
+      "bytes": 1212,
+      "sha256": "b2f904e6da7f83bb1e7f9efd0971002212e252c1fdcb4b75e75877581632414a"
     },
     {
       "path": "results/celeba/manifests/p010_main/completion_summary.json",
@@ -255,149 +265,39 @@
       "sha256": "9292d05b423b6699cfb1fd187fb47e6abb5db3f08f195e8659e12bfa028bd5b0"
     },
     {
-      "path": "results/celeba/manifests/p030_low_v/completion_summary.json",
-      "bytes": 5637,
-      "sha256": "e4764ba62c4d9ba57e6951a17e5163d380db07d56dce71a9fb4d36f116a974d9"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/completion_summary.json",
-      "bytes": 10214,
-      "sha256": "20203c1bacf4604916a782dda336b5a625fcd64d2b2ebbe3c6538e5d8b903a97"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/config.json",
-      "bytes": 2557,
-      "sha256": "09060d465a575fa05099776a9280fe0dee7913a8151eda856178ddf0f5cf1bfd"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/data_manifest.json",
-      "bytes": 65827,
-      "sha256": "3d9c78cbb3887489933a2e2a5dab706f134d511ed7203b59a40a612fd5beab36"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/face_embedder_manifest.json",
-      "bytes": 380,
-      "sha256": "dd30d9442d737e52ae76d3e7e28f67232b5fb5149d772d6fc6b72796ad3d5d25"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/face_linkage_manifest.json",
-      "bytes": 1219544,
-      "sha256": "77273014004a628984832b8f447e8731e1a9ff94543e56a251d6e7233e255e67"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/full_run_manifest.json",
-      "bytes": 40022,
-      "sha256": "1a1549683472728d2e78782ddad0593bb48d7420aa0209e98021bc7cfeb2795f"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/original_image_control.json",
-      "bytes": 3360,
-      "sha256": "64d58f9f608fbd3f826e39da5f1d052750220434e94a745f426d6f3bbf678418"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/public_svd_floor_control.json",
-      "bytes": 3710,
-      "sha256": "6a76fd050c3c4e44a83cd6220637a6d2296a90386e05a2320472baa998d58628"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/runtime_environment_lock.json",
-      "bytes": 824,
-      "sha256": "8a428698f547e32598620a3b471093e17a0a9d7adf085ffb23fba4030158a983"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/stage_runtime.json",
-      "bytes": 605,
-      "sha256": "c4b091add8911a30277b01ae0444d40ea8c2f7a6616321a2ad0d1d39ad30127c"
-    },
-    {
-      "path": "results/celeba/manifests/p030_main/summary.json",
-      "bytes": 42655,
-      "sha256": "0a47b01722aea3a13baa638ee2db7a36f7fac9f3c1ba9e6af1fb9980a7c73bdd"
-    },
-    {
-      "path": "results/celeba/manifests/p050_low_v/completion_summary.json",
-      "bytes": 5639,
-      "sha256": "6d766288a786269402a4347fd8c4326826b5b55b64d63f50b8dac06e9ffe1098"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/completion_summary.json",
-      "bytes": 10211,
-      "sha256": "30e313c99b9d8452abfb79c6e9ef0be66e591c78bffac54f83e9eff80f8a3107"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/config.json",
-      "bytes": 2557,
-      "sha256": "e2616afe7c39d09e3cd6900b8aa55aa9e089bce820576aa80f70d93f3a42516e"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/data_manifest.json",
-      "bytes": 95293,
-      "sha256": "46affb89676a835b516e4dc959ace2e3ba959e14b9e9cfdfb20db4a6f876c2bf"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/face_embedder_manifest.json",
-      "bytes": 380,
-      "sha256": "dd30d9442d737e52ae76d3e7e28f67232b5fb5149d772d6fc6b72796ad3d5d25"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/face_linkage_manifest.json",
-      "bytes": 1219402,
-      "sha256": "d9cfed40709f40248e9a98defd444cf73658602252bc7c6ce1e458cf5f9c8a3c"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/full_run_manifest.json",
-      "bytes": 40022,
-      "sha256": "3c2ea046313516b4a714bdb415a3078b603068f46c656ade8d6147b39ca45d41"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/original_image_control.json",
-      "bytes": 3360,
-      "sha256": "b07aac9348cdf20a21381eeed6767f8577ea086a7d903f73ff9dec3f68c0f254"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/public_svd_floor_control.json",
-      "bytes": 3683,
-      "sha256": "57be6a58ddff4004ce51a87e0cac2b458718c3a5e76496b0ef87751e966794f0"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/runtime_environment_lock.json",
-      "bytes": 824,
-      "sha256": "8a428698f547e32598620a3b471093e17a0a9d7adf085ffb23fba4030158a983"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/stage_runtime.json",
-      "bytes": 602,
-      "sha256": "f9bf4afea980f82a55acb36665f70091ec268d88209aedca1769d01eebf9525f"
-    },
-    {
-      "path": "results/celeba/manifests/p050_main/summary.json",
-      "bytes": 42655,
-      "sha256": "8d3b5181b33f631c38a8d8d6233895524026b1ebb5ad5a24e60dbe0c070a80b6"
-    },
-    {
       "path": "results/celeba/p010_combined_407_results.json.gz",
       "bytes": 3226051,
       "sha256": "3f1f064848a98c9a6aa336a92ca546ffde81d8354471b8d1146f65d878c6d1eb"
     },
     {
-      "path": "results/celeba/p030_core_207_results.json.gz",
-      "bytes": 1877950,
-      "sha256": "e5da422afcf7edf875a3d49ca9d7817f90207937519243d88f8d97333c7606e7"
+      "path": "results/celeba/participant_replay/README.md",
+      "bytes": 984,
+      "sha256": "08ed3f8baafa75d29f72c209737b3dffc0b0f959416437d89c9f95202f6e2982"
     },
     {
-      "path": "results/celeba/p030_low_v_100_results.json.gz",
-      "bytes": 712068,
-      "sha256": "4a33009618ff0ef69f9e227ba8689a9727aeef3c669b5ba314ed6ec6bda52b4e"
+      "path": "results/celeba/participant_replay/p002_results.csv.gz",
+      "bytes": 1003518,
+      "sha256": "a155071bef5ec2403e15424dc45246b2ad286c6256dce75aae140d7e5d4c92aa"
     },
     {
-      "path": "results/celeba/p050_core_207_results.json.gz",
-      "bytes": 1879593,
-      "sha256": "d0ecf0b62c040bccf77d500769ea6294f2750142558cb63a709537ce253943d1"
+      "path": "results/celeba/participant_replay/p005_results.csv.gz",
+      "bytes": 990440,
+      "sha256": "b2d211b6bd980a063b66d32eb9b870eac2ec11553367b5703dc224b3071d3067"
     },
     {
-      "path": "results/celeba/p050_low_v_100_results.json.gz",
-      "bytes": 674033,
-      "sha256": "1faddda40113ea1a22fff756cf74ac912cfe7d17cf804f5ab4c7bb45e2ffcc8e"
+      "path": "results/celeba/participant_replay/p010_results.csv.gz",
+      "bytes": 952038,
+      "sha256": "50eb0d6efe8bef06038a0af5390cdb1a4a67e70dbda99b434e68aef32662b7ab"
+    },
+    {
+      "path": "results/celeba/participant_replay/p020_results.csv.gz",
+      "bytes": 932385,
+      "sha256": "9efe3a99a2900ef80480f9c65920e6b00ec2e835c49cec04c798d55db9432309"
+    },
+    {
+      "path": "results/celeba/participant_replay/p050_results.csv.gz",
+      "bytes": 890578,
+      "sha256": "07b85d234c1e48bbfc8bcb8266bdbaf65e7f6c28c4a84cb74017516875470845"
     },
     {
       "path": "results/mnist/manifests/auditor_metrics.json",
@@ -455,19 +355,24 @@
       "sha256": "3ff21cb4d799696048ef1329794c06dc31c456628b57723dfbb15fe2af43fb54"
     },
     {
+      "path": "scripts/celeba_participant_replay_runner.py",
+      "bytes": 35780,
+      "sha256": "022c0d23e34312b9bb3313c3a9ea7beb3f4a66d2b7a28a11af9ec78c242b73cc"
+    },
+    {
       "path": "scripts/regenerate_artifact_manifest.py",
       "bytes": 1715,
       "sha256": "8199264ded5fd7d2c0ffab3b3545b90d8490c82b9d1387d9fff963806070a756"
     },
     {
       "path": "scripts/reproduce_figures.py",
-      "bytes": 7801,
-      "sha256": "7fb8ac878d049f4fe683c04639468d8e606fea57fc78978387bad43f39cec04c"
+      "bytes": 7676,
+      "sha256": "9aa4002de2dbf2960fa832153d0cb00f7a945a572b92a5f000e0a9bbb1a16ada"
     },
     {
       "path": "scripts/validate_repository.py",
-      "bytes": 6179,
-      "sha256": "858e3aaea6e3f3257a0864cdea98b2430bd9c958c06f3250de87fc32d63fb141"
+      "bytes": 10382,
+      "sha256": "4cf124fbe794cbfe0ec62ec561b5764632e5b16984cfd8bb0cf5cea233c54699"
     }
   ]
 }

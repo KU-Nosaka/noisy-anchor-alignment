@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from collections import Counter
+import csv
 import gzip
 import hashlib
 import json
@@ -29,6 +30,12 @@ def load_gzip_json(relative: str) -> dict:
     if not isinstance(payload, dict) or not isinstance(payload.get("records"), list):
         raise ValueError(f"{relative} is not a result object with a records array")
     return payload
+
+
+def load_gzip_csv(relative: str) -> list[dict[str, str]]:
+    path = REPO / relative
+    with gzip.open(path, "rt", encoding="utf-8-sig", newline="") as handle:
+        return list(csv.DictReader(handle))
 
 
 def require_count(relative: str, expected: int, participant_count: int | None = None) -> list[dict]:
@@ -97,16 +104,74 @@ def validate_results() -> None:
     if p10_schedule != expected_p10:
         raise ValueError(f"CelebA p=10 schedule differs: {p10_schedule}")
 
-    require_count("results/celeba/p030_core_207_results.json.gz", 207, 30)
-    require_count("results/celeba/p050_core_207_results.json.gz", 207, 50)
-    for p in (30, 50):
-        records = require_count(
-            f"results/celeba/p{p:03d}_low_v_100_results.json.gz", 100, p
+    replay_grid = (2, 5, 10, 20, 50)
+    expected_replay_schedule = Counter(
+        {
+            ("c_gdp", "clean"): 1,
+            ("i_gdp", "clean"): 1,
+            ("pa_i_gdp", "endpoint_zero"): 1,
+            ("pa_i_gdp", "random"): 100,
+        }
+    )
+    expected_convergence = {
+        2: (23, 77),
+        5: (26, 74),
+        10: (32, 68),
+        20: (34, 66),
+        50: (40, 60),
+    }
+    expected_anchor_hash = (
+        "b0e6fe305579175c80a9b9e5ec33f0969b461814a93886541147b25fb69347a5"
+    )
+    expected_bank_hash = (
+        "32d672b0b58fcdd38da68cd4669bd940146b88205893a5749f88c64a61198afa"
+    )
+    paired_v: tuple[float, ...] | None = None
+    for p in replay_grid:
+        relative = f"results/celeba/participant_replay/p{p:03d}_results.csv.gz"
+        records = load_gzip_csv(relative)
+        if len(records) != 103:
+            raise ValueError(f"{relative}: expected 103 records, found {len(records)}")
+        if {int(row["n_participants"]) for row in records} != {p}:
+            raise ValueError(f"{relative}: participant-count field mismatch")
+        if len({row["run_id"] for row in records}) != 103:
+            raise ValueError(f"{relative}: run IDs are not unique")
+        schedule = Counter(
+            (row["protocol"], row["run_role"]) for row in records
         )
+        if schedule != expected_replay_schedule:
+            raise ValueError(f"{relative}: schedule differs: {schedule}")
+        random_rows = sorted(
+            (row for row in records if row["run_role"] == "random"),
+            key=lambda row: int(row["draw"]),
+        )
+        if [int(row["draw"]) for row in random_rows] != list(range(100)):
+            raise ValueError(f"{relative}: random draws are not 0,...,99")
+        v = tuple(float(row["anchor_v"]) for row in random_rows)
+        if len(set(v)) != 100 or not all(0.0 < value < 0.1 for value in v):
+            raise ValueError(f"{relative}: invalid Uniform(0, 0.1) realization")
+        if paired_v is None:
+            paired_v = v
+        elif v != paired_v:
+            raise ValueError(f"{relative}: anchor-noise draws are not paired")
         if {
-            (str(row["protocol"]), str(row["run_role"])) for row in records
-        } != {("pa_i_gdp", "supplemental_anchor_v_0_0p05_v1")}:
-            raise ValueError(f"CelebA p={p} low-v schedule differs")
+            row["anchor.tensor_sha256_float64_c_order"] for row in records
+        } != {expected_anchor_hash}:
+            raise ValueError(f"{relative}: anchor hash differs")
+        if {row["deployment.tensor_file_sha256"] for row in records} != {
+            expected_bank_hash
+        }:
+            raise ValueError(f"{relative}: deployment-bank hash differs")
+        convergence = sum(
+            row["gpm.converged"].strip().lower() == "true"
+            for row in random_rows
+        )
+        expected_converged, expected_capped = expected_convergence[p]
+        if (convergence, len(random_rows) - convergence) != (
+            expected_converged,
+            expected_capped,
+        ):
+            raise ValueError(f"{relative}: GPM stopping counts differ")
 
 
 def validate_archives() -> None:
@@ -136,6 +201,37 @@ def validate_archives() -> None:
             raise ValueError(f"{relative}: missing {required_member}")
 
 
+def validate_replay_notebooks() -> None:
+    expected_shards = {
+        "notebooks/06_celeba_participant_replay_p050.ipynb": (50,),
+        "notebooks/07_celeba_participant_replay_p002_p020.ipynb": (2, 20),
+        "notebooks/08_celeba_participant_replay_p005_p010.ipynb": (5, 10),
+    }
+    runner = (REPO / "scripts" / "celeba_participant_replay_runner.py").read_text(
+        encoding="utf-8"
+    )
+    normalized_runner = runner.replace("\r\n", "\n").rstrip() + "\n"
+    writefile_header = "%%writefile celeba_participant_replay_runner.py\n"
+    for relative, shard in expected_shards.items():
+        payload = json.loads((REPO / relative).read_text(encoding="utf-8"))
+        sources = ["".join(cell.get("source", [])) for cell in payload["cells"]]
+        controls = [source for source in sources if "SHARD_PARTICIPANT_COUNTS" in source]
+        expected_assignment = f"SHARD_PARTICIPANT_COUNTS = {shard!r}"
+        if len(controls) < 1 or expected_assignment not in controls[0]:
+            raise ValueError(f"{relative}: shard assignment differs")
+        embedded = [source for source in sources if source.startswith(writefile_header)]
+        if len(embedded) != 1:
+            raise ValueError(f"{relative}: expected one embedded replay runner")
+        normalized_embedded = (
+            embedded[0][len(writefile_header):]
+            .replace("\r\n", "\n")
+            .rstrip()
+            + "\n"
+        )
+        if normalized_embedded != normalized_runner:
+            raise ValueError(f"{relative}: embedded replay runner differs")
+
+
 def validate_manifest() -> None:
     manifest_path = REPO / "ARTIFACT_MANIFEST.json"
     payload = json.loads(manifest_path.read_text(encoding="utf-8"))
@@ -158,6 +254,7 @@ def main() -> None:
     validate_manifest()
     validate_results()
     validate_archives()
+    validate_replay_notebooks()
     print("Repository validation passed: hashes, schedules, counts, and archives.")
 
 

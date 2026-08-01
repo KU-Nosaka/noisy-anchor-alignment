@@ -7,11 +7,11 @@ The compressed result tables are the authoritative records of the completed quan
 The notebooks contain the protocol, attacks, data preparation, model training, evaluation, and checkpoint logic needed for an independent rerun. The available provenance records are distributed with the results, but their coverage differs by stage:
 
 - the MNIST main and supplemental stages retain their principal configuration, data, linkage, noise, run, completion, and runtime records;
-- the CelebA \(p=10,30,50\) core stages and the \(p=10\) supplemental stage retain their locally archived configuration, allocation, linkage, run, completion, control, and runtime records;
+- the primary CelebA \(p=10\) core and supplemental stages retain their locally archived configuration, allocation, linkage, run, completion, control, and runtime records;
 - the CelebA calibration manifest referenced by the completed stages was not present in the local archive;
-- the focused CelebA \(p=30,50\) low-\(v\) stages retain completion summaries, but not separate run manifests or runtime locks.
+- the revised participant-count replay retains the complete 103-record aggregate table for every \(p\in\{2,5,10,20,50\}\). Each row carries its run, data-design, anchor, deployment, training, attack, GPM, and runtime fields; the three exact standalone notebooks retain the checkpoint and resume implementation.
 
-These omissions do not remove any observation used by the paper figures, but they preclude claiming a complete byte-for-byte provenance chain for every historical stage.
+These omissions do not remove any observation used by the paper figures, but they preclude claiming a complete byte-for-byte provenance chain for every historical stage. For the revised participant-count study, the validator additionally checks that the five files share the paired noise vector, anchor hash, and deployment-bank hash.
 
 ## MNIST supplemental source snapshot
 
@@ -47,4 +47,4 @@ The identity-specific archive records the latter hash. Notebook 06 is sufficient
 
 ## Excluded artifacts
 
-The repository intentionally excludes complete source datasets, model-download caches, optimizer checkpoints, redundant CSV/JSON copies, rendered PNG/SVG previews, obsolete pilot designs, superseded 100-draw analyses, removed digit-leakage plots, \(p=70,90\) experimental results, Overleaf snapshots, and local dependency directories. The compact qualitative archives retain only the selected source and recovered tiles needed for the published grids.
+The repository intentionally excludes complete source datasets, model-download caches, optimizer checkpoints, redundant CSV/JSON copies, rendered PNG/SVG previews, obsolete pilot designs, the superseded \(p=10,30,50\) participant-count analysis, the failed pre-correction \(p=5,10\) replay shard, removed digit-leakage plots, \(p=70,90\) experimental results, Overleaf snapshots, and local dependency directories. The compact qualitative archives retain only the selected source and recovered tiles needed for the published grids.
