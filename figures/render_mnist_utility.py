@@ -61,11 +61,11 @@ COLORS = {
 }
 
 LABELS = {
-    "c_private": "C-GDP (private noise)",
-    "aa_private": "AA-I-GDP (private noise)",
-    "mp": "AA-I-GDP (anchor noise): MP attack",
-    "op": "AA-I-GDP (anchor noise): OP attack",
-    "am": "AA-I-GDP (anchor noise): AM attack",
+    "c_private": "C-GDP (private-data noise)",
+    "aa_private": "AA-GDP (private-data noise)",
+    "mp": "NAA-GDP: MP attack",
+    "op": "NAA-GDP: OP attack",
+    "am": "NAA-GDP: AM attack",
 }
 
 ATTACKS = {
@@ -152,7 +152,7 @@ def validate_private_equivalence(
     c_rows: list[dict[str, Any]], aa_rows: list[dict[str, Any]]
 ) -> dict[str, float | int]:
     if len(c_rows) != len(aa_rows):
-        raise AssertionError("Private C-GDP/AA-I-GDP counts differ")
+        raise AssertionError("Private C-GDP/AA-GDP counts differ")
     for c_row, aa_row in zip(c_rows, aa_rows):
         c_key = (c_row["run_role"], int(c_row["draw"]))
         aa_key = (aa_row["run_role"], int(aa_row["draw"]))
@@ -300,7 +300,7 @@ def utility_legend_entries(axes: Iterable[plt.Axes]) -> tuple[list[Any], list[st
         handles, labels = ax.get_legend_handles_labels()
         for handle, label in zip(handles, labels):
             by_label.setdefault(label, handle)
-    by_label["200 random noise draws"] = Line2D(
+    by_label["Individual observations"] = Line2D(
         [], [], linestyle="none", marker="o", markersize=5.5,
         markerfacecolor="#777777", markeredgewidth=0,
     )
@@ -308,14 +308,14 @@ def utility_legend_entries(axes: Iterable[plt.Axes]) -> tuple[list[Any], list[st
         facecolor="#777777", edgecolor="none", alpha=0.18,
     )
     order = (
-        "C-GDP (private noise)",
-        "AA-I-GDP (private noise)",
-        "200 random noise draws",
-        "AA-I-GDP (anchor noise)",
+        "C-GDP (private-data noise)",
+        "AA-GDP (private-data noise)",
+        "Individual observations",
+        "NAA-GDP",
         "95% conditional band",
         "Random guess (10%)",
         "C-GDP",
-        "AA-I-GDP",
+        "AA-GDP",
         "I-GDP",
     )
     return (
@@ -391,9 +391,9 @@ def draw_digit_panel(
                linewidth=1.2, label="Random guess (10%)", zorder=1)
     ax.axhline(100 * baselines["aa_digit"], color=COLORS["aa_private"],
                linestyle=(0, (4.2, 1.6, 1.0, 1.6)), linewidth=1.9,
-               label="AA-I-GDP (no noise)", zorder=3)
+               label="AA-GDP (no noise)", zorder=3)
     if private:
-        ax.text(0.03, 0.045, r"C-GDP and AA-I-GDP coincide at every sampled $\sigma$",
+        ax.text(0.03, 0.045, r"C-GDP and AA-GDP coincide at every sampled $\sigma$",
                 transform=ax.transAxes, ha="left", va="bottom", fontsize=8.8, color="#333333")
     dedupe_legend(ax, loc="upper right", frameon=True, fancybox=False, framealpha=0.93,
                   edgecolor="#B0B0B0", borderpad=0.45, handlelength=2.8, labelspacing=0.35)
@@ -432,9 +432,9 @@ def draw_utility_panel(
         ax.scatter(x_for(aa_records, False), 100 * y_utility(aa_records), s=25, marker="s",
                    facecolors="none", edgecolors=COLORS["aa_private"], alpha=0.42, linewidths=0.75, zorder=4)
         ax.plot(fit["x"], 100 * fit["estimate"], color=COLORS["c_private"], linewidth=2.8,
-                label="C-GDP (private noise)", zorder=5)
+                label="C-GDP (private-data noise)", zorder=5)
         ax.plot(aa_fit["x"], 100 * aa_fit["estimate"], color=COLORS["aa_private"], linestyle=(0, (5.2, 2.2)),
-                linewidth=2.0, label="AA-I-GDP (private noise)", zorder=6)
+                linewidth=2.0, label="AA-GDP (private-data noise)", zorder=6)
     else:
         converged = np.asarray([bool(row["gpm"]["converged"]) for row in records])
         ax.scatter(x[converged], 100 * y[converged], s=20, color=color, alpha=0.42, linewidths=0,
@@ -442,12 +442,12 @@ def draw_utility_panel(
         ax.scatter(x[~converged], 100 * y[~converged], s=25, facecolors="none", edgecolors=color,
                    alpha=0.48, linewidths=0.85, zorder=4)
         ax.plot(fit["x"], 100 * fit["estimate"], color=color, linewidth=2.6,
-                label="AA-I-GDP (anchor noise)", zorder=5)
+                label="NAA-GDP", zorder=5)
     ax.axhline(10.0, color="#777777", linestyle=(0, (1.2, 2.2)), linewidth=1.2,
                label="Random guess (10%)", zorder=1)
     ax.axhline(100 * baselines["c_utility"], color=COLORS["clean"],
                linestyle=(0, (1.0, 1.8)) if private else (0, (5.0, 2.0, 1.0, 2.0)),
-               linewidth=1.8, label="C-GDP" if private else "AA-I-GDP", zorder=2)
+               linewidth=1.8, label="C-GDP" if private else "AA-GDP", zorder=2)
     ax.axhline(100 * baselines["i_utility"], color=COLORS["i_gdp"], linestyle=(0, (5.0, 2.0, 1.0, 2.0)),
                linewidth=2.0, label="I-GDP", zorder=3)
 
@@ -477,7 +477,7 @@ def draw_direct_tradeoff(
         (c_rows, private_fit, ATTACKS["c_private"], COLORS["c_private"], "o", "-",
          "C-GDP (private-data noise)", False),
         (anchor_rows, anchor_fit, ATTACKS["op"], COLORS["op"], "^", (0, (5.0, 2.0)),
-         "AA-I-GDP (anchor noise), OP attack", True),
+         "NAA-GDP", True),
     ):
         x = 100 * y_digit(rows, attack_name)
         y = 100 * y_utility(rows)
@@ -494,7 +494,7 @@ def draw_direct_tradeoff(
                 linewidth=2.55, label=label, zorder=5)
     ax.scatter([100 * baselines["c_digit"]], [100 * baselines["c_utility"]], s=132,
                marker="*", color="#222222", edgecolors="white", linewidths=0.55,
-               label="C-GDP / AA-I-GDP (no noise)", zorder=9)
+               label="C-GDP / AA-GDP (no noise)", zorder=9)
     ax.axhline(100 * baselines["i_utility"], color="#D55E00", linestyle=(0, (5.0, 2.0, 1.0, 2.0)),
                linewidth=2.0, label="I-GDP balanced accuracy", zorder=4)
     dedupe_legend(ax, loc="upper left", bbox_to_anchor=(1.015, 1.0), frameon=False,
@@ -529,7 +529,7 @@ def write_source_csv(
                 count += 1
         for key, protocol, attack_name, label in (
             ("clean_c", "c_gdp", "C-exact", "C-GDP (no noise)"),
-            ("clean_aa", "aa_i_gdp", "AA-known-anchor", "AA-I-GDP (no noise)"),
+            ("clean_aa", "aa_i_gdp", "AA-known-anchor", "AA-GDP (no noise)"),
             ("i_gdp", "i_gdp", "", "I-GDP"),
         ):
             row = baselines_records[protocol]
@@ -628,7 +628,7 @@ def main() -> None:
         "i_utility": balanced_accuracy(baseline_records["i_gdp"]),
     }
     if baselines["c_digit"] != baselines["aa_digit"] or baselines["c_utility"] != baselines["aa_utility"]:
-        raise AssertionError("Clean C-GDP/AA-I-GDP baselines differ")
+        raise AssertionError("Clean C-GDP/AA-GDP baselines differ")
 
     private_x = x_for(c_rows, False)
     anchor_x = x_for(anchor_rows, True)

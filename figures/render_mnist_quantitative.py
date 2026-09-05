@@ -65,10 +65,10 @@ COLORS = {
 
 LABELS = {
     "c_private": "C-GDP (private-data noise)",
-    "aa_private": "AA-I-GDP (private-data noise)",
-    "mp": "AA-I-GDP (anchor noise): MP attack",
-    "op": "AA-I-GDP (anchor noise): OP attack",
-    "am": "AA-I-GDP (anchor noise): alignment-map attack",
+    "aa_private": "AA-GDP (private-data noise)",
+    "mp": "NAA-GDP: MP attack",
+    "op": "NAA-GDP: OP attack",
+    "am": "NAA-GDP: alignment-map attack",
 }
 
 ATTACKS = {
@@ -156,7 +156,7 @@ def validate_private_equivalence(
     c_rows: list[dict[str, Any]], aa_rows: list[dict[str, Any]]
 ) -> dict[str, float | int]:
     if len(c_rows) != len(aa_rows):
-        raise AssertionError("Private C-GDP/AA-I-GDP counts differ")
+        raise AssertionError("Private C-GDP/AA-GDP counts differ")
     for c_row, aa_row in zip(c_rows, aa_rows):
         c_key = (c_row["run_role"], int(c_row["draw"]))
         aa_key = (aa_row["run_role"], int(aa_row["draw"]))
@@ -403,9 +403,9 @@ def draw_linkage_panel(
                linewidth=1.2, label="Random guess (10%)", zorder=1)
     ax.axhline(100 * baselines["aa_source"], color=COLORS["aa_private"],
                linestyle=(0, (4.2, 1.6, 1.0, 1.6)), linewidth=1.9,
-               label="AA-I-GDP (no noise)", zorder=3)
+               label="AA-GDP (no noise)", zorder=3)
     if private:
-        ax.text(0.03, 0.045, r"C-GDP and AA-I-GDP coincide at every sampled $\sigma$",
+        ax.text(0.03, 0.045, r"C-GDP and AA-GDP coincide at every sampled $\sigma$",
                 transform=ax.transAxes, ha="left", va="bottom", fontsize=16.0, color="#333333")
     dedupe_legend(ax, loc="upper right", frameon=True, fancybox=False, framealpha=0.93,
                   edgecolor="#B0B0B0", borderpad=0.45, handlelength=2.8, labelspacing=0.35)
@@ -436,10 +436,10 @@ def render_figure1(
         "am": "#009E73",
     }
     figure_labels = {
-        "private": "C-GDP / AA-I-GDP (private noise)",
-        "mp": "AA-I-GDP (anchor noise): MP",
-        "op": "AA-I-GDP (anchor noise): OP",
-        "am": "AA-I-GDP (anchor noise): AM",
+        "private": "C-GDP / AA-GDP (private-data noise)",
+        "mp": "NAA-GDP: MP",
+        "op": "NAA-GDP: OP",
+        "am": "NAA-GDP: AM",
     }
 
     def prepare_axis(ax: plt.Axes, *, private: bool) -> None:
@@ -592,13 +592,13 @@ def render_figure1(
     ]
     legend_labels = [
         figure_labels["private"],
-        "200 random noise draws",
+        "Individual observations",
         figure_labels["mp"],
         figure_labels["op"],
         figure_labels["am"],
         "95% conditional band",
         "Random guess (10%)",
-        "C-GDP / AA-I-GDP",
+        "C-GDP / AA-GDP",
     ]
     fig.legend(
         legend_handles,
@@ -622,8 +622,8 @@ def render_figure1(
         zip(
             axes,
             (
-                "C-GDP / AA-I-GDP (private noise)",
-                "AA-I-GDP (anchor noise)",
+                "C-GDP / AA-GDP (private-data noise)",
+                "NAA-GDP",
             ),
         )
     ):
@@ -691,7 +691,7 @@ def draw_utility_panel(
         ax.plot(fit["x"], 100 * fit["estimate"], color=COLORS["c_private"], linewidth=2.8,
                 label="C-GDP (private-data noise)", zorder=5)
         ax.plot(aa_fit["x"], 100 * aa_fit["estimate"], color=COLORS["aa_private"], linestyle=(0, (5.2, 2.2)),
-                linewidth=2.0, label="AA-I-GDP (private-data noise)", zorder=6)
+                linewidth=2.0, label="AA-GDP (private-data noise)", zorder=6)
     else:
         converged = np.asarray([bool(row["gpm"]["converged"]) for row in records])
         ax.scatter(x[converged], 100 * y[converged], s=20, color=color, alpha=0.42, linewidths=0,
@@ -699,11 +699,11 @@ def draw_utility_panel(
         ax.scatter(x[~converged], 100 * y[~converged], s=25, facecolors="none", edgecolors=color,
                    alpha=0.48, linewidths=0.85, label="Fit observation: 500-iteration cap", zorder=4)
         ax.plot(fit["x"], 100 * fit["estimate"], color=color, linewidth=2.6,
-                label="AA-I-GDP (anchor noise)", zorder=5)
+                label="NAA-GDP", zorder=5)
     ax.axhline(10.0, color="#777777", linestyle=(0, (1.2, 2.2)), linewidth=1.2,
                label="Random guess (10%)", zorder=1)
     ax.axhline(100 * baselines["c_utility"], color=COLORS["clean"], linestyle=(0, (1.0, 1.8)),
-               linewidth=1.8, label="C-GDP / AA-I-GDP (no noise)", zorder=2)
+               linewidth=1.8, label="C-GDP / AA-GDP (no noise)", zorder=2)
     ax.axhline(100 * baselines["i_utility"], color=COLORS["i_gdp"], linestyle=(0, (5.0, 2.0, 1.0, 2.0)),
                linewidth=2.0, label="I-GDP", zorder=3)
     dedupe_legend(ax, loc="upper right", frameon=True, fancybox=False, framealpha=0.93,
@@ -713,11 +713,20 @@ def draw_utility_panel(
 def draw_direct_tradeoff(
     ax: plt.Axes,
     c_rows: list[dict[str, Any]],
+    aa_rows: list[dict[str, Any]],
     anchor_rows: list[dict[str, Any]],
     private_fit: dict[str, Any],
+    private_aa_fit: dict[str, Any],
     anchor_fit: dict[str, Any],
     baselines: dict[str, float],
 ) -> None:
+    """Balanced accuracy against OP exact-source linkage.
+
+    C-GDP (private-data noise) and AA-GDP (private-data noise) are both drawn
+    so that their coincidence is visible: the AA-GDP fit is dashed and sits on
+    top of the solid C-GDP fit, mirroring the private-data-noise utility panel.
+    """
+
     style_axis(ax)
     ax.grid(axis="x", color="#D9D9D9", linewidth=0.6, alpha=0.75)
     ax.set_xlim(5.0, 40.0)
@@ -731,29 +740,40 @@ def draw_direct_tradeoff(
     ax.axhline(10.0, color="#6A6A6A", linestyle=(0, (1.5, 2.2)), linewidth=1.15, zorder=1)
     ax.text(0.025, 0.965, "preferred: upper left", transform=ax.transAxes,
             ha="left", va="top", fontsize=8.8, color="#444444")
-    for rows, fit, attack_name, color, marker, linestyle, label, anchor in (
-        (c_rows, private_fit, ATTACKS["c_private"], COLORS["c_private"], "o", "-",
-         "C-GDP (private-data noise)", False),
-        (anchor_rows, anchor_fit, ATTACKS["op"], COLORS["op"], "^", (0, (5.0, 2.0)),
-         "AA-I-GDP (anchor noise), OP attack", True),
-    ):
-        x = 100 * y_linkage(rows, attack_name)
-        y = 100 * y_utility(rows)
-        if anchor:
-            converged = np.asarray([bool(row["gpm"]["converged"]) for row in rows])
-            ax.scatter(x[converged], y[converged], s=19, marker=marker, color=color,
-                       alpha=0.27, linewidths=0, zorder=3)
-            ax.scatter(x[~converged], y[~converged], s=21, marker=marker, facecolors="none",
-                       edgecolors=color, alpha=0.30, linewidths=0.70, zorder=3)
-        else:
-            ax.scatter(x, y, s=19, marker=marker, color=color, alpha=0.22, linewidths=0, zorder=3)
-        ax.fill_between(fit["x"], fit["lower"], fit["upper"], color=color, alpha=0.14, linewidth=0, zorder=2)
-        ax.plot(fit["x"], fit["estimate"], color=color, linestyle=linestyle,
-                linewidth=2.55, label=label, zorder=5)
+    # C-GDP (private-data noise): filled circles, solid fit.
+    c_x = 100 * y_linkage(c_rows, ATTACKS["c_private"])
+    c_y = 100 * y_utility(c_rows)
+    ax.scatter(c_x, c_y, s=19, marker="o", color=COLORS["c_private"], alpha=0.22,
+               linewidths=0, zorder=3)
+    ax.fill_between(private_fit["x"], private_fit["lower"], private_fit["upper"],
+                    color=COLORS["c_private"], alpha=0.14, linewidth=0, zorder=2)
+    ax.plot(private_fit["x"], private_fit["estimate"], color=COLORS["c_private"], linestyle="-",
+            linewidth=2.55, label="C-GDP (private-data noise)", zorder=5)
+    # AA-GDP (private-data noise): hollow squares, dashed fit drawn over the C-GDP fit.
+    aa_x = 100 * y_linkage(aa_rows, ATTACKS["aa_private"])
+    aa_y = 100 * y_utility(aa_rows)
+    ax.scatter(aa_x, aa_y, s=24, marker="s", facecolors="none", edgecolors=COLORS["aa_private"],
+               alpha=0.36, linewidths=0.70, zorder=4)
+    ax.fill_between(private_aa_fit["x"], private_aa_fit["lower"], private_aa_fit["upper"],
+                    color=COLORS["aa_private"], alpha=0.10, linewidth=0, zorder=2)
+    ax.plot(private_aa_fit["x"], private_aa_fit["estimate"], color=COLORS["aa_private"],
+            linestyle=(0, (2.6, 1.6)), linewidth=1.9, label="AA-GDP (private-data noise)", zorder=6)
+    # NAA-GDP under the OP attack: triangles (filled: GPM converged; hollow: iteration cap).
+    n_x = 100 * y_linkage(anchor_rows, ATTACKS["op"])
+    n_y = 100 * y_utility(anchor_rows)
+    converged = np.asarray([bool(row["gpm"]["converged"]) for row in anchor_rows])
+    ax.scatter(n_x[converged], n_y[converged], s=19, marker="^", color=COLORS["op"],
+               alpha=0.27, linewidths=0, zorder=3)
+    ax.scatter(n_x[~converged], n_y[~converged], s=21, marker="^", facecolors="none",
+               edgecolors=COLORS["op"], alpha=0.30, linewidths=0.70, zorder=3)
+    ax.fill_between(anchor_fit["x"], anchor_fit["lower"], anchor_fit["upper"],
+                    color=COLORS["op"], alpha=0.14, linewidth=0, zorder=2)
+    ax.plot(anchor_fit["x"], anchor_fit["estimate"], color=COLORS["op"], linestyle=(0, (5.0, 2.0)),
+            linewidth=2.55, label="NAA-GDP", zorder=5)
     ax.scatter([100 * baselines["c_source"]], [100 * baselines["c_utility"]], s=132,
                marker="*", color="#222222", edgecolors="white", linewidths=0.55,
-               label="C-GDP / AA-I-GDP (no noise)", zorder=9)
-    ax.axhline(100 * baselines["i_utility"], color="#D55E00", linestyle=(0, (5.0, 2.0, 1.0, 2.0)),
+               label="C-GDP / AA-GDP (no noise)", zorder=9)
+    ax.axhline(100 * baselines["i_utility"], color=COLORS["i_gdp"], linestyle=(0, (5.0, 2.0, 1.0, 2.0)),
                linewidth=2.0, label="I-GDP balanced accuracy", zorder=4)
     dedupe_legend(ax, loc="upper left", bbox_to_anchor=(1.015, 1.0), frameon=False,
                   handlelength=2.9, labelspacing=0.50, borderaxespad=0.0)
@@ -792,7 +812,7 @@ def write_source_csv(
                 count += 1
         for key, protocol, attack_name, label in (
             ("clean_c", "c_gdp", "C-exact", "C-GDP (no noise)"),
-            ("clean_aa", "aa_i_gdp", "AA-known-anchor", "AA-I-GDP (no noise)"),
+            ("clean_aa", "aa_i_gdp", "AA-known-anchor", "AA-GDP (no noise)"),
             ("i_gdp", "i_gdp", "", "I-GDP utility reference"),
         ):
             row = baselines_records[protocol]
@@ -841,6 +861,7 @@ def write_plot_csv(
                              "balanced_accuracy": "", "lower_95": f"{low:.17g}", "upper_95": f"{high:.17g}"})
     for key, rows, fit_key, attack_name, anchor in (
         ("private", series["c_private"]["records"], "direct_private", ATTACKS["c_private"], False),
+        ("private_aa", series["aa_private"]["records"], "direct_private_aa", ATTACKS["aa_private"], False),
         ("anchor_op", series["op"]["records"], "direct_anchor", ATTACKS["op"], True),
     ):
         for row in rows:
@@ -987,9 +1008,28 @@ def build_numerical_summary(
         "representative_fitted_values": representative,
         "direct_spline_support_percent": {
             "private_noise": fits["direct_private"]["support"],
+            "private_noise_aa": fits["direct_private_aa"]["support"],
             "anchor_noise_op": fits["direct_anchor"]["support"],
         },
+        "direct_fit_private_method_equivalence": direct_fit_equivalence(
+            fits["direct_private"], fits["direct_private_aa"]
+        ),
         "endpoint_controls_used": False,
+    }
+
+
+def direct_fit_equivalence(c_fit: dict[str, Any], aa_fit: dict[str, Any]) -> dict[str, Any]:
+    """Compare the C-GDP and AA-GDP private-data-noise trade-off fits on the C-GDP grid."""
+    grid = np.asarray(c_fit["x"], dtype=np.float64)
+    c_estimate = np.asarray(c_fit["estimate"], dtype=np.float64)
+    aa_estimate = np.interp(grid, np.asarray(aa_fit["x"], dtype=np.float64),
+                            np.asarray(aa_fit["estimate"], dtype=np.float64))
+    difference = aa_estimate - c_estimate
+    return {
+        "comparison_grid": "C-GDP direct-spline grid (exact-source linkage, percent)",
+        "support_identical": bool(np.allclose(c_fit["support"], aa_fit["support"], rtol=0.0, atol=1.0e-12)),
+        "max_abs_balanced_accuracy_difference_pp": float(np.max(np.abs(difference))),
+        "mean_abs_balanced_accuracy_difference_pp": float(np.mean(np.abs(difference))),
     }
 
 
@@ -1012,7 +1052,8 @@ def write_summary(summary: dict[str, Any]) -> None:
         "",
         f"- 200 fit observations per noisy protocol.",
         f"- One common linkage manifest: `{summary['linkage_protocol']['manifest_hash']}`.",
-        f"- C-GDP and AA-I-GDP private-noise linkage agrees in all {summary['private_method_equivalence']['exact_sigma_linkage_pairs']} paired observations.",
+        f"- C-GDP and AA-GDP private-data-noise linkage agrees in all {summary['private_method_equivalence']['exact_sigma_linkage_pairs']} paired observations.",
+        f"- The C-GDP and AA-GDP private-data-noise trade-off fits differ by at most {summary['direct_fit_private_method_equivalence']['max_abs_balanced_accuracy_difference_pp']:.4f} percentage points of balanced accuracy over the shared linkage support.",
         f"- OP has the largest mean exact-source linkage ({100 * op['mean_linkage']['op']:.4f}%) and is pointwise strongest (ties included) in {op['pointwise_maximum_count_including_ties']['op']} of 200 paired draws.",
         "",
         "## Fitted chance crossings",
@@ -1021,8 +1062,8 @@ def write_summary(summary: dict[str, Any]) -> None:
         "",
         "## Noiseless controls",
         "",
-        f"- C-GDP / AA-I-GDP exact-source linkage: {100 * summary['noiseless_controls']['c_source']:.4f}%.",
-        f"- C-GDP / AA-I-GDP balanced accuracy: {100 * summary['noiseless_controls']['c_utility']:.4f}%.",
+        f"- C-GDP / AA-GDP exact-source linkage: {100 * summary['noiseless_controls']['c_source']:.4f}%.",
+        f"- C-GDP / AA-GDP balanced accuracy: {100 * summary['noiseless_controls']['c_utility']:.4f}%.",
         f"- I-GDP balanced-accuracy reference: {100 * summary['noiseless_controls']['i_utility']:.4f}%.",
         "",
         "The full representative-value table is stored in the companion JSON file.",
@@ -1049,7 +1090,7 @@ def main() -> None:
         "i_utility": balanced_accuracy(baseline_records["i_gdp"]),
     }
     if baselines["c_source"] != baselines["aa_source"] or baselines["c_utility"] != baselines["aa_utility"]:
-        raise AssertionError("Clean C-GDP/AA-I-GDP baselines differ")
+        raise AssertionError("Clean C-GDP/AA-GDP baselines differ")
 
     private_x = x_for(c_rows, False)
     anchor_x = x_for(anchor_rows, True)
@@ -1063,6 +1104,7 @@ def main() -> None:
         "utility_anchor": conditional_spline(anchor_x, y_utility(anchor_rows), ANCHOR_UPPER, 24072012),
         "direct_private": direct_spline(y_linkage(c_rows, ATTACKS["c_private"]), y_utility(c_rows), 24072031),
         "direct_anchor": direct_spline(y_linkage(anchor_rows, ATTACKS["op"]), y_utility(anchor_rows), 24072032),
+        "direct_private_aa": direct_spline(y_linkage(aa_rows, ATTACKS["aa_private"]), y_utility(aa_rows), 24072033),
     }
     series = {
         "c_private": {"records": c_rows}, "aa_private": {"records": aa_rows},
@@ -1080,7 +1122,8 @@ def main() -> None:
 
     configure_matplotlib()
     fig, ax = plt.subplots(figsize=(8.7, 5.4))
-    draw_direct_tradeoff(ax, c_rows, anchor_rows, fits["direct_private"], fits["direct_anchor"], baselines)
+    draw_direct_tradeoff(ax, c_rows, aa_rows, anchor_rows, fits["direct_private"],
+                         fits["direct_private_aa"], fits["direct_anchor"], baselines)
     fig.subplots_adjust(left=0.10, right=0.70, bottom=0.12, top=0.96)
     outputs["mnist_balanced_accuracy_versus_exact_source_linkage_op"] = save_figure(
         fig, "mnist_balanced_accuracy_versus_exact_source_linkage_op"
@@ -1119,7 +1162,9 @@ def main() -> None:
                    "bootstrap_resamples": BOOTSTRAP_RESAMPLES, "bootstrap": "multinomial percentile",
                    "seeds": {key: value["seed"] for key, value in fits.items()}},
         "direct_spline_support_percent": {
-            "private": fits["direct_private"]["support"], "anchor_op": fits["direct_anchor"]["support"]
+            "private": fits["direct_private"]["support"],
+            "private_aa": fits["direct_private_aa"]["support"],
+            "anchor_op": fits["direct_anchor"]["support"],
         },
         "summary_files": {"json": SUMMARY_JSON.name, "markdown": SUMMARY_MD.name},
         "outputs": outputs,

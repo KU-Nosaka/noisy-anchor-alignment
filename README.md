@@ -9,6 +9,8 @@ It supports two distinct workflows:
 
 Raw datasets, downloaded model weights, training checkpoints, caches, and duplicate result formats are deliberately excluded. The complete observations used in the paper are retained as compressed result tables. The available run, data-allocation, linkage, completion, and environment records are included alongside them; the exact coverage of those records is documented in [docs/PROVENANCE.md](docs/PROVENANCE.md).
 
+The manuscript names the anchor-noise method *NAA-GDP* (noisy-anchor-aligned GDP) and the noiseless anchor-aligned variants *AA-GDP*; the code, notebooks, and frozen result tables keep the identifiers of the recorded runs (`pa_i_gdp`, `aa_i_gdp`, `aa_i_gdp_an`, `c_gdp_an`, and the attack names `PA-OP`, `PA-MP`, `PA-AM`), and the figure renderers map them to the manuscript's labels.
+
 ## Quick figure reproduction
 
 Python 3.12 or newer is recommended. The recorded publication figures were rendered with Python 3.14.2, NumPy 2.5.1, Matplotlib 3.11.1, and Pillow 12.3.0.
@@ -46,8 +48,9 @@ The revised Section 5.3.3 participant-count replay is split into three independe
 6. `06_celeba_participant_replay_p050.ipynb`
 7. `07_celeba_participant_replay_p002_p020.ipynb`
 8. `08_celeba_participant_replay_p005_p010.ipynb`
+9. `09_celeba_participant_replay_supplemental_v0_0p05.ipynb`
 
-Together they evaluate \(p\in\{2,5,10,20,50\}\), with 100 paired draws per participant count and \(v\sim\mathrm{Uniform}(0,0.1)\). Only the corrected `p005_p010` shard is distributed; the failed pre-correction attempt is not part of this repository.
+Together, Notebooks 06--08 evaluate \(p\in\{2,5,10,20,50\}\), with 100 paired draws per participant count and \(v\sim\mathrm{Uniform}(0,0.1)\). Only the corrected `p005_p010` shard is distributed; the failed pre-correction attempt is not part of this repository. Notebook 09 adds, for every participant count, 100 paired supplemental draws in the low-noise regime \(0<v<0.05\): draw \(j\) reuses the quantile, noise tensors, and seeds of published draw \(j\) at exactly half its amplitude, after rebuilding the reviewed modules from the pinned repository commit and verifying the regenerated deployment against the published hashes. The participant-count figure uses all 200 draws per condition.
 
 The notebooks mount Google Drive and use atomic stage/checkpoint files. Set each notebook's result root to a new, empty Drive directory for an independent rerun. The CelebA stages are intended for a high-memory A100 runtime; interrupted stages can be resumed on a different runtime without discarding completed fits.
 
@@ -59,7 +62,7 @@ See [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md) for the exact stage composition, 
 notebooks/       Self-contained Colab experiment notebooks
 results/         Compressed complete result records and provenance manifests
 figure_inputs/   Compact lossless inputs for qualitative reconstruction grids
-figures/         Deterministic publication-figure renderers
+figures/         Deterministic publication-figure renderers; latex/ holds the layered participant-count figure body
 scripts/         One-command reproduction and validation
 docs/            Experiment, figure, data, and provenance documentation
 ```
@@ -76,7 +79,7 @@ The source datasets, model weights, and caches are not redistributed. The three 
 
 ## Scope and provenance
 
-The frozen tables are the authoritative source for the values and figures reported in the paper. They contain 609 MNIST records, 407 CelebA records for the primary \(p=10\) analysis, and 103 records for each of \(p\in\{2,5,10,20,50\}\) in the revised participant-count replay. Each replay condition consists of 100 anchor-noise observations and three deterministic controls.
+The frozen tables are the authoritative source for the values and figures reported in the paper. They contain 609 MNIST records, 407 CelebA records for the primary \(p=10\) analysis, and 103 records for each of \(p\in\{2,5,10,20,50\}\) in the revised participant-count replay. Each replay condition consists of 100 anchor-noise observations and three deterministic controls. The paired low-noise stratum of Notebook 09 adds 100 anchor-noise observations per participant count; its compact per-draw tables are distributed under `results/celeba/participant_replay/supplemental/`, and the complete per-fit records will be added in the schema of the published tables.
 
 Source-snapshot limitations affecting one MNIST supplemental runner and the historical CelebA qualitative replay code are documented transparently in [docs/PROVENANCE.md](docs/PROVENANCE.md). They do not affect regeneration of the reported figures from the frozen records and frozen qualitative inputs.
 

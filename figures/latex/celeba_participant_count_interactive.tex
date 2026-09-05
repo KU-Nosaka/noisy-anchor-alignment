@@ -1,0 +1,22 @@
+% Standalone build of the interactive CelebA participant-count figure.
+%
+%   pdflatex celeba_participant_count_interactive   (run twice)
+%
+% Expects celeba_privacy_utility_by_participant_count_replay_layers.pdf (the
+% 16-page layered PDF written by figures/render_celeba_participant_count.py,
+% renamed to the manuscript's file name) in the working directory or in
+% \graphicspath.  The figure body is the same file that the manuscript inputs;
+% the width is the IEEE Transactions column width.
+\documentclass{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage[hidelinks]{hyperref}
+\usepackage{ocgx2}
+\newcommand{\pcFigureWidth}{3.5in}
+\begin{document}
+\begin{minipage}{\pcFigureWidth}
+\input{celeba_participant_count_layers}
+\end{minipage}
+\end{document}

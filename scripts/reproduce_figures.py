@@ -160,6 +160,13 @@ def main() -> None:
         "celeba_privacy_utility_by_participant_count.pdf":
             celeba_count / "figures"
             / "celeba_privacy_utility_by_participant_count.pdf",
+        # one layer per page; figures/latex/celeba_participant_count_layers.tex
+        # stacks the pages as switchable PDF layers (ocgx2 package)
+        "celeba_privacy_utility_by_participant_count_layers.pdf":
+            celeba_count / "figures"
+            / "celeba_privacy_utility_by_participant_count_layers.pdf",
+        "celeba_participant_count_layers.tex":
+            REPO / "figures" / "latex" / "celeba_participant_count_layers.tex",
     }
     supplement_files = {
         **{

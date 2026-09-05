@@ -70,7 +70,7 @@ ATTACK_SERIES: dict[str, dict[str, str]] = {
     "private": {
         "protocol": "c_gdp_an",
         "attack": "known-secret",
-        "label": "C-GDP (private noise)",
+        "label": "C-GDP (private-data noise)",
         "noise_field": "noise_sigma",
         "noise_symbol": r"$\sigma$",
         "color": "#CC79A7",
@@ -78,7 +78,7 @@ ATTACK_SERIES: dict[str, dict[str, str]] = {
     "mp": {
         "protocol": "pa_i_gdp",
         "attack": "PA-MP",
-        "label": "AA-I-GDP (anchor noise): MP attack",
+        "label": "NAA-GDP: MP attack",
         "noise_field": "anchor_noise_sigma",
         "noise_symbol": r"$v$",
         "color": "#0072B2",
@@ -86,7 +86,7 @@ ATTACK_SERIES: dict[str, dict[str, str]] = {
     "op": {
         "protocol": "pa_i_gdp",
         "attack": "PA-OP",
-        "label": "AA-I-GDP (anchor noise): OP attack",
+        "label": "NAA-GDP: OP attack",
         "noise_field": "anchor_noise_sigma",
         "noise_symbol": r"$v$",
         "color": "#E69F00",
@@ -94,7 +94,7 @@ ATTACK_SERIES: dict[str, dict[str, str]] = {
     "am": {
         "protocol": "pa_i_gdp",
         "attack": "PA-AM",
-        "label": "AA-I-GDP (anchor noise): AM attack",
+        "label": "NAA-GDP: AM attack",
         "noise_field": "anchor_noise_sigma",
         "noise_symbol": r"$v$",
         "color": "#009E73",
@@ -104,14 +104,14 @@ ATTACK_SERIES: dict[str, dict[str, str]] = {
 UTILITY_SERIES: dict[str, dict[str, str]] = {
     "private": {
         "protocol": "c_gdp_an",
-        "label": "C-GDP (private noise)",
+        "label": "C-GDP (private-data noise)",
         "noise_field": "noise_sigma",
         "noise_symbol": r"$\sigma$",
         "color": "#0072B2",
     },
     "anchor": {
         "protocol": "pa_i_gdp",
-        "label": "AA-I-GDP (anchor noise)",
+        "label": "NAA-GDP",
         "noise_field": "anchor_noise_sigma",
         "noise_symbol": r"$v$",
         "color": "#CC79A7",
@@ -385,47 +385,47 @@ def compact_linkage_legend_entries(
     handles, labels = combined_legend_entries(axes)
     by_label = dict(zip(labels, handles))
     label_map = {
-        "C-GDP (private noise)": "C-GDP (private noise)",
-        "AA-I-GDP (anchor noise): MP attack":
-            "AA-I-GDP (anchor noise): MP",
-        "AA-I-GDP (anchor noise): OP attack":
-            "AA-I-GDP (anchor noise): OP",
-        "AA-I-GDP (anchor noise): AM attack":
-            "AA-I-GDP (anchor noise): AM",
-        "200 observations": "200 random noise draws",
-        "GPM converged (200 observations total)":
+        "C-GDP (private-data noise)": "C-GDP (private-data noise)",
+        "NAA-GDP: MP attack":
+            "NAA-GDP: MP",
+        "NAA-GDP: OP attack":
+            "NAA-GDP: OP",
+        "NAA-GDP: AM attack":
+            "NAA-GDP: AM",
+        "Individual observations": "Individual observations",
+        "GPM converged":
             "Anchor noise: GPM converged",
-        "500-iteration cap (200 observations total)":
+        "500-iteration cap":
             "Anchor noise: 500-iteration cap",
         "C-GDP": "C-GDP",
-        "AA-I-GDP": "AA-I-GDP",
+        "AA-GDP": "AA-GDP",
     }
     order = (
-        "C-GDP (private noise)",
-        "200 observations",
-        "AA-I-GDP (anchor noise): MP attack",
-        "AA-I-GDP (anchor noise): OP attack",
-        "AA-I-GDP (anchor noise): AM attack",
+        "C-GDP (private-data noise)",
+        "Individual observations",
+        "NAA-GDP: MP attack",
+        "NAA-GDP: OP attack",
+        "NAA-GDP: AM attack",
         "95% conditional band",
         "Random guess (10%)",
         "C-GDP",
-        "AA-I-GDP",
+        "AA-GDP",
     )
     selected_handles: list[Any] = []
     selected_labels: list[str] = []
     shared_proxies: dict[str, Any] = {
-        "200 observations": Line2D(
+        "Individual observations": Line2D(
             [], [], linestyle="none", marker="o", markersize=5.5,
             markerfacecolor="#777777", markeredgewidth=0,
         ),
         "95% conditional band": Patch(
             facecolor="#777777", edgecolor="none", alpha=0.18
         ),
-        "GPM converged (200 observations total)": Line2D(
+        "GPM converged": Line2D(
             [], [], linestyle="none", marker="o", markersize=5.5,
             markerfacecolor="#777777", markeredgewidth=0,
         ),
-        "500-iteration cap (200 observations total)": Line2D(
+        "500-iteration cap": Line2D(
             [], [], linestyle="none", marker="o", markersize=5.5,
             markerfacecolor="none", markeredgecolor="#777777",
             markeredgewidth=0.8,
@@ -509,15 +509,15 @@ def draw_linkage_panel(
         ax.scatter(xs[converged], 100.0 * ys[converged],
                    s=(13 if overlay else 18), color=color,
                    alpha=(0.20 if overlay else 0.28),
-                   linewidths=0, label="GPM converged (200 observations total)", zorder=3)
+                   linewidths=0, label="GPM converged", zorder=3)
         ax.scatter(xs[~converged], 100.0 * ys[~converged],
                    s=(15 if overlay else 21), facecolors="none",
                    edgecolors=color, alpha=(0.24 if overlay else 0.33),
                    linewidths=0.7,
-                   label="500-iteration cap (200 observations total)", zorder=3)
+                   label="500-iteration cap", zorder=3)
     else:
         ax.scatter(xs, 100.0 * ys, s=18, color=color, alpha=0.25, linewidths=0,
-                   label="200 observations", zorder=3)
+                   label="Individual observations", zorder=3)
     ax.plot(fit["x"], 100.0 * np.clip(fit["estimate"], 0, 1), color=color,
             linewidth=2.55, label=definition["label"], zorder=5)
     if show_guides:
@@ -527,7 +527,7 @@ def draw_linkage_panel(
         baseline = endpoint_value(zero, definition, metric)
         ax.axhline(100.0 * baseline, color="#333333", linestyle=(0, (5.0, 2.0, 1.0, 2.0)),
                    linewidth=1.7, label=("C-GDP" if definition["protocol"] == "c_gdp_an"
-                                         else "AA-I-GDP"), zorder=2)
+                                         else "AA-GDP"), zorder=2)
     if not compact:
         dedupe_legend(ax, loc="upper right", frameon=True, fancybox=False,
                       framealpha=0.93, edgecolor="#B0B0B0", borderpad=0.45,
@@ -542,10 +542,10 @@ def render_linkage_figures(
         for metric in METRICS
     }
     panel_names = {
-        "private": "\nC-GDP (private noise)",
-        "mp": "\nAA-I-GDP (anchor noise) under MP attack",
-        "op": "\nAA-I-GDP (anchor noise) under OP attack",
-        "am": "\nAA-I-GDP (anchor noise) under AM attack",
+        "private": "\nC-GDP (private-data noise)",
+        "mp": "\nNAA-GDP under MP attack",
+        "op": "\nNAA-GDP under OP attack",
+        "am": "\nNAA-GDP under AM attack",
     }
     for metric, metric_spec in METRICS.items():
         for key in ATTACK_SERIES:
@@ -613,8 +613,8 @@ def render_linkage_figures(
                 zip(
                     axes,
                     (
-                        "C-GDP (private noise)",
-                        "AA-I-GDP (anchor noise)",
+                        "C-GDP (private-data noise)",
+                        "NAA-GDP",
                     ),
                 )
             ):
@@ -678,7 +678,7 @@ def draw_utility_panel(
                    edgecolors=color, alpha=0.34, linewidths=0.7, zorder=3)
     else:
         ax.scatter(xs, 100.0 * ys, s=18, color=color, alpha=0.25, linewidths=0,
-                   label="200 random noise draws", zorder=3)
+                   label="Individual observations", zorder=3)
     ax.plot(fit["x"], 100.0 * fit["estimate"], color=color, linewidth=2.6,
             label=definition["label"], zorder=5)
     ax.axhline(100.0 * BALANCED_CHANCE, color="#888888", linestyle=(0, (1.3, 2.2)),
@@ -688,7 +688,7 @@ def draw_utility_panel(
     if definition["protocol"] == "pa_i_gdp":
         ax.axhline(100.0 * controls["aa_zero"], color="#D55E00",
                    linestyle=(0, (5.0, 2.0, 1.0, 2.0)), linewidth=1.7,
-                   label="AA-I-GDP", zorder=2)
+                   label="AA-GDP", zorder=2)
     ax.axhline(100.0 * controls["i_gdp"], color="#009E73", linestyle=(0, (5.5, 2.2, 1.2, 2.2)),
                linewidth=2.0, label="I-GDP", zorder=2)
     if not compact:
@@ -707,8 +707,8 @@ def render_utility_figures(
         "aa_zero": float(record_one(records, "pa_i_gdp", "endpoint_zero")["utility"]["test_balanced_accuracy"]),
     }
     titles = {
-        "private": "C-GDP (private noise)",
-        "anchor": "AA-I-GDP (anchor noise)",
+        "private": "C-GDP (private-data noise)",
+        "anchor": "NAA-GDP",
     }
     for key in UTILITY_SERIES:
         fig, ax = plt.subplots(figsize=(7.4, 5.2))
@@ -728,13 +728,13 @@ def render_utility_figures(
             facecolor="#777777", edgecolor="none", alpha=0.18
         )
         order = (
-            "C-GDP (private noise)",
-            "200 random noise draws",
-            "AA-I-GDP (anchor noise)",
+            "C-GDP (private-data noise)",
+            "Individual observations",
+            "NAA-GDP",
             "95% conditional band",
             "Balanced random guess (50%)",
             "C-GDP",
-            "AA-I-GDP",
+            "AA-GDP",
             "I-GDP",
         )
         handles = [by_label[label] for label in order if label in by_label]
@@ -804,8 +804,8 @@ def draw_tradeoff_panel(
     ax.axhline(50.0, color="#AAAAAA", linestyle=(0, (1.3, 2.2)), linewidth=1.0, zorder=1)
 
     for attack_key, utility_key, color, marker, linestyle, label in (
-        ("private", "private", "#0072B2", "o", "-", "C-GDP private noise (200 observations)"),
-        ("op", "anchor", "#E69F00", "^", (0, (5.0, 2.0)), "AA-I-GDP anchor noise: OP (200 observations)"),
+        ("private", "private", "#0072B2", "o", "-", "C-GDP (private-data noise)"),
+        ("op", "anchor", "#E69F00", "^", (0, (5.0, 2.0)), "NAA-GDP"),
     ):
         leak = leakage_prepared[metric][attack_key]
         util = utility_prepared[utility_key]
@@ -838,7 +838,7 @@ def draw_tradeoff_panel(
     ax.scatter([100.0 * clean_leakage], [100.0 * controls["c_gdp"]], s=128,
                marker="*", color="#222222", edgecolors="white", linewidths=0.55,
                label="C-GDP (no noise)", zorder=9)
-    ax.axhline(100.0 * controls["i_gdp"], color="#D55E00",
+    ax.axhline(100.0 * controls["i_gdp"], color="#009E73",
                linestyle=(0, (5.0, 2.0, 1.0, 2.0)), linewidth=2.0,
                label="I-GDP balanced accuracy", zorder=2)
     if not compact:
@@ -894,10 +894,10 @@ def render_gpm_diagnostics(records: list[dict[str, Any]], outputs: dict[str, Any
         ):
             style_axis(ax)
             ax.scatter(v[converged], y[converged], s=22, color="#0072B2", alpha=0.55,
-                       linewidths=0, label="Converged (200 observations total)")
+                       linewidths=0, label="Converged")
             ax.scatter(v[~converged], y[~converged], s=24, facecolors="none",
                        edgecolors="#D55E00", alpha=0.55, linewidths=0.8,
-                       label="500-iteration cap (200 observations total)")
+                       label="500-iteration cap")
             ax.set_xlabel(r"Anchor-Noise Scale $v$")
             ax.set_xlim(0.0, 0.25)
             ax.set_ylabel(ylabel)
@@ -923,7 +923,7 @@ def reconstruction_row_templates() -> list[dict[str, Any]]:
         },
         {
             "key": "c_gdp_clean",
-            "label": "C-GDP  |  known-secret inversion",
+            "label": "C-GDP  |  known-parameter inversion",
             "math": [
                 r"$\widehat{\widetilde{\boldsymbol{X}}}_j=(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\Psi_s^\top)\boldsymbol{O}_s^\top=\widetilde{\boldsymbol{X}}_j$",
                 r"$\widehat{\boldsymbol{X}}_j=\widetilde{\boldsymbol{X}}_j\boldsymbol{F}^\dagger=\boldsymbol{X}_j\boldsymbol{F}\boldsymbol{F}^\dagger$",
@@ -932,7 +932,7 @@ def reconstruction_row_templates() -> list[dict[str, Any]]:
         },
         {
             "key": "c_gdp_private",
-            "label": "C-GDP (private-data noise)  |  known-secret inversion",
+            "label": "C-GDP (private-data noise)  |  known-parameter inversion",
             "math": [
                 r"$\widehat{\widetilde{\boldsymbol{X}}}_j=(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\Psi_s^\top)\boldsymbol{O}_s^\top=\widetilde{\boldsymbol{X}}_j+\sigma\boldsymbol{W}_j\boldsymbol{O}_s^\top$",
                 r"$\widehat{\boldsymbol{X}}_j=\boldsymbol{X}_j\boldsymbol{F}\boldsymbol{F}^\dagger+\sigma\boldsymbol{W}_j\boldsymbol{O}_s^\top\boldsymbol{F}^\dagger$",
@@ -941,7 +941,7 @@ def reconstruction_row_templates() -> list[dict[str, Any]]:
         },
         {
             "key": "aa_anchor_mp",
-            "label": "AA-I-GDP (anchor noise)  |  MP attack",
+            "label": "NAA-GDP  |  MP attack",
             "math": [
                 r"$\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{MP}}=(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^\top)(\boldsymbol{A}^\top\overline{\boldsymbol{B}}_j)^\dagger$",
                 r"$\widehat{\boldsymbol{X}}_j^{\mathrm{MP}}=\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{MP}}\boldsymbol{F}^\dagger,\quad v\to0:\ \widehat{\boldsymbol{X}}_j^{\mathrm{MP}}\to\boldsymbol{X}_j\boldsymbol{F}\boldsymbol{F}^\dagger$",
@@ -950,7 +950,7 @@ def reconstruction_row_templates() -> list[dict[str, Any]]:
         },
         {
             "key": "aa_anchor_op",
-            "label": "AA-I-GDP (anchor noise)  |  OP attack",
+            "label": "NAA-GDP  |  OP attack",
             "math": [
                 r"$\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{OP}}=(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^\top)[\Pi(\boldsymbol{A}^\top\overline{\boldsymbol{B}}_j)]^\top$",
                 r"$\widehat{\boldsymbol{X}}_j^{\mathrm{OP}}=\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{OP}}\boldsymbol{F}^\dagger,\quad v\to0:\ \widehat{\boldsymbol{X}}_j^{\mathrm{OP}}\to\boldsymbol{X}_j\boldsymbol{F}\boldsymbol{F}^\dagger$",
@@ -959,7 +959,7 @@ def reconstruction_row_templates() -> list[dict[str, Any]]:
         },
         {
             "key": "aa_anchor_am",
-            "label": "AA-I-GDP (anchor noise)  |  alignment-map attack",
+            "label": "NAA-GDP  |  alignment-map attack",
             "math": [
                 r"$\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{AM}}=(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^\top)[\Pi(\boldsymbol{O}_c\widehat{\boldsymbol{R}}_c)\widehat{\boldsymbol{R}}_j^\top]^\top$",
                 r"$\widehat{\boldsymbol{X}}_j^{\mathrm{AM}}=\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{AM}}\boldsymbol{F}^\dagger,\quad v\to0:\ \widehat{\boldsymbol{X}}_j^{\mathrm{AM}}\to\boldsymbol{X}_j\boldsymbol{F}\boldsymbol{F}^\dagger$",
@@ -1147,7 +1147,7 @@ def render_reconstruction_noise_sweep(
         for value in clean_aa_linkages
     ):
         raise ValueError(
-            "The zero-anchor-noise AA-I-GDP leakage does not match clean C-GDP"
+            "The zero-anchor-noise AA-GDP leakage does not match clean C-GDP"
         )
     scales = {
         "original": None,
@@ -1229,7 +1229,7 @@ def render_identity_reconstruction_sweeps(
         for value in clean_aa_linkages
     ):
         raise ValueError(
-            "The zero-anchor-noise AA-I-GDP leakage does not match clean C-GDP"
+            "The zero-anchor-noise AA-GDP leakage does not match clean C-GDP"
         )
     scales = {
         "original": None,
@@ -1408,7 +1408,7 @@ def write_readme(metadata: dict[str, Any]) -> None:
 This folder renders updated CelebA figures for **p=10** from the authoritative
 407-record combined aggregate. Each noisy family contains **200 fit
 observations**: 100 original random draws and 100 matching supplemental draws.
-The four endpoint controls and AA-I-GDP v=40 equivalence control are excluded
+The four endpoint controls and NAA-GDP v=40 equivalence control are excluded
 from fits and are not displayed as endpoint markers.
 
 ## Metrics

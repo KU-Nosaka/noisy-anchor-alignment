@@ -58,7 +58,7 @@ ROW_STYLE: dict[str, dict[str, str]] = {
         "face": "#edf1f5",
     },
     "c_gdp_known_secret": {
-        "title": "C-GDP | known-secret inversion",
+        "title": "C-GDP | known-parameter inversion",
         "math1": (
             r"$\widehat{\widetilde{\boldsymbol{X}}}_j="
             r"(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{\Psi}_s^{\mathsf{T}})"
@@ -72,7 +72,7 @@ ROW_STYLE: dict[str, dict[str, str]] = {
         "face": "#e8f2f8",
     },
     "aa_i_gdp_known_anchor": {
-        "title": "AA-I-GDP | known-anchor inversion",
+        "title": "AA-GDP | known-anchor attack",
         "math1": (
             r"$\widehat{\widetilde{\boldsymbol{X}}}_j="
             r"(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^{\mathsf{T}})"
@@ -87,7 +87,7 @@ ROW_STYLE: dict[str, dict[str, str]] = {
         "face": "#e8f2f8",
     },
     "c_gdp_private_data_noise": {
-        "title": "C-GDP (private-data noise) | known-secret inversion",
+        "title": "C-GDP (private-data noise) | known-parameter inversion",
         "math1": (
             r"$\widehat{\widetilde{\boldsymbol{X}}}_j="
             r"(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{\Psi}_s^{\mathsf{T}})"
@@ -102,7 +102,7 @@ ROW_STYLE: dict[str, dict[str, str]] = {
         "face": "#e8f2f8",
     },
     "aa_i_gdp_private_data_noise": {
-        "title": "AA-I-GDP (private-data noise) | known-anchor inversion",
+        "title": "AA-GDP (private-data noise) | known-anchor attack",
         "math1": (
             r"$\widehat{\widetilde{\boldsymbol{X}}}_j="
             r"(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^{\mathsf{T}})"
@@ -117,7 +117,7 @@ ROW_STYLE: dict[str, dict[str, str]] = {
         "face": "#e8f2f8",
     },
     "aa_i_gdp_anchor_noise_mp": {
-        "title": "AA-I-GDP (anchor noise) | MP attack",
+        "title": "NAA-GDP | MP attack",
         "math1": (
             r"$\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{MP}}="
             r"(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^{\mathsf{T}})"
@@ -131,7 +131,7 @@ ROW_STYLE: dict[str, dict[str, str]] = {
         "face": "#fbf4e7",
     },
     "aa_i_gdp_anchor_noise_op": {
-        "title": "AA-I-GDP (anchor noise) | OP attack",
+        "title": "NAA-GDP | OP attack",
         "math1": (
             r"$\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{OP}}="
             r"(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^{\mathsf{T}})"
@@ -145,7 +145,7 @@ ROW_STYLE: dict[str, dict[str, str]] = {
         "face": "#fbf4e7",
     },
     "aa_i_gdp_anchor_noise_alignment_map": {
-        "title": "AA-I-GDP (anchor noise) | AM attack",
+        "title": "NAA-GDP | AM attack",
         "math1": (
             r"$\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{AM}}="
             r"(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^{\mathsf{T}})"

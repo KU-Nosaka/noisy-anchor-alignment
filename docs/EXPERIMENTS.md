@@ -44,6 +44,8 @@ p\in\{2,5,10,20,50\}.
 
 For each participant count, the replay contains 100 anchor-noise observations with paired scales \(v\sim\mathrm{Uniform}(0,0.1)\), plus noiseless C-GDP, I-GDP, and AA-I-GDP controls. Thus, each condition contains 103 records and the complete participant-count study contains 515 records. Draw index \(k\) uses the same scalar \(v_k\) across all five conditions, while participant data and GDP parameters are nested prefixes of the frozen 50-participant deployment. The corrected \(p=5,10\) shard reuses the self-hashed frozen master allocation; the failed earlier shard is excluded.
 
+A supplemental stratum (Notebook 09, `run_role = supplemental_anchor_v_0_0p05_v1`) adds 100 further anchor-noise observations per participant count over \(0<v<0.05\). Supplemental draw \(k\) reuses the uniform quantile, participant-indexed noise tensors, model seed, minibatch order, and GPM restart seed of published draw \(k\) at exactly half its amplitude, \(v_k/2\), which the notebook asserts before executing any fit; the draws are thus paired across participant counts as in the published stratum, and the reported participant-count figure uses 200 draws per condition. The stratum has no additional controls.
+
 Utility is held-out balanced accuracy for the Smiling attribute. Privacy is ten-way cross-image identity linkage using normalized 512-dimensional embeddings from a frozen InceptionResnetV1 auditor pretrained on VGGFace2.
 
 ## Recommended runtime

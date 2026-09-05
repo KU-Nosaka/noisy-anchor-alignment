@@ -173,6 +173,59 @@ def validate_results() -> None:
         ):
             raise ValueError(f"{relative}: GPM stopping counts differ")
 
+    assert paired_v is not None
+    validate_supplemental_replay(paired_v)
+
+
+def validate_supplemental_replay(published_v: tuple[float, ...]) -> None:
+    """Check the paired low-noise stratum of the participant-count replay.
+
+    Supplemental draw ``j`` of every participant count reuses the uniform
+    quantile, noise tensors and seeds of published draw ``j`` at exactly half
+    the anchor-noise amplitude, so ``anchor_v`` must equal ``published_v[j] / 2``
+    bit for bit.  Until the complete records are frozen, the distributed files
+    are the compact per-draw tables exported by Notebook 09.
+    """
+
+    expected_convergence = {2: (48, 52), 5: (58, 42), 10: (71, 29), 20: (81, 19), 50: (90, 10)}
+    required_columns = {
+        "p",
+        "draw",
+        "anchor_v",
+        "test_balanced_accuracy",
+        "op_cross_image_identity_top1",
+        "gpm_converged",
+        "gpm_iterations",
+    }
+    for p in (2, 5, 10, 20, 50):
+        relative = (
+            "results/celeba/participant_replay/supplemental/"
+            f"p{p:03d}_supplemental_compact.csv"
+        )
+        path = REPO / relative
+        with path.open("r", encoding="utf-8-sig", newline="") as handle:
+            rows = list(csv.DictReader(handle))
+        if not rows or not required_columns <= set(rows[0].keys()):
+            raise ValueError(f"{relative}: missing columns")
+        if len(rows) != 100:
+            raise ValueError(f"{relative}: expected 100 records, found {len(rows)}")
+        if {int(row["p"]) for row in rows} != {p}:
+            raise ValueError(f"{relative}: participant-count field mismatch")
+        rows.sort(key=lambda row: int(row["draw"]))
+        if [int(row["draw"]) for row in rows] != list(range(100)):
+            raise ValueError(f"{relative}: supplemental draws are not 0,...,99")
+        v = [float(row["anchor_v"]) for row in rows]
+        if any(value != 0.5 * source for value, source in zip(v, published_v)):
+            raise ValueError(f"{relative}: anchor_v is not half of the paired published draw")
+        if not all(0.0 < value < 0.05 for value in v):
+            raise ValueError(f"{relative}: invalid (0, 0.05) realization")
+        for column in ("test_balanced_accuracy", "op_cross_image_identity_top1"):
+            if not all(0.0 <= float(row[column]) <= 1.0 for row in rows):
+                raise ValueError(f"{relative}: {column} outside [0, 1]")
+        convergence = sum(row["gpm_converged"].strip().lower() == "true" for row in rows)
+        if (convergence, 100 - convergence) != expected_convergence[p]:
+            raise ValueError(f"{relative}: GPM stopping counts differ")
+
 
 def validate_archives() -> None:
     expectations = {
@@ -230,6 +283,28 @@ def validate_replay_notebooks() -> None:
         )
         if normalized_embedded != normalized_runner:
             raise ValueError(f"{relative}: embedded replay runner differs")
+
+    # Notebook 09 rebuilds the reviewed modules from the pinned commit of this
+    # repository (Notebook 06's %%writefile cells) and embeds only the
+    # supplemental overlay, which is mirrored in scripts/ for review.
+    relative = "notebooks/09_celeba_participant_replay_supplemental_v0_0p05.ipynb"
+    payload = json.loads((REPO / relative).read_text(encoding="utf-8"))
+    sources = ["".join(cell.get("source", [])) for cell in payload["cells"]]
+    pinned = 'REPO_COMMIT = "20383a6fcd87f83eb615397e84a7e6f4af996210"'
+    if not any(pinned in source for source in sources):
+        raise ValueError(f"{relative}: pinned repository commit differs")
+    overlay = (
+        REPO / "scripts" / "celeba_participant_replay_supplemental_runner.py"
+    ).read_text(encoding="utf-8")
+    normalized_overlay = overlay.replace("\r\n", "\n").rstrip() + "\n"
+    header = "%%writefile celeba_participant_replay_supplemental_runner.py\n"
+    embedded = [source for source in sources if source.startswith(header)]
+    others = [source for source in sources if source.startswith("%%writefile ") and not source.startswith(header)]
+    if len(embedded) != 1 or others:
+        raise ValueError(f"{relative}: expected exactly one embedded module, the supplemental overlay")
+    normalized_embedded = embedded[0][len(header):].replace("\r\n", "\n").rstrip() + "\n"
+    if normalized_embedded != normalized_overlay:
+        raise ValueError(f"{relative}: embedded supplemental overlay differs")
 
 
 def validate_manifest() -> None:

@@ -74,7 +74,7 @@ ATTACK_SERIES: dict[str, dict[str, str]] = {
     "private": {
         "protocol": "c_gdp_an",
         "attack": "known-secret",
-        "label": "C-GDP (private-data noise): known-secret attack",
+        "label": "C-GDP (private-data noise): known-parameter inversion",
         "noise_field": "noise_sigma",
         "noise_symbol": r"$\sigma$",
         "color": "#0072B2",
@@ -82,7 +82,7 @@ ATTACK_SERIES: dict[str, dict[str, str]] = {
     "mp": {
         "protocol": "pa_i_gdp",
         "attack": "PA-MP",
-        "label": "AA-I-GDP (anchor noise): MP attack",
+        "label": "NAA-GDP: MP attack",
         "noise_field": "anchor_noise_sigma",
         "noise_symbol": r"$v$",
         "color": "#0072B2",
@@ -90,7 +90,7 @@ ATTACK_SERIES: dict[str, dict[str, str]] = {
     "op": {
         "protocol": "pa_i_gdp",
         "attack": "PA-OP",
-        "label": "AA-I-GDP (anchor noise): OP attack",
+        "label": "NAA-GDP: OP attack",
         "noise_field": "anchor_noise_sigma",
         "noise_symbol": r"$v$",
         "color": "#E69F00",
@@ -98,7 +98,7 @@ ATTACK_SERIES: dict[str, dict[str, str]] = {
     "am": {
         "protocol": "pa_i_gdp",
         "attack": "PA-AM",
-        "label": "AA-I-GDP (anchor noise): alignment-map attack",
+        "label": "NAA-GDP: alignment-map attack",
         "noise_field": "anchor_noise_sigma",
         "noise_symbol": r"$v$",
         "color": "#009E73",
@@ -115,7 +115,7 @@ UTILITY_SERIES: dict[str, dict[str, str]] = {
     },
     "anchor": {
         "protocol": "pa_i_gdp",
-        "label": "AA-I-GDP (anchor noise)",
+        "label": "NAA-GDP",
         "noise_field": "anchor_noise_sigma",
         "noise_symbol": r"$v$",
         "color": "#CC79A7",
@@ -449,7 +449,7 @@ def draw_linkage_panel(
     baseline = endpoint_value(zero, definition, metric)
     ax.axhline(100.0 * baseline, color="#D55E00", linestyle=(0, (5.0, 2.0, 1.0, 2.0)),
                linewidth=1.7, label=("C-GDP (no noise)" if definition["protocol"] == "c_gdp_an"
-                                     else "AA-I-GDP (no anchor noise)"), zorder=2)
+                                     else "AA-GDP (no noise)"), zorder=2)
     if not compact:
         dedupe_legend(ax, loc="upper right", frameon=True, fancybox=False,
                       framealpha=0.93, edgecolor="#B0B0B0", borderpad=0.45,
@@ -561,7 +561,7 @@ def draw_utility_panel(
     if definition["protocol"] == "pa_i_gdp":
         ax.axhline(100.0 * controls["aa_zero"], color="#D55E00",
                    linestyle=(0, (5.0, 2.0, 1.0, 2.0)), linewidth=1.7,
-                   label="AA-I-GDP (no anchor noise)", zorder=2)
+                   label="AA-GDP (no noise)", zorder=2)
     ax.axhline(100.0 * controls["i_gdp"], color="#009E73", linestyle=(0, (5.5, 2.2, 1.2, 2.2)),
                linewidth=2.0, label="I-GDP", zorder=2)
     if not compact:
@@ -580,8 +580,8 @@ def render_utility_figures(
         "aa_zero": float(record_one(records, "pa_i_gdp", "endpoint_zero")["utility"]["test_balanced_accuracy"]),
     }
     titles = {
-        "private": "C-GDP (private noise)",
-        "anchor": "AA-I-GDP (anchor noise)",
+        "private": "C-GDP (private-data noise)",
+        "anchor": "NAA-GDP",
     }
     for key in UTILITY_SERIES:
         fig, ax = plt.subplots(figsize=(7.4, 5.2))
@@ -636,7 +636,7 @@ def draw_tradeoff_panel(
 
     for attack_key, utility_key, color, marker, linestyle, label in (
         ("private", "private", "#0072B2", "o", "-", "C-GDP (private-data noise)"),
-        ("op", "anchor", "#E69F00", "^", (0, (5.0, 2.0)), "AA-I-GDP (anchor noise): OP attack"),
+        ("op", "anchor", "#E69F00", "^", (0, (5.0, 2.0)), "NAA-GDP: OP attack"),
     ):
         leak = leakage_prepared[metric][attack_key]
         util = utility_prepared[utility_key]
@@ -754,7 +754,7 @@ def reconstruction_row_templates() -> list[dict[str, Any]]:
         },
         {
             "key": "c_gdp_clean",
-            "label": "C-GDP  |  known-secret inversion",
+            "label": "C-GDP  |  known-parameter inversion",
             "math": [
                 r"$\widehat{\widetilde{\boldsymbol{X}}}_j=(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\Psi_s^\top)\boldsymbol{O}_s^\top=\widetilde{\boldsymbol{X}}_j$",
                 r"$\widehat{\boldsymbol{X}}_j=\widetilde{\boldsymbol{X}}_j\boldsymbol{F}^\dagger=\boldsymbol{X}_j\boldsymbol{F}\boldsymbol{F}^\dagger$",
@@ -763,7 +763,7 @@ def reconstruction_row_templates() -> list[dict[str, Any]]:
         },
         {
             "key": "c_gdp_private",
-            "label": "C-GDP (private-data noise)  |  known-secret inversion",
+            "label": "C-GDP (private-data noise)  |  known-parameter inversion",
             "math": [
                 r"$\widehat{\widetilde{\boldsymbol{X}}}_j=(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\Psi_s^\top)\boldsymbol{O}_s^\top=\widetilde{\boldsymbol{X}}_j+\sigma\boldsymbol{W}_j\boldsymbol{O}_s^\top$",
                 r"$\widehat{\boldsymbol{X}}_j=\boldsymbol{X}_j\boldsymbol{F}\boldsymbol{F}^\dagger+\sigma\boldsymbol{W}_j\boldsymbol{O}_s^\top\boldsymbol{F}^\dagger$",
@@ -772,7 +772,7 @@ def reconstruction_row_templates() -> list[dict[str, Any]]:
         },
         {
             "key": "aa_anchor_mp",
-            "label": "AA-I-GDP (anchor noise)  |  MP attack",
+            "label": "NAA-GDP  |  MP attack",
             "math": [
                 r"$\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{MP}}=(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^\top)(\boldsymbol{A}^\top\overline{\boldsymbol{B}}_j)^\dagger$",
                 r"$\widehat{\boldsymbol{X}}_j^{\mathrm{MP}}=\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{MP}}\boldsymbol{F}^\dagger,\quad v\to0:\ \widehat{\boldsymbol{X}}_j^{\mathrm{MP}}\to\boldsymbol{X}_j\boldsymbol{F}\boldsymbol{F}^\dagger$",
@@ -781,7 +781,7 @@ def reconstruction_row_templates() -> list[dict[str, Any]]:
         },
         {
             "key": "aa_anchor_op",
-            "label": "AA-I-GDP (anchor noise)  |  OP attack",
+            "label": "NAA-GDP  |  OP attack",
             "math": [
                 r"$\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{OP}}=(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^\top)[\Pi(\boldsymbol{A}^\top\overline{\boldsymbol{B}}_j)]^\top$",
                 r"$\widehat{\boldsymbol{X}}_j^{\mathrm{OP}}=\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{OP}}\boldsymbol{F}^\dagger,\quad v\to0:\ \widehat{\boldsymbol{X}}_j^{\mathrm{OP}}\to\boldsymbol{X}_j\boldsymbol{F}\boldsymbol{F}^\dagger$",
@@ -790,7 +790,7 @@ def reconstruction_row_templates() -> list[dict[str, Any]]:
         },
         {
             "key": "aa_anchor_am",
-            "label": "AA-I-GDP (anchor noise)  |  AM attack",
+            "label": "NAA-GDP  |  AM attack",
             "math": [
                 r"$\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{AM}}=(\boldsymbol{Y}_j-\mathbf{1}_{n_j}\boldsymbol{b}_j^\top)[\Pi(\boldsymbol{O}_c\widehat{\boldsymbol{R}}_c)\widehat{\boldsymbol{R}}_j^\top]^\top$",
                 r"$\widehat{\boldsymbol{X}}_j^{\mathrm{AM}}=\widehat{\widetilde{\boldsymbol{X}}}_j^{\mathrm{AM}}\boldsymbol{F}^\dagger,\quad v\to0:\ \widehat{\boldsymbol{X}}_j^{\mathrm{AM}}\to\boldsymbol{X}_j\boldsymbol{F}\boldsymbol{F}^\dagger$",
@@ -993,7 +993,7 @@ def render_reconstruction_noise_sweep(
         for value in clean_aa_linkages
     ):
         raise ValueError(
-            "The zero-anchor-noise AA-I-GDP leakage does not match clean C-GDP"
+            "The zero-anchor-noise AA-GDP leakage does not match clean C-GDP"
         )
     scales = {
         "original": None,
@@ -1075,7 +1075,7 @@ def render_identity_reconstruction_sweeps(
         for value in clean_aa_linkages
     ):
         raise ValueError(
-            "The zero-anchor-noise AA-I-GDP leakage does not match clean C-GDP"
+            "The zero-anchor-noise AA-GDP leakage does not match clean C-GDP"
         )
     scales = {
         "original": None,
@@ -1253,8 +1253,8 @@ def write_readme(metadata: dict[str, Any]) -> None:
 
 This folder reproduces the CelebA participant-count-sweep figures for **p=10**.
 The authoritative aggregate contains **207 fits**: two clean controls, 100
-C-GDP private-data-noise draws, 100 AA-I-GDP anchor-noise draws, four endpoint
-controls, and one separate AA-I-GDP v=40 equivalence control.
+C-GDP private-data-noise draws, 100 NAA-GDP draws, four endpoint
+controls, and one separate NAA-GDP v=40 equivalence control.
 
 ## Metrics
 

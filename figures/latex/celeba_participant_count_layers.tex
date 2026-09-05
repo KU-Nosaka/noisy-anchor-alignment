@@ -1,0 +1,76 @@
+% Interactive (layered) version of the CelebA participant-count figure.
+%
+% The renderer figures/render_celeba_participant_count.py writes, next to the
+% flat figure, a 16-page PDF whose pages share the flat figure's page box:
+%   page 1       axes, chance levels, legends
+%   pages 2--6   95% bootstrap bands            for p = 2, 5, 10, 20, 50
+%   pages 7--11  observations + I-GDP reference for p = 2, 5, 10, 20, 50
+%   pages 12--16 fitted splines                  for p = 2, 5, 10, 20, 50
+% This file stacks the pages as PDF optional-content groups (layers) with the
+% ocgx2 package and typesets one check box per participant count plus one for
+% the spline fits.  Every layer starts visible, so the static rendering (print,
+% viewers without layer support) is the flat figure; in viewers that support
+% PDF layers (Adobe Acrobat/Reader, Foxit, PDF-XChange, Okular, Firefox), a
+% click on a check box shows or hides that participant count, and the spline
+% fit of a participant count is visible only if both its box and the "spline
+% fits" box are ticked (nested optional content).
+%
+% Preamble requirements:  \usepackage{graphicx}, \usepackage{amssymb} (for
+% \checkmark) and \usepackage{ocgx2}, the latter loaded after hyperref.
+% Usage:   \begin{figure}[t] \input{celeba_participant_count_layers}
+%          \caption{...} \label{...} \end{figure}
+% Rename \pcLayersFile if the layered PDF is stored under another name.
+\providecommand{\pcLayersFile}{celeba_privacy_utility_by_participant_count_replay_layers}
+\providecommand{\pcFigureWidth}{\columnwidth}
+% one page of the layered PDF, as a zero-width box so that the pages overlay
+\providecommand{\pcPage}[1]{%
+  \makebox[0pt][l]{\includegraphics[width=\pcFigureWidth,page=#1]{\pcLayersFile}}}
+% #1 layer name shown in the viewer's layer panel, #2 OCG id: an empty first
+% opening lists the layer once, at the top level of the viewer's layer panel
+\providecommand{\pcRegisterLayer}[2]{\begin{ocg}{#1}{#2}{1}\end{ocg}}
+% #1 layer name, #2 OCG id, #3 page of the layered PDF (re-opens the layer)
+\providecommand{\pcCountLayer}[3]{\begin{ocg}[showingui=never]{#1}{#2}{1}\pcPage{#3}\end{ocg}}
+% a spline layer is nested in the "Spline fits" group and in its count's group,
+% so it is visible only when both are
+\providecommand{\pcFitLayer}[3]{%
+  \begin{ocg}[showingui=never]{Spline fits}{pcFits}{1}%
+    \begin{ocg}[showingui=never]{#1}{#2}{1}\pcPage{#3}\end{ocg}%
+  \end{ocg}}
+% check box: a link that toggles OCG #1; the tick is an optional-content
+% membership dictionary that is visible exactly when OCG #1 is visible
+\providecommand{\pcCheckBox}[2]{%
+  \switchocg{#1}{\framebox[1.05em][c]{\rule{0pt}{1.35ex}\begin{ocmd}{\AllOn{#1}}\checkmark\end{ocmd}}\,#2}}
+\centering
+\makebox[\pcFigureWidth][l]{%
+  \pcRegisterLayer{p = 2}{pcTwo}%
+  \pcRegisterLayer{p = 5}{pcFive}%
+  \pcRegisterLayer{p = 10}{pcTen}%
+  \pcRegisterLayer{p = 20}{pcTwenty}%
+  \pcRegisterLayer{p = 50}{pcFifty}%
+  \pcRegisterLayer{Spline fits}{pcFits}%
+  \pcPage{1}%
+  \pcFitLayer{p = 2}{pcTwo}{2}%
+  \pcFitLayer{p = 5}{pcFive}{3}%
+  \pcFitLayer{p = 10}{pcTen}{4}%
+  \pcFitLayer{p = 20}{pcTwenty}{5}%
+  \pcFitLayer{p = 50}{pcFifty}{6}%
+  \pcCountLayer{p = 2}{pcTwo}{7}%
+  \pcCountLayer{p = 5}{pcFive}{8}%
+  \pcCountLayer{p = 10}{pcTen}{9}%
+  \pcCountLayer{p = 20}{pcTwenty}{10}%
+  \pcCountLayer{p = 50}{pcFifty}{11}%
+  \pcFitLayer{p = 2}{pcTwo}{12}%
+  \pcFitLayer{p = 5}{pcFive}{13}%
+  \pcFitLayer{p = 10}{pcTen}{14}%
+  \pcFitLayer{p = 20}{pcTwenty}{15}%
+  \pcFitLayer{p = 50}{pcFifty}{16}%
+}\\[2pt]
+{\footnotesize
+  % no link frames around the check boxes, whatever hyperref's border setting
+  \ifdefined\hypersetup\hypersetup{pdfborder={0 0 0}}\fi
+  \pcCheckBox{pcTwo}{$p=2$}\quad
+  \pcCheckBox{pcFive}{$p=5$}\quad
+  \pcCheckBox{pcTen}{$p=10$}\quad
+  \pcCheckBox{pcTwenty}{$p=20$}\quad
+  \pcCheckBox{pcFifty}{$p=50$}\quad
+  \pcCheckBox{pcFits}{spline fits}\par}
