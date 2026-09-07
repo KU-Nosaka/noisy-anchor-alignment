@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "artifact": "Noisy Anchor Alignment code and numerical results",
-  "file_count": 142,
-  "total_bytes": 35327396,
+  "artifact": "Noisy Anchor Alignment reproducibility repository",
+  "file_count": 83,
+  "total_bytes": 32042654,
   "files": [
     {
       "path": ".gitattributes",
@@ -11,13 +11,13 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 346,
-      "sha256": "d2db4fcf833b5d1352431439f2ca39d1fd2884af48565b77f4275e0d02a5da66"
+      "bytes": 241,
+      "sha256": "1dc7b064ec53c7191ce774147d808a02cf8ca36597ff22078f35fedb82630fe3"
     },
     {
       "path": "CITATION.cff",
-      "bytes": 853,
-      "sha256": "76c79c5649ab2232ed282a4ab59a5e13c21d06e03551bb6b578635499cad6212"
+      "bytes": 893,
+      "sha256": "654e9b9293ef7d6b79b97e7a4118d3b86df1058101a895a8d29a70cecba2285e"
     },
     {
       "path": "LICENSE",
@@ -26,333 +26,38 @@
     },
     {
       "path": "LICENSE-DATA.md",
-      "bytes": 1194,
-      "sha256": "7e37bdb96c191a420ef512d99f89d421247c5e32c644f7011b826990f57e3c28"
+      "bytes": 1130,
+      "sha256": "4c115ae20c4011e624741f4b5dd76c38e7a1d73f5dcf994e0ed05e1c56bf6520"
     },
     {
       "path": "README.md",
-      "bytes": 4405,
-      "sha256": "ffa4617847117c8cb195c39e3dde1b009f4fc96743f984cf2ceb3f0222c51ca1"
+      "bytes": 7078,
+      "sha256": "c03437f20a27b53751dc541aa322f61b8be295023cd37bde267bc8c5abec99f3"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 2045,
-      "sha256": "80e383325eb2760cd8272f3282d406a918c452b268c1076e93197d237fb78147"
-    },
-    {
-      "path": "current/README.md",
-      "bytes": 1070,
-      "sha256": "7fccf4bdb05ca81685c8327ed402aa6f9272d8e4b4903ebdff01d955133f351e"
-    },
-    {
-      "path": "current/archive/CelebA_Privacy_Utility_and_Scaling.ipynb",
-      "bytes": 98285,
-      "sha256": "38920974bcd6ceb7be7c08ee6cf5ae9638a769f5f58a3aecdadfa3a2a7261bfa"
-    },
-    {
-      "path": "current/archive/README.md",
-      "bytes": 877,
-      "sha256": "fe3a4786c36077cc3a03125d4cf8180030de3826cf56207273d39520770ac0c6"
-    },
-    {
-      "path": "current/docs/EXPERIMENTS.md",
-      "bytes": 8426,
-      "sha256": "1255b78584ebc0344c5048ec48d5616b2cb922c60ecb7809ea03049f486b77db"
-    },
-    {
-      "path": "current/docs/FIGURES.md",
-      "bytes": 4544,
-      "sha256": "b36d93922c194214d3aa856c1709c3320a2b413642660a2021c823f9003cc416"
-    },
-    {
-      "path": "current/docs/FRESH_START_SOURCE_MANIFEST.json",
-      "bytes": 15432,
-      "sha256": "61d0deb2e23b707617d9ef8babce32ba96c335b8a8fbeecabea081efb56da76f"
-    },
-    {
-      "path": "current/docs/PROVENANCE.md",
-      "bytes": 3995,
-      "sha256": "ff1d786ed53a01fa1e6649452db87f2b7b48cb6ab0c0f785576a2f82407f37d0"
-    },
-    {
-      "path": "current/notebooks/C_GDP_AA_GDP_Equivalence.ipynb",
-      "bytes": 17346,
-      "sha256": "a7136f2e75133f9816bcf9caacbba21244de828642dca6be750e816f407c42a0"
-    },
-    {
-      "path": "current/notebooks/CelebA_P2_P20.ipynb",
-      "bytes": 129125,
-      "sha256": "e5afc550d1a6db7ec75a12cb4f93794839c8cd5c409ac31ed5faa86ee61b3326"
-    },
-    {
-      "path": "current/notebooks/CelebA_P50.ipynb",
-      "bytes": 136282,
-      "sha256": "b7d3ed6b0e6d535a06482154811bfeb805945c3066e38ea1073a5b1ea7018b95"
-    },
-    {
-      "path": "current/notebooks/CelebA_P5_P10.ipynb",
-      "bytes": 129906,
-      "sha256": "bdd947e4e0d3712de944444c41822485bf683730a86cc7da95c9cf541f81863a"
-    },
-    {
-      "path": "current/notebooks/Experiment_Figures.ipynb",
-      "bytes": 84919,
-      "sha256": "da5f3f0f29cf9698a6e0ec3765ebf6a3ce3aefe4da39468ed0280bf232f54880"
-    },
-    {
-      "path": "current/notebooks/LFWA_Privacy_Utility.ipynb",
-      "bytes": 104036,
-      "sha256": "020f99468c7b7f2281eb35ce2e2ccb60751659c3ba8525065d97c870273f26fd"
-    },
-    {
-      "path": "current/notebooks/README.md",
-      "bytes": 2492,
-      "sha256": "7a581d11f5f406dfcfd87cafe80b770602c00ef949b0fbabd68c53e17e15caec"
-    },
-    {
-      "path": "current/requirements-figures.txt",
-      "bytes": 40,
-      "sha256": "32d93c14aa754ae21ef8e00fd5ee39dd5d9c17b2c020cc0428618182309831f7"
-    },
-    {
-      "path": "current/results/README.md",
-      "bytes": 6511,
-      "sha256": "86578ae87b8b6cf6039d9db9b1b8fb1364babb15fc85effc4cdf64558e80869b"
-    },
-    {
-      "path": "current/results/SOURCE_MANIFEST.json",
-      "bytes": 17231,
-      "sha256": "a001ebedda0c92c943655108dfd756952ef8e2fd52769c5cd8456fa1f176416a"
-    },
-    {
-      "path": "current/results/VALIDATION.json",
-      "bytes": 1265,
-      "sha256": "b895076757a2443224c799c2c15199ab55f90856ee03cc7d09834289ffeec196"
-    },
-    {
-      "path": "current/results/celeba_parallel/jobs/p2_20/progress.json",
-      "bytes": 313,
-      "sha256": "dd108911d08fecabe858691a4bd8b6178923830602d8ce0e9923022bbd5f0764"
-    },
-    {
-      "path": "current/results/celeba_parallel/jobs/p2_20/protocol.json",
-      "bytes": 332,
-      "sha256": "7f9bc9b17707015d36eafda69f640d0ef89340350e619269d39df48b9fc63877"
-    },
-    {
-      "path": "current/results/celeba_parallel/jobs/p50/progress.json",
-      "bytes": 311,
-      "sha256": "1018a43afe107a55fa779a45a62bbca0b07d6958eec97ef0de897aaf8449c91e"
-    },
-    {
-      "path": "current/results/celeba_parallel/jobs/p50/protocol.json",
-      "bytes": 330,
-      "sha256": "63dc2f07fbd5d99bfa1aa205ad9fcffe852a4e4cb84fddbe1c3c8667af6eea71"
-    },
-    {
-      "path": "current/results/celeba_parallel/jobs/p5_10/attack_progress.json",
-      "bytes": 163,
-      "sha256": "01021f69130b32795796ac15c1068d722bb0de11005587c900a60391ac2f9631"
-    },
-    {
-      "path": "current/results/celeba_parallel/jobs/p5_10/progress.json",
-      "bytes": 315,
-      "sha256": "fb25e38644445e3a029ba821d1a4767b50925d21891aee3a8dddc3876a784d27"
-    },
-    {
-      "path": "current/results/celeba_parallel/jobs/p5_10/protocol.json",
-      "bytes": 332,
-      "sha256": "0ffd7058c8fba725c40dc68455dc2df8e0afc6bd46b34a06656be437760b447f"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/REPORT.md",
-      "bytes": 977,
-      "sha256": "d2f6a88cc5a8c4703a2ecdc827192b3dcbf704f2ab37df89fff2dc9e602679b2"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/attack_results.csv",
-      "bytes": 292273,
-      "sha256": "4859f532667062ce1593ae48fd49666f0b1f2cd245b07320b68062f656fa9626"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/attack_seed_means.csv",
-      "bytes": 53711,
-      "sha256": "09eeadd95895d30da24435de063d813198cfaa6f0bb562287d471648d4725ad0"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/attack_summary.csv",
-      "bytes": 17663,
-      "sha256": "53d7d21101b7a283afca5806092de4a66c1404a98e9418df8c8879f21adb4e3e"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/celeba_gpm_diagnostics.csv",
-      "bytes": 29131,
-      "sha256": "4eb34280f7a921b4ab1ab69cfde063ce218fe286614c7bd716e500d72622dc57"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/main_p10_results.csv",
-      "bytes": 248429,
-      "sha256": "068c2229ad7862e2b2638c64eef531dea7f632a96b9e6e9a291e7fdf5c4410e2"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/privacy_utility_by_attack.csv",
-      "bytes": 233217,
-      "sha256": "31331a2795ac79cdda1d5564087f2fd591739ea2ef120b728badf684d92b9cbc"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/progress.json",
-      "bytes": 445,
-      "sha256": "54f5964769605ed177d03c7430664c028b7adb358e6d3675d677f965a8b3b2e0"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/raw_results.csv",
-      "bytes": 764325,
-      "sha256": "eea3853036fb18571af9dcf58351210387ba42b0c294ad460cf938560a4ad17f"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/seed_means.csv",
-      "bytes": 34661,
-      "sha256": "f292e2dae082765341921112d605e817edab37f30192af9c20cc02b73ba4e741"
-    },
-    {
-      "path": "current/results/celeba_parallel/merged/summary.csv",
-      "bytes": 13018,
-      "sha256": "1600ce5dab93a401ed13d729a6279c21ed8aea5e35a8b8235d4dabe1e4f19eef"
-    },
-    {
-      "path": "current/results/celeba_parallel/shared/canonical_public.json",
-      "bytes": 4115,
-      "sha256": "eb115bedcc672e5627d0cbdb0b3f518d441ba92828673645ce21c41260a1f4c0"
-    },
-    {
-      "path": "current/results/equivalence/equivalence_manifest.json",
-      "bytes": 1417,
-      "sha256": "06e1d537a60791f181c17605f54912b361a7a838f066eb0fd63ff4be5859952b"
-    },
-    {
-      "path": "current/results/equivalence/equivalence_raw.csv",
-      "bytes": 170428,
-      "sha256": "8b38b19974ddd16d606f06e6b55558c6de696ee4e06222233d66fe9e7722a23d"
-    },
-    {
-      "path": "current/results/equivalence/equivalence_report.md",
-      "bytes": 1851,
-      "sha256": "8159f3660d2df869c0101b9a78b6078167dbbc7e182e294519c1219a730a8d86"
-    },
-    {
-      "path": "current/results/equivalence/equivalence_summary.csv",
-      "bytes": 1028,
-      "sha256": "771954b92797b60db5cb409c51bb420b555a977f4b4ebb8f3e2ad708d227c816"
-    },
-    {
-      "path": "current/results/equivalence/equivalence_table.tex",
-      "bytes": 526,
-      "sha256": "e8d9244506236c4a6a1c069cd375a8c2261fe76cb385baf255d4100c367c382c"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/REPORT.md",
-      "bytes": 1353,
-      "sha256": "b12bb831ded1d3f81d2af2a58711c5c94b1e801f732d0fd85660b11e7a3331c0"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/alignment_diagnostics.csv",
-      "bytes": 16596,
-      "sha256": "f9e486aa50e0d8d4520033c549c0b2a8daca23f8e6af7686431e0c5219e976f0"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/attack_results.csv",
-      "bytes": 64849,
-      "sha256": "8e1ca297c93735d0042e230776f41436380e9bf907c3cf35dc00ccdfa4939bc9"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/attack_seed_means.csv",
-      "bytes": 14492,
-      "sha256": "4406f1ef39aa4ce2216c66cfc677b80630196fa09db8a6d2a59413a83b0d53be"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/attack_summary.csv",
-      "bytes": 5096,
-      "sha256": "f233018aaf244ddca689217b96a729b9e8b6528eb70f7b023b1e6819febd46e7"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/auditor.json",
-      "bytes": 312,
-      "sha256": "50a1c9b4acff4aa73280d8a3c86a114bbb0f3b1177d29b8efd4362c59e10fd21"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/main_p5_results.csv",
-      "bytes": 185291,
-      "sha256": "00f5d94c4879040e4f4414230c1f020f35bc4b0568d8ad0d47a1627bcc4c8abd"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/progress.json",
-      "bytes": 341,
-      "sha256": "99d446c06edef0df25c28b1aeb078f12da3d072b29298611b452437144ed369c"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/protocol.json",
-      "bytes": 1360,
-      "sha256": "7931aca6756ee766a05b5c3baa8fddf12ce84949454a0df1dc22d06ad10d3ab7"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/raw_results.csv",
-      "bytes": 185291,
-      "sha256": "00f5d94c4879040e4f4414230c1f020f35bc4b0568d8ad0d47a1627bcc4c8abd"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/seed_means.csv",
-      "bytes": 10507,
-      "sha256": "8f474868ba1561046f620a38fe9b483bb02fe78d20dc6d45bdf099a61d717cfe"
-    },
-    {
-      "path": "current/results/lfwa_full_sweep/summary.csv",
-      "bytes": 3937,
-      "sha256": "c655915686196e47ca6cd674483995b6eb3785762f11c5a16a5cd461cafeeedb"
-    },
-    {
-      "path": "current/scripts/prepare_celeba.py",
-      "bytes": 5379,
-      "sha256": "7868ec799c4d0829b41bf7f6fd521b9113ed596c9301b803501f1c8818b6ad9e"
-    },
-    {
-      "path": "current/scripts/reproduce_figures.py",
-      "bytes": 11153,
-      "sha256": "9df189be086004f62d833bb7173a095945b757ffa7d84c04fb7d7fa7c8114423"
-    },
-    {
-      "path": "current/scripts/validate_results.py",
-      "bytes": 12198,
-      "sha256": "da8956115d5c962b485b802e31b907b8cd7ed6e42e47544ab289485bf83bfd7a"
-    },
-    {
-      "path": "current/source_snapshots/CelebA_P50.ipynb",
-      "bytes": 129139,
-      "sha256": "1cd78d741b2dcea3effa10a643905dc753b8d87ab85c78f9918ada4362efeb5e"
+      "bytes": 1634,
+      "sha256": "7f4033ded752def754abd8ce03665f3359e36af05961875bdc8c77f266ce2bc5"
     },
     {
       "path": "docs/EXPERIMENTS.md",
-      "bytes": 5189,
-      "sha256": "185b26ec1b339b1659b840b123577d1363c36438dcb9fec4eeb315af01d93054"
+      "bytes": 5032,
+      "sha256": "5af252deb80c9027a90566e610bb7a61fa1a7d47628270097fda1038b80a8ccd"
     },
     {
       "path": "docs/FIGURES.md",
-      "bytes": 3742,
-      "sha256": "d91b029437b77cc94ff0a3a1fb334d255063ceb01840e1f9b0aafe72cc293777"
-    },
-    {
-      "path": "docs/HISTORICAL_PACKAGE.md",
-      "bytes": 7391,
-      "sha256": "3409caabd3b96f2762957ccc0ebaf6a5a5f633b1fb91513a2f187ae7b0eb8cdb"
+      "bytes": 3585,
+      "sha256": "8ff49c60e008a17ba78f711e3d530470318ed51e68e22224d8c21b3c78a42d84"
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 3762,
-      "sha256": "ac9acfac6bbb3d36f1b7c13ce3dae3627f309545cd5b813aa89d3d9d469cfda3"
+      "bytes": 3605,
+      "sha256": "f09374bf3efb2d1aeddae8dd8c5091fcc30a074876199a180fb94e41dd8bfd49"
     },
     {
       "path": "figure_inputs/README.md",
-      "bytes": 988,
-      "sha256": "bdb4f6380389ed944daadfde1654a2f8558646684ed79de2c49e4320f1f3054a"
+      "bytes": 831,
+      "sha256": "8aebebacdb394149800b3f45de742c63fd6083fdf4a6d3d401f0e64f58fd6bc6"
     },
     {
       "path": "figure_inputs/celeba_identity_reconstructions.zip",
@@ -456,8 +161,8 @@
     },
     {
       "path": "notebooks/README.md",
-      "bytes": 4948,
-      "sha256": "abf0ed9349fbd3117ce96cd3fd9c73e24c44c5d90c4b57c1d3b8630a81dd6b17"
+      "bytes": 4791,
+      "sha256": "0893c58a63df2581afa8a4cf73908f8a8f855a3e7a6f850f723b24137e207a10"
     },
     {
       "path": "requirements-figures.txt",
@@ -466,8 +171,8 @@
     },
     {
       "path": "results/README.md",
-      "bytes": 1369,
-      "sha256": "98eaa90b4127246fa3b5afcf5876086fb1feb1892b14c3576b31be0a43163c76"
+      "bytes": 1212,
+      "sha256": "b2f904e6da7f83bb1e7f9efd0971002212e252c1fdcb4b75e75877581632414a"
     },
     {
       "path": "results/celeba/manifests/p010_main/completion_summary.json",
@@ -701,18 +406,18 @@
     },
     {
       "path": "scripts/regenerate_artifact_manifest.py",
-      "bytes": 1714,
-      "sha256": "3ed3efdb936f47a3869a0a89b3039ba529c2f8f6c8541c09f9efe260ead70e74"
+      "bytes": 1713,
+      "sha256": "bc9cbc8d9ba085928b3adbb0e5c086d3616a1511f82b2a36ce07fa003ebb6424"
     },
     {
       "path": "scripts/reproduce_figures.py",
-      "bytes": 8203,
-      "sha256": "3fe9d0bb4679a8d91b2406532ee0b74a3e54e1664b0923a6f5dad326a5d1796c"
+      "bytes": 8126,
+      "sha256": "2c2915081367ef955a10a43ccb1b3c6e83336b855ff90ec421ad30b8885cde27"
     },
     {
       "path": "scripts/validate_repository.py",
-      "bytes": 14573,
-      "sha256": "725ceedc83717aeb67db11b8d23a25612eccf7ffcb3b3e1e5cadb59a6f5a9df9"
+      "bytes": 14496,
+      "sha256": "bdffc465d843d073154c5e18b7d8820200eec79ea49265391526c71ea6e46a91"
     }
   ]
 }

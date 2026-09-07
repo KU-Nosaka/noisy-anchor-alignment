@@ -1,5 +1,3 @@
-> **Historical package.** This file documents the earlier MNIST/CelebA experiments. For the current LFWA/CelebA manuscript, see [`current/`](../current/).
-
 # Frozen experimental results
 
 The files in this directory are the complete result records used by the current paper figures. JSON records are gzip-compressed without changing their serialized contents.
@@ -16,4 +14,3 @@ The files in this directory are the complete result records used by the current 
 - `celeba/manifests/`: the locally retained configuration, allocation, linkage, completion, and environment records for the primary \(p=10\) experiment.
 
 The result tables include deterministic controls that are retained for provenance but excluded from the random-draw spline fits, bootstrap resampling, and quantitative scatter plots.
-

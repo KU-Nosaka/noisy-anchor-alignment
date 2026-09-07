@@ -18,7 +18,3 @@ __pycache__/
 Thumbs.db
 .idea/
 .vscode/
-
-# Reviewed files under current/results are tracked; ignore additional working outputs
-current/results/
-

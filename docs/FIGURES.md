@@ -1,5 +1,3 @@
-> **Historical package.** This file documents the earlier MNIST/CelebA experiments. For the current LFWA/CelebA manuscript, see [`current/`](../current/).
-
 # Paper figure map
 
 Running `python scripts/reproduce_figures.py` regenerates the following manuscript-ready PDFs.
@@ -30,4 +28,3 @@ The quantitative curves are fixed cubic regression-spline fits with five equally
 ## Layered (interactive) participant-count figure
 
 Besides the flat figure, `render_celeba_participant_count.py` writes `celeba_privacy_utility_by_participant_count_layers.pdf`, a 16-page PDF whose pages share the flat figure's page box: page 1 carries the axes, chance levels, and legends, and each further page carries one participant count's bootstrap band, observations (with its I-GDP reference), or fitted spline. `figures/latex/celeba_participant_count_layers.tex` stacks these pages as PDF optional-content groups with the `ocgx2` package and typesets one check box per participant count and one for the spline fits; a spline layer is nested in its participant count's group and in the spline-fits group, so it is visible only when both boxes are ticked. Every layer starts visible, so printing or a viewer without layer support shows the flat figure. To use it in a LaTeX manuscript, load `graphicx`, `amssymb`, and `ocgx2` (after `hyperref`), place the layered PDF and the `.tex` body next to the document, and `\input` the body inside a `figure` environment; `figures/latex/celeba_participant_count_interactive.tex` compiles the same body as a standalone PDF (`pdflatex`, twice). Layer switching works in viewers that implement PDF optional content and `SetOCGState` link actions (Adobe Acrobat and Reader, Foxit, PDF-XChange, Okular, and Firefox's viewer); other viewers show the default state.
-
