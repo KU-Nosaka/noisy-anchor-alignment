@@ -1,0 +1,8 @@
+{
+  "architecture": "InceptionResnetV1",
+  "comparison": "cosine similarity to clean cross-image references",
+  "frozen": true,
+  "preprocessing": "RGB [0,1], bilinear 160x160, (255*x-127.5)/128",
+  "pretrained": "vggface2",
+  "state_sha256": "988babfb79a4be0620cf47d259d4da35f8fc07573e92f83a2e388003c17759ba"
+}

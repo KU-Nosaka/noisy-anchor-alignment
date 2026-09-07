@@ -15,17 +15,17 @@ The six notebooks in `current/notebooks/` are the manuscript's current execution
 
 Three tabs connected to the same runtime do not constitute three GPU workers. Never launch two runtimes for the same worker directory. Rerunning the notebooks resumes verified checkpoints. Source, configuration, environment, deployment and auditor checks prevent mixing incompatible results.
 
-The notebooks define the full experimental schedules and write their own progress and completion records. Local aggregate rows summarize participant models and are not additional fits. Current saved tables and completion reports are not included in the GitHub checkout.
+The notebooks define the full experimental schedules and write their own progress and completion records. Local aggregate rows summarize participant models and are not additional fits. Completed tables and compact completion records are included in [`../results/`](../results/).
 
 ## Existing Drive experiment
 
-When resuming an existing Drive experiment migrated from the serial runner, the active workers read any reused fit records under `results/celeba/`. They also require that run's protocol, source, environment and auditor manifests. Shared deployment artifacts and worker-specific checkpoints belong under `results/celeba_parallel/`. These files are private working inputs, separate from the public code checkout.
+When resuming an existing Drive experiment migrated from the serial runner, the active workers read any reused fit records under `results/celeba/`. They also require that run's protocol, source, environment and auditor manifests. Shared deployment artifacts and worker-specific checkpoints belong under `results/celeba_parallel/`. Full caches and resumable deployment artifacts are separate working inputs; the public bundle contains only the selected numerical and provenance records described in its README.
 
 Deleting the superseded serial notebook does not remove any of these dependencies. Preserve the existing `results/celeba/`, `results/celeba_parallel/`, `results/lfwa_full_sweep/`, `results/equivalence/` and figure-input directories. The older `results/lfwa/` contains the first three-level run and a public source-archive cache used by the full-sweep notebook.
 
 ## Fresh public installation
 
-A GitHub checkout contains the current code and source snapshots. It does not contain the current result tables, image archives, trained models, generated figures, or fitted deployment caches. Obtain the dataset inputs separately, then place the notebooks in your own Drive working directory.
+A GitHub checkout contains the current code, source snapshots, and reviewed numerical result bundle. The bundle supports validation and quantitative plotting without training. A full rerun additionally requires image archives, pretrained weights, and newly generated deployment caches. Obtain the dataset inputs separately, then place the notebooks in your own Drive working directory.
 
 The CelebA configuration reads the historical raw cache at:
 

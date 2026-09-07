@@ -1,0 +1,360 @@
+{
+  "snapshot_date_utc": "2026-09-07",
+  "description": "Compact non-image experiment evidence copied from the completed Google Drive runs; source hashes describe original bytes before explicitly listed portability edits.",
+  "files": [
+    {
+      "path": "celeba_parallel/jobs/p2_20/progress.json",
+      "source_path": "celeba_parallel/jobs/p2_20/progress.json",
+      "source_modified_utc": "2026-09-06T19:28:28.140Z",
+      "source_sha256": "dd108911d08fecabe858691a4bd8b6178923830602d8ce0e9923022bbd5f0764",
+      "packaged_sha256": "dd108911d08fecabe858691a4bd8b6178923830602d8ce0e9923022bbd5f0764",
+      "source_bytes": 313,
+      "packaged_bytes": 313,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/jobs/p2_20/protocol.json",
+      "source_path": "celeba_parallel/jobs/p2_20/protocol.json",
+      "source_modified_utc": "2026-09-06T11:00:08.314Z",
+      "source_sha256": "7f9bc9b17707015d36eafda69f640d0ef89340350e619269d39df48b9fc63877",
+      "packaged_sha256": "7f9bc9b17707015d36eafda69f640d0ef89340350e619269d39df48b9fc63877",
+      "source_bytes": 332,
+      "packaged_bytes": 332,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/jobs/p50/progress.json",
+      "source_path": "celeba_parallel/jobs/p50/progress.json",
+      "source_modified_utc": "2026-09-07T04:07:24.829Z",
+      "source_sha256": "1018a43afe107a55fa779a45a62bbca0b07d6958eec97ef0de897aaf8449c91e",
+      "packaged_sha256": "1018a43afe107a55fa779a45a62bbca0b07d6958eec97ef0de897aaf8449c91e",
+      "source_bytes": 311,
+      "packaged_bytes": 311,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/jobs/p50/protocol.json",
+      "source_path": "celeba_parallel/jobs/p50/protocol.json",
+      "source_modified_utc": "2026-09-06T10:59:40.407Z",
+      "source_sha256": "63dc2f07fbd5d99bfa1aa205ad9fcffe852a4e4cb84fddbe1c3c8667af6eea71",
+      "packaged_sha256": "63dc2f07fbd5d99bfa1aa205ad9fcffe852a4e4cb84fddbe1c3c8667af6eea71",
+      "source_bytes": 330,
+      "packaged_bytes": 330,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/jobs/p5_10/attack_progress.json",
+      "source_path": "celeba_parallel/jobs/p5_10/attack_progress.json",
+      "source_modified_utc": "2026-09-07T07:24:04.924Z",
+      "source_sha256": "01021f69130b32795796ac15c1068d722bb0de11005587c900a60391ac2f9631",
+      "packaged_sha256": "01021f69130b32795796ac15c1068d722bb0de11005587c900a60391ac2f9631",
+      "source_bytes": 163,
+      "packaged_bytes": 163,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/jobs/p5_10/progress.json",
+      "source_path": "celeba_parallel/jobs/p5_10/progress.json",
+      "source_modified_utc": "2026-09-07T07:00:25.895Z",
+      "source_sha256": "fb25e38644445e3a029ba821d1a4767b50925d21891aee3a8dddc3876a784d27",
+      "packaged_sha256": "fb25e38644445e3a029ba821d1a4767b50925d21891aee3a8dddc3876a784d27",
+      "source_bytes": 315,
+      "packaged_bytes": 315,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/jobs/p5_10/protocol.json",
+      "source_path": "celeba_parallel/jobs/p5_10/protocol.json",
+      "source_modified_utc": "2026-09-07T06:52:47.995Z",
+      "source_sha256": "0ffd7058c8fba725c40dc68455dc2df8e0afc6bd46b34a06656be437760b447f",
+      "packaged_sha256": "0ffd7058c8fba725c40dc68455dc2df8e0afc6bd46b34a06656be437760b447f",
+      "source_bytes": 332,
+      "packaged_bytes": 332,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/merged/REPORT.md",
+      "source_path": "celeba_parallel/merged/REPORT.md",
+      "source_modified_utc": "2026-09-07T07:23:33.928Z",
+      "source_sha256": "d2f6a88cc5a8c4703a2ecdc827192b3dcbf704f2ab37df89fff2dc9e602679b2",
+      "packaged_sha256": "d2f6a88cc5a8c4703a2ecdc827192b3dcbf704f2ab37df89fff2dc9e602679b2",
+      "source_bytes": 977,
+      "packaged_bytes": 977,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/merged/attack_results.csv",
+      "source_path": "celeba_parallel/merged/attack_results.csv",
+      "source_modified_utc": "2026-09-07T07:23:31.832Z",
+      "source_sha256": "4859f532667062ce1593ae48fd49666f0b1f2cd245b07320b68062f656fa9626",
+      "packaged_sha256": "4859f532667062ce1593ae48fd49666f0b1f2cd245b07320b68062f656fa9626",
+      "source_bytes": 292273,
+      "packaged_bytes": 292273,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/merged/attack_seed_means.csv",
+      "source_path": "celeba_parallel/merged/attack_seed_means.csv",
+      "source_modified_utc": "2026-09-07T07:23:33.710Z",
+      "source_sha256": "09eeadd95895d30da24435de063d813198cfaa6f0bb562287d471648d4725ad0",
+      "packaged_sha256": "09eeadd95895d30da24435de063d813198cfaa6f0bb562287d471648d4725ad0",
+      "source_bytes": 53711,
+      "packaged_bytes": 53711,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/merged/attack_summary.csv",
+      "source_path": "celeba_parallel/merged/attack_summary.csv",
+      "source_modified_utc": "2026-09-07T07:23:33.799Z",
+      "source_sha256": "53d7d21101b7a283afca5806092de4a66c1404a98e9418df8c8879f21adb4e3e",
+      "packaged_sha256": "53d7d21101b7a283afca5806092de4a66c1404a98e9418df8c8879f21adb4e3e",
+      "source_bytes": 17663,
+      "packaged_bytes": 17663,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/merged/celeba_gpm_diagnostics.csv",
+      "source_path": "figures/manuscript_inputs/celeba_gpm_diagnostics.csv",
+      "source_modified_utc": "2026-09-07T10:29:57.554Z",
+      "source_sha256": "4eb34280f7a921b4ab1ab69cfde063ce218fe286614c7bd716e500d72622dc57",
+      "packaged_sha256": "4eb34280f7a921b4ab1ab69cfde063ce218fe286614c7bd716e500d72622dc57",
+      "source_bytes": 29131,
+      "packaged_bytes": 29131,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/merged/privacy_utility_by_attack.csv",
+      "source_path": "celeba_parallel/merged/privacy_utility_by_attack.csv",
+      "source_modified_utc": "2026-09-07T07:23:33.716Z",
+      "source_sha256": "31331a2795ac79cdda1d5564087f2fd591739ea2ef120b728badf684d92b9cbc",
+      "packaged_sha256": "31331a2795ac79cdda1d5564087f2fd591739ea2ef120b728badf684d92b9cbc",
+      "source_bytes": 233217,
+      "packaged_bytes": 233217,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/merged/progress.json",
+      "source_path": "celeba_parallel/merged/progress.json",
+      "source_modified_utc": "2026-09-07T07:24:04.908Z",
+      "source_sha256": "54f5964769605ed177d03c7430664c028b7adb358e6d3675d677f965a8b3b2e0",
+      "packaged_sha256": "54f5964769605ed177d03c7430664c028b7adb358e6d3675d677f965a8b3b2e0",
+      "source_bytes": 445,
+      "packaged_bytes": 445,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/merged/raw_results.csv",
+      "source_path": "celeba_parallel/merged/raw_results.csv",
+      "source_modified_utc": "2026-09-07T07:24:02.562Z",
+      "source_sha256": "eea3853036fb18571af9dcf58351210387ba42b0c294ad460cf938560a4ad17f",
+      "packaged_sha256": "eea3853036fb18571af9dcf58351210387ba42b0c294ad460cf938560a4ad17f",
+      "source_bytes": 764325,
+      "packaged_bytes": 764325,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/merged/seed_means.csv",
+      "source_path": "celeba_parallel/merged/seed_means.csv",
+      "source_modified_utc": "2026-09-07T07:23:31.652Z",
+      "source_sha256": "f292e2dae082765341921112d605e817edab37f30192af9c20cc02b73ba4e741",
+      "packaged_sha256": "f292e2dae082765341921112d605e817edab37f30192af9c20cc02b73ba4e741",
+      "source_bytes": 34661,
+      "packaged_bytes": 34661,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/merged/summary.csv",
+      "source_path": "celeba_parallel/merged/summary.csv",
+      "source_modified_utc": "2026-09-07T07:23:32.018Z",
+      "source_sha256": "1600ce5dab93a401ed13d729a6279c21ed8aea5e35a8b8235d4dabe1e4f19eef",
+      "packaged_sha256": "1600ce5dab93a401ed13d729a6279c21ed8aea5e35a8b8235d4dabe1e4f19eef",
+      "source_bytes": 13018,
+      "packaged_bytes": 13018,
+      "transformation": "none"
+    },
+    {
+      "path": "equivalence/equivalence_manifest.json",
+      "source_path": "equivalence/equivalence_manifest.json",
+      "source_modified_utc": "2026-09-06T05:39:54.000Z",
+      "source_sha256": "e55ae5882f19f41f4c6a54c5551beed5bf88f7a9cd627ccf3bc9260e01b13682",
+      "packaged_sha256": "06e1d537a60791f181c17605f54912b361a7a838f066eb0fd63ff4be5859952b",
+      "source_bytes": 1521,
+      "packaged_bytes": 1417,
+      "transformation": "Removed numerical_libraries[*].filepath runtime library installation paths."
+    },
+    {
+      "path": "equivalence/equivalence_raw.csv",
+      "source_path": "equivalence/equivalence_raw.csv",
+      "source_modified_utc": "2026-09-06T05:39:54.000Z",
+      "source_sha256": "8b38b19974ddd16d606f06e6b55558c6de696ee4e06222233d66fe9e7722a23d",
+      "packaged_sha256": "8b38b19974ddd16d606f06e6b55558c6de696ee4e06222233d66fe9e7722a23d",
+      "source_bytes": 170428,
+      "packaged_bytes": 170428,
+      "transformation": "none"
+    },
+    {
+      "path": "equivalence/equivalence_report.md",
+      "source_path": "equivalence/equivalence_report.md",
+      "source_modified_utc": "2026-09-06T05:39:54.000Z",
+      "source_sha256": "8159f3660d2df869c0101b9a78b6078167dbbc7e182e294519c1219a730a8d86",
+      "packaged_sha256": "8159f3660d2df869c0101b9a78b6078167dbbc7e182e294519c1219a730a8d86",
+      "source_bytes": 1851,
+      "packaged_bytes": 1851,
+      "transformation": "none"
+    },
+    {
+      "path": "equivalence/equivalence_summary.csv",
+      "source_path": "equivalence/equivalence_summary.csv",
+      "source_modified_utc": "2026-09-06T05:39:54.000Z",
+      "source_sha256": "771954b92797b60db5cb409c51bb420b555a977f4b4ebb8f3e2ad708d227c816",
+      "packaged_sha256": "771954b92797b60db5cb409c51bb420b555a977f4b4ebb8f3e2ad708d227c816",
+      "source_bytes": 1028,
+      "packaged_bytes": 1028,
+      "transformation": "none"
+    },
+    {
+      "path": "equivalence/equivalence_table.tex",
+      "source_path": "equivalence/equivalence_table.tex",
+      "source_modified_utc": "2026-09-06T05:39:54.000Z",
+      "source_sha256": "e8d9244506236c4a6a1c069cd375a8c2261fe76cb385baf255d4100c367c382c",
+      "packaged_sha256": "e8d9244506236c4a6a1c069cd375a8c2261fe76cb385baf255d4100c367c382c",
+      "source_bytes": 526,
+      "packaged_bytes": 526,
+      "transformation": "none"
+    },
+    {
+      "path": "lfwa_full_sweep/REPORT.md",
+      "source_path": "lfwa_full_sweep/REPORT.md",
+      "source_modified_utc": "2026-09-07T11:01:16.398Z",
+      "source_sha256": "b12bb831ded1d3f81d2af2a58711c5c94b1e801f732d0fd85660b11e7a3331c0",
+      "packaged_sha256": "b12bb831ded1d3f81d2af2a58711c5c94b1e801f732d0fd85660b11e7a3331c0",
+      "source_bytes": 1353,
+      "packaged_bytes": 1353,
+      "transformation": "none"
+    },
+    {
+      "path": "lfwa_full_sweep/alignment_diagnostics.csv",
+      "source_path": "lfwa_full_sweep/alignment_diagnostics.csv",
+      "source_modified_utc": "2026-09-07T11:01:14.499Z",
+      "source_sha256": "f9e486aa50e0d8d4520033c549c0b2a8daca23f8e6af7686431e0c5219e976f0",
+      "packaged_sha256": "f9e486aa50e0d8d4520033c549c0b2a8daca23f8e6af7686431e0c5219e976f0",
+      "source_bytes": 16596,
+      "packaged_bytes": 16596,
+      "transformation": "none"
+    },
+    {
+      "path": "lfwa_full_sweep/attack_results.csv",
+      "source_path": "lfwa_full_sweep/attack_results.csv",
+      "source_modified_utc": "2026-09-07T11:01:14.552Z",
+      "source_sha256": "8e1ca297c93735d0042e230776f41436380e9bf907c3cf35dc00ccdfa4939bc9",
+      "packaged_sha256": "8e1ca297c93735d0042e230776f41436380e9bf907c3cf35dc00ccdfa4939bc9",
+      "source_bytes": 64849,
+      "packaged_bytes": 64849,
+      "transformation": "none"
+    },
+    {
+      "path": "lfwa_full_sweep/attack_seed_means.csv",
+      "source_path": "lfwa_full_sweep/attack_seed_means.csv",
+      "source_modified_utc": "2026-09-07T11:01:14.713Z",
+      "source_sha256": "4406f1ef39aa4ce2216c66cfc677b80630196fa09db8a6d2a59413a83b0d53be",
+      "packaged_sha256": "4406f1ef39aa4ce2216c66cfc677b80630196fa09db8a6d2a59413a83b0d53be",
+      "source_bytes": 14492,
+      "packaged_bytes": 14492,
+      "transformation": "none"
+    },
+    {
+      "path": "lfwa_full_sweep/attack_summary.csv",
+      "source_path": "lfwa_full_sweep/attack_summary.csv",
+      "source_modified_utc": "2026-09-07T11:01:14.807Z",
+      "source_sha256": "f233018aaf244ddca689217b96a729b9e8b6528eb70f7b023b1e6819febd46e7",
+      "packaged_sha256": "f233018aaf244ddca689217b96a729b9e8b6528eb70f7b023b1e6819febd46e7",
+      "source_bytes": 5096,
+      "packaged_bytes": 5096,
+      "transformation": "none"
+    },
+    {
+      "path": "lfwa_full_sweep/auditor.json",
+      "source_path": "lfwa_full_sweep/auditor.json",
+      "source_modified_utc": "2026-09-07T08:08:16.320Z",
+      "source_sha256": "50a1c9b4acff4aa73280d8a3c86a114bbb0f3b1177d29b8efd4362c59e10fd21",
+      "packaged_sha256": "50a1c9b4acff4aa73280d8a3c86a114bbb0f3b1177d29b8efd4362c59e10fd21",
+      "source_bytes": 312,
+      "packaged_bytes": 312,
+      "transformation": "none"
+    },
+    {
+      "path": "lfwa_full_sweep/progress.json",
+      "source_path": "lfwa_full_sweep/progress.json",
+      "source_modified_utc": "2026-09-07T11:01:18.707Z",
+      "source_sha256": "99d446c06edef0df25c28b1aeb078f12da3d072b29298611b452437144ed369c",
+      "packaged_sha256": "99d446c06edef0df25c28b1aeb078f12da3d072b29298611b452437144ed369c",
+      "source_bytes": 341,
+      "packaged_bytes": 341,
+      "transformation": "none"
+    },
+    {
+      "path": "lfwa_full_sweep/protocol.json",
+      "source_path": "lfwa_full_sweep/protocol.json",
+      "source_modified_utc": "2026-09-07T08:07:30.177Z",
+      "source_sha256": "f1b766a2c8fa0f4e6a4bd2c23ae1bfacb08822c171d4ff39970b797457442471",
+      "packaged_sha256": "7931aca6756ee766a05b5c3baa8fddf12ce84949454a0df1dc22d06ad10d3ab7",
+      "source_bytes": 1657,
+      "packaged_bytes": 1360,
+      "transformation": "Removed config.auditor_cache, config.output_root, and config.source_archive_cache absolute runtime paths. Scientific signature retained from original protocol."
+    },
+    {
+      "path": "lfwa_full_sweep/raw_results.csv",
+      "source_path": "lfwa_full_sweep/raw_results.csv",
+      "source_modified_utc": "2026-09-07T11:01:14.568Z",
+      "source_sha256": "00f5d94c4879040e4f4414230c1f020f35bc4b0568d8ad0d47a1627bcc4c8abd",
+      "packaged_sha256": "00f5d94c4879040e4f4414230c1f020f35bc4b0568d8ad0d47a1627bcc4c8abd",
+      "source_bytes": 185291,
+      "packaged_bytes": 185291,
+      "transformation": "none"
+    },
+    {
+      "path": "lfwa_full_sweep/seed_means.csv",
+      "source_path": "lfwa_full_sweep/seed_means.csv",
+      "source_modified_utc": "2026-09-07T11:01:14.670Z",
+      "source_sha256": "8f474868ba1561046f620a38fe9b483bb02fe78d20dc6d45bdf099a61d717cfe",
+      "packaged_sha256": "8f474868ba1561046f620a38fe9b483bb02fe78d20dc6d45bdf099a61d717cfe",
+      "source_bytes": 10507,
+      "packaged_bytes": 10507,
+      "transformation": "none"
+    },
+    {
+      "path": "lfwa_full_sweep/summary.csv",
+      "source_path": "lfwa_full_sweep/summary.csv",
+      "source_modified_utc": "2026-09-07T11:01:14.545Z",
+      "source_sha256": "c655915686196e47ca6cd674483995b6eb3785762f11c5a16a5cd461cafeeedb",
+      "packaged_sha256": "c655915686196e47ca6cd674483995b6eb3785762f11c5a16a5cd461cafeeedb",
+      "source_bytes": 3937,
+      "packaged_bytes": 3937,
+      "transformation": "none"
+    },
+    {
+      "path": "celeba_parallel/shared/canonical_public.json",
+      "source_path": "celeba_parallel/shared/canonical.json",
+      "source_modified_utc": "2026-09-06T10:57:23.672Z",
+      "source_sha256": "a12dcb1ba4e2a21b6a4474c284e3079c1b8e06dc282072a6d2d3a684bd02794b",
+      "packaged_sha256": "eb115bedcc672e5627d0cbdb0b3f518d441ba92828673645ce21c41260a1f4c0",
+      "source_bytes": 111057,
+      "packaged_bytes": 4115,
+      "transformation": "Public excerpt: removed legacy_root, torchcache, source_manifest (source image/sample identifiers), scientific_config.old_cache/output_root, deployments[*].bank_path/data_path. Retained scientific configuration and all deployment/cache integrity hashes; added public_excerpt and original_canonical_sha256."
+    },
+    {
+      "path": "lfwa_full_sweep/main_p5_results.csv",
+      "source_path": "lfwa_full_sweep/raw_results.csv",
+      "source_sha256": "00f5d94c4879040e4f4414230c1f020f35bc4b0568d8ad0d47a1627bcc4c8abd",
+      "packaged_sha256": "00f5d94c4879040e4f4414230c1f020f35bc4b0568d8ad0d47a1627bcc4c8abd",
+      "transformation": "Exact CSV row filter participant_count == 5; original column values retained."
+    },
+    {
+      "path": "celeba_parallel/merged/main_p10_results.csv",
+      "source_path": "celeba_parallel/merged/raw_results.csv",
+      "source_sha256": "eea3853036fb18571af9dcf58351210387ba42b0c294ad460cf938560a4ad17f",
+      "packaged_sha256": "068c2229ad7862e2b2638c64eef531dea7f632a96b9e6e9a291e7fdf5c4410e2",
+      "transformation": "Exact CSV row filter participant_count == 10; original column values retained."
+    }
+  ]
+}

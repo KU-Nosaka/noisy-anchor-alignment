@@ -1,0 +1,7 @@
+{
+  "canonical_sha256": "a12dcb1ba4e2a21b6a4474c284e3079c1b8e06dc282072a6d2d3a684bd02794b",
+  "code_sha256": "1a980269c1778978c64462bf76cf00949cd95e29e33d5066107809299e5dec35",
+  "job_id": "p50",
+  "schema": "celeba-three-workers-v1",
+  "scientific_signature": "fcf8b4f93626e8cf9603afe70c3a614f6523366181d2f4df2620ee6efbb41bdb"
+}

@@ -1,0 +1,13 @@
+{
+  "completed_fits": 440,
+  "completed_local_aggregates": 5,
+  "completed_local_fits": 25,
+  "completed_result_rows": 420,
+  "current": null,
+  "error": null,
+  "scheduled_fits": 440,
+  "scheduled_result_rows": 420,
+  "session_elapsed_seconds": 10390.972659947,
+  "status": "complete",
+  "updated_utc": "2026-09-07T11:01:09.170241+00:00"
+}

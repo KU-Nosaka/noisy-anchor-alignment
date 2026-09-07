@@ -1,6 +1,8 @@
 # Source provenance and validation
 
-The current package publishes the LFWA/CelebA experiment code and figure workflow. It does not include the current experimental result tables, completion reports, result manifests, image inputs, or generated figures. Those saved artifacts remain separately in the author's Google Drive. An independent run writes new artifacts to the user's own output directory.
+The current package publishes the LFWA/CelebA experiment code, figure workflow, and completed numerical [result bundle](../results/). The bundle includes scalar tables, completion records, attack and solver evidence, and compact provenance metadata. Image inputs, generated figures, and full deployment caches remain separate working artifacts. An independent run writes new artifacts to the user's own output directory.
+
+All 39 reviewed bundle files are published unchanged. [SOURCE_MANIFEST.json](../results/SOURCE_MANIFEST.json) records original and packaged hashes and the documented metadata portability edits made when the bundle was assembled. Scalar CSV values are preserved; [VALIDATION.json](../results/VALIDATION.json) records the numerical checks.
 
 ## Code snapshots
 
@@ -8,11 +10,11 @@ The active notebooks derive from the Drive workflow, with outputs, execution cou
 
 The archived serial notebook is a provenance record and must not be run concurrently with the parallel workers. The public setup helper records new source, runtime, and deployment identities for a fresh run; it does not fabricate historical completion records.
 
-## Result provenance in your working directory
+## Bundled results and independent runs
 
 The notebooks record configuration and source identities, deployment information, run identifiers, and progress alongside their output tables. Preserve those records with the tables when working in Drive or copying your results locally. Do not mix checkpoints after changing scientific configuration or source data. Different GPU hardware and package versions may affect training outputs, so source hashes alone do not establish byte-for-byte reproducibility across environments.
 
-The local validator accepts a separately supplied result directory using `--results-root`. It checks the expected design, unique run IDs, noise grids, five outer seeds, summary aggregation, applicable attack tables, solver records, and progress consistency. It is configured for the manuscript's experiment schedule and stopping criteria; a newly configured study needs corresponding validator changes. Converged and capped totals are calculated from the supplied flags rather than fixed to a reported outcome. Nothing is downloaded from private Drive by these local scripts.
+The local validator checks the bundled `current/results/` directory by default and accepts a separately supplied result directory using `--results-root`. It checks the expected design, unique run IDs, noise grids, five outer seeds, summary aggregation, applicable attack tables, solver records, and progress consistency. It is configured for the manuscript's experiment schedule and stopping criteria; a newly configured study needs corresponding validator changes. Converged and capped totals are calculated from the supplied flags rather than fixed to a reported outcome. Nothing is downloaded from private Drive by these local scripts.
 
 ## Aggregation and figures
 

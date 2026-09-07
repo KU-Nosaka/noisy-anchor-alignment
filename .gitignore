@@ -19,6 +19,6 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Current experiment results are supplied separately; keep working outputs private
+# Reviewed files under current/results are tracked; ignore additional working outputs
 current/results/
 

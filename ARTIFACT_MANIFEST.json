@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "artifact": "Noisy Anchor Alignment code repository",
-  "file_count": 103,
-  "total_bytes": 32942506,
+  "artifact": "Noisy Anchor Alignment code and numerical results",
+  "file_count": 142,
+  "total_bytes": 35327396,
   "files": [
     {
       "path": ".gitattributes",
@@ -11,8 +11,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 343,
-      "sha256": "a59d75f91fb12a6f5d8ebb0c25d5e28eb21bc3dc4c9d16e8fb630b55cb0be3c4"
+      "bytes": 346,
+      "sha256": "d2db4fcf833b5d1352431439f2ca39d1fd2884af48565b77f4275e0d02a5da66"
     },
     {
       "path": "CITATION.cff",
@@ -26,13 +26,13 @@
     },
     {
       "path": "LICENSE-DATA.md",
-      "bytes": 1163,
-      "sha256": "56fc8ffa421066eff25bf9551d4d5675bda712b0e77f0afd292c2bf9cb6d5a38"
+      "bytes": 1194,
+      "sha256": "7e37bdb96c191a420ef512d99f89d421247c5e32c644f7011b826990f57e3c28"
     },
     {
       "path": "README.md",
-      "bytes": 4179,
-      "sha256": "7f599cacc5121dc9d2896e7f1603392b572f9b4d296fe35974c59c5296304894"
+      "bytes": 4405,
+      "sha256": "ffa4617847117c8cb195c39e3dde1b009f4fc96743f984cf2ceb3f0222c51ca1"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -41,8 +41,8 @@
     },
     {
       "path": "current/README.md",
-      "bytes": 844,
-      "sha256": "2658b2f3de5a041ca2db276cdc1839bd6363f7b6d43696763a97b739c5548111"
+      "bytes": 1070,
+      "sha256": "7fccf4bdb05ca81685c8327ed402aa6f9272d8e4b4903ebdff01d955133f351e"
     },
     {
       "path": "current/archive/CelebA_Privacy_Utility_and_Scaling.ipynb",
@@ -56,13 +56,13 @@
     },
     {
       "path": "current/docs/EXPERIMENTS.md",
-      "bytes": 8225,
-      "sha256": "4967d72ae40494e51bbd0c6bf44e8542dd11ce485e41f5c37ccb449fc2fa502f"
+      "bytes": 8426,
+      "sha256": "1255b78584ebc0344c5048ec48d5616b2cb922c60ecb7809ea03049f486b77db"
     },
     {
       "path": "current/docs/FIGURES.md",
-      "bytes": 4581,
-      "sha256": "72b482fb2a6b4a2332056983ec899bdabeff87de9879c261c88f4eb75f81c4be"
+      "bytes": 4544,
+      "sha256": "b36d93922c194214d3aa856c1709c3320a2b413642660a2021c823f9003cc416"
     },
     {
       "path": "current/docs/FRESH_START_SOURCE_MANIFEST.json",
@@ -71,8 +71,8 @@
     },
     {
       "path": "current/docs/PROVENANCE.md",
-      "bytes": 3542,
-      "sha256": "467b52230de348ea9f62ccc18cb6eb9af42245e0a0b79bb5c6d9b31e2c337f0c"
+      "bytes": 3995,
+      "sha256": "ff1d786ed53a01fa1e6649452db87f2b7b48cb6ab0c0f785576a2f82407f37d0"
     },
     {
       "path": "current/notebooks/C_GDP_AA_GDP_Equivalence.ipynb",
@@ -106,13 +106,208 @@
     },
     {
       "path": "current/notebooks/README.md",
-      "bytes": 2448,
-      "sha256": "3d7b891b3b8058d64ce78bcb00a2dd0af21a9eeed8a130aa1325fe4e3a06d43f"
+      "bytes": 2492,
+      "sha256": "7a581d11f5f406dfcfd87cafe80b770602c00ef949b0fbabd68c53e17e15caec"
     },
     {
       "path": "current/requirements-figures.txt",
       "bytes": 40,
       "sha256": "32d93c14aa754ae21ef8e00fd5ee39dd5d9c17b2c020cc0428618182309831f7"
+    },
+    {
+      "path": "current/results/README.md",
+      "bytes": 6511,
+      "sha256": "86578ae87b8b6cf6039d9db9b1b8fb1364babb15fc85effc4cdf64558e80869b"
+    },
+    {
+      "path": "current/results/SOURCE_MANIFEST.json",
+      "bytes": 17231,
+      "sha256": "a001ebedda0c92c943655108dfd756952ef8e2fd52769c5cd8456fa1f176416a"
+    },
+    {
+      "path": "current/results/VALIDATION.json",
+      "bytes": 1265,
+      "sha256": "b895076757a2443224c799c2c15199ab55f90856ee03cc7d09834289ffeec196"
+    },
+    {
+      "path": "current/results/celeba_parallel/jobs/p2_20/progress.json",
+      "bytes": 313,
+      "sha256": "dd108911d08fecabe858691a4bd8b6178923830602d8ce0e9923022bbd5f0764"
+    },
+    {
+      "path": "current/results/celeba_parallel/jobs/p2_20/protocol.json",
+      "bytes": 332,
+      "sha256": "7f9bc9b17707015d36eafda69f640d0ef89340350e619269d39df48b9fc63877"
+    },
+    {
+      "path": "current/results/celeba_parallel/jobs/p50/progress.json",
+      "bytes": 311,
+      "sha256": "1018a43afe107a55fa779a45a62bbca0b07d6958eec97ef0de897aaf8449c91e"
+    },
+    {
+      "path": "current/results/celeba_parallel/jobs/p50/protocol.json",
+      "bytes": 330,
+      "sha256": "63dc2f07fbd5d99bfa1aa205ad9fcffe852a4e4cb84fddbe1c3c8667af6eea71"
+    },
+    {
+      "path": "current/results/celeba_parallel/jobs/p5_10/attack_progress.json",
+      "bytes": 163,
+      "sha256": "01021f69130b32795796ac15c1068d722bb0de11005587c900a60391ac2f9631"
+    },
+    {
+      "path": "current/results/celeba_parallel/jobs/p5_10/progress.json",
+      "bytes": 315,
+      "sha256": "fb25e38644445e3a029ba821d1a4767b50925d21891aee3a8dddc3876a784d27"
+    },
+    {
+      "path": "current/results/celeba_parallel/jobs/p5_10/protocol.json",
+      "bytes": 332,
+      "sha256": "0ffd7058c8fba725c40dc68455dc2df8e0afc6bd46b34a06656be437760b447f"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/REPORT.md",
+      "bytes": 977,
+      "sha256": "d2f6a88cc5a8c4703a2ecdc827192b3dcbf704f2ab37df89fff2dc9e602679b2"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/attack_results.csv",
+      "bytes": 292273,
+      "sha256": "4859f532667062ce1593ae48fd49666f0b1f2cd245b07320b68062f656fa9626"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/attack_seed_means.csv",
+      "bytes": 53711,
+      "sha256": "09eeadd95895d30da24435de063d813198cfaa6f0bb562287d471648d4725ad0"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/attack_summary.csv",
+      "bytes": 17663,
+      "sha256": "53d7d21101b7a283afca5806092de4a66c1404a98e9418df8c8879f21adb4e3e"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/celeba_gpm_diagnostics.csv",
+      "bytes": 29131,
+      "sha256": "4eb34280f7a921b4ab1ab69cfde063ce218fe286614c7bd716e500d72622dc57"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/main_p10_results.csv",
+      "bytes": 248429,
+      "sha256": "068c2229ad7862e2b2638c64eef531dea7f632a96b9e6e9a291e7fdf5c4410e2"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/privacy_utility_by_attack.csv",
+      "bytes": 233217,
+      "sha256": "31331a2795ac79cdda1d5564087f2fd591739ea2ef120b728badf684d92b9cbc"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/progress.json",
+      "bytes": 445,
+      "sha256": "54f5964769605ed177d03c7430664c028b7adb358e6d3675d677f965a8b3b2e0"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/raw_results.csv",
+      "bytes": 764325,
+      "sha256": "eea3853036fb18571af9dcf58351210387ba42b0c294ad460cf938560a4ad17f"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/seed_means.csv",
+      "bytes": 34661,
+      "sha256": "f292e2dae082765341921112d605e817edab37f30192af9c20cc02b73ba4e741"
+    },
+    {
+      "path": "current/results/celeba_parallel/merged/summary.csv",
+      "bytes": 13018,
+      "sha256": "1600ce5dab93a401ed13d729a6279c21ed8aea5e35a8b8235d4dabe1e4f19eef"
+    },
+    {
+      "path": "current/results/celeba_parallel/shared/canonical_public.json",
+      "bytes": 4115,
+      "sha256": "eb115bedcc672e5627d0cbdb0b3f518d441ba92828673645ce21c41260a1f4c0"
+    },
+    {
+      "path": "current/results/equivalence/equivalence_manifest.json",
+      "bytes": 1417,
+      "sha256": "06e1d537a60791f181c17605f54912b361a7a838f066eb0fd63ff4be5859952b"
+    },
+    {
+      "path": "current/results/equivalence/equivalence_raw.csv",
+      "bytes": 170428,
+      "sha256": "8b38b19974ddd16d606f06e6b55558c6de696ee4e06222233d66fe9e7722a23d"
+    },
+    {
+      "path": "current/results/equivalence/equivalence_report.md",
+      "bytes": 1851,
+      "sha256": "8159f3660d2df869c0101b9a78b6078167dbbc7e182e294519c1219a730a8d86"
+    },
+    {
+      "path": "current/results/equivalence/equivalence_summary.csv",
+      "bytes": 1028,
+      "sha256": "771954b92797b60db5cb409c51bb420b555a977f4b4ebb8f3e2ad708d227c816"
+    },
+    {
+      "path": "current/results/equivalence/equivalence_table.tex",
+      "bytes": 526,
+      "sha256": "e8d9244506236c4a6a1c069cd375a8c2261fe76cb385baf255d4100c367c382c"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/REPORT.md",
+      "bytes": 1353,
+      "sha256": "b12bb831ded1d3f81d2af2a58711c5c94b1e801f732d0fd85660b11e7a3331c0"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/alignment_diagnostics.csv",
+      "bytes": 16596,
+      "sha256": "f9e486aa50e0d8d4520033c549c0b2a8daca23f8e6af7686431e0c5219e976f0"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/attack_results.csv",
+      "bytes": 64849,
+      "sha256": "8e1ca297c93735d0042e230776f41436380e9bf907c3cf35dc00ccdfa4939bc9"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/attack_seed_means.csv",
+      "bytes": 14492,
+      "sha256": "4406f1ef39aa4ce2216c66cfc677b80630196fa09db8a6d2a59413a83b0d53be"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/attack_summary.csv",
+      "bytes": 5096,
+      "sha256": "f233018aaf244ddca689217b96a729b9e8b6528eb70f7b023b1e6819febd46e7"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/auditor.json",
+      "bytes": 312,
+      "sha256": "50a1c9b4acff4aa73280d8a3c86a114bbb0f3b1177d29b8efd4362c59e10fd21"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/main_p5_results.csv",
+      "bytes": 185291,
+      "sha256": "00f5d94c4879040e4f4414230c1f020f35bc4b0568d8ad0d47a1627bcc4c8abd"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/progress.json",
+      "bytes": 341,
+      "sha256": "99d446c06edef0df25c28b1aeb078f12da3d072b29298611b452437144ed369c"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/protocol.json",
+      "bytes": 1360,
+      "sha256": "7931aca6756ee766a05b5c3baa8fddf12ce84949454a0df1dc22d06ad10d3ab7"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/raw_results.csv",
+      "bytes": 185291,
+      "sha256": "00f5d94c4879040e4f4414230c1f020f35bc4b0568d8ad0d47a1627bcc4c8abd"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/seed_means.csv",
+      "bytes": 10507,
+      "sha256": "8f474868ba1561046f620a38fe9b483bb02fe78d20dc6d45bdf099a61d717cfe"
+    },
+    {
+      "path": "current/results/lfwa_full_sweep/summary.csv",
+      "bytes": 3937,
+      "sha256": "c655915686196e47ca6cd674483995b6eb3785762f11c5a16a5cd461cafeeedb"
     },
     {
       "path": "current/scripts/prepare_celeba.py",

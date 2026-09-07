@@ -1,6 +1,6 @@
 # Current experiment notebooks
 
-These six notebooks supply the current manuscript workflow. Current result tables and generated figures are stored separately in Drive and are not included in the public checkout. Open the GitHub notebook in Google Colab or upload it to Colab. The CPU equivalence check is independent; the image experiments use GPU runtimes and persistent Google Drive storage.
+These six notebooks supply the current manuscript workflow. Completed numerical tables are bundled in [`../results/`](../results/); full deployment caches and generated qualitative figures remain separate working artifacts. Open the GitHub notebook in Google Colab or upload it to Colab. The CPU equivalence check is independent; the image experiments use GPU runtimes and persistent Google Drive storage.
 
 | Notebook | Execution role |
 |---|---|

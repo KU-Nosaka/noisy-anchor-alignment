@@ -1,0 +1,22 @@
+{
+  "completed_fits": 1525,
+  "completed_main_result_rows": 1300,
+  "expected_main_result_rows": 1300,
+  "jobs": {
+    "p2_20": {
+      "completed_fits": 430,
+      "scheduled_fits": 430
+    },
+    "p50": {
+      "completed_fits": 465,
+      "scheduled_fits": 465
+    },
+    "p5_10": {
+      "completed_fits": 630,
+      "scheduled_fits": 630
+    }
+  },
+  "legacy_records_preserved": true,
+  "scheduled_fits": 1525,
+  "utility_complete": true
+}

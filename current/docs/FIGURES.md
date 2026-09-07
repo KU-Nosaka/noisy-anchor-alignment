@@ -13,11 +13,11 @@ The current manuscript uses the figures below. The overview schematic (Figure 1)
 | Supplement | `lfwa_anchor_noise_identity_leakage.pdf` | LFWA MP, AM, OP linkage over all ten levels |
 | Supplement | `celeba_noise_identity_leakage.pdf` | CelebA OP and disclosed-common-transform inversion |
 
-## Quantitative figures from separately supplied results
+## Quantitative figures from the bundled results
 
-The current result tables and generated figures are not bundled with this checkout. Run the experiment notebooks to produce your own results, or use a saved result directory you already have access to. Keep the notebooks' directory structure when copying results out of Drive.
+The completed numerical result bundle is included in [`../results/`](../results/). It contains the inputs for all six quantitative plots and preserves the reviewed scalar CSV values. Generated plots are written locally. For an independent run, keep the notebooks' directory structure when copying results out of Drive.
 
-Pass the path to that `results/` directory, which contains these required files:
+The scripts default to `current/results/`. An alternative directory supplied with `--results-root` must contain these required files:
 
 | Subdirectory | Required inputs |
 |---|---|
@@ -26,14 +26,14 @@ Pass the path to that `results/` directory, which contains these required files:
 | `equivalence/` | `equivalence_raw.csv` |
 | `figures/manuscript_inputs/` | `celeba_gpm_diagnostics.csv` exported by the figure notebook |
 
-For a compact local export, the diagnostics CSV may alternatively be placed in `celeba_parallel/merged/`. The scripts prefer the original figure-input location when both exist. Missing inputs produce an error identifying the required files.
+The bundled compact export places the diagnostics CSV in `celeba_parallel/merged/`. The scripts prefer the original figure-input location when both exist. Missing inputs produce an error identifying the required files.
 
 From the repository root:
 
 ```bash
 python -m pip install -r current/requirements-figures.txt
-python current/scripts/validate_results.py --results-root '/path/to/Noisy Anchor Alignment/results'
-python current/scripts/reproduce_figures.py --results-root '/path/to/Noisy Anchor Alignment/results'
+python current/scripts/validate_results.py
+python current/scripts/reproduce_figures.py
 ```
 
 The script writes the six quantitative PDFs and PNG previews to `build/current_figures/`, with the seed-level plotting statistics and a source-hash manifest. It does not fit models or load images. The plotting code derives from the current Colab figure notebook; convergence labels are calculated from the supplied diagnostics.
@@ -44,6 +44,6 @@ The positive-noise conditions first average four realizations within seed; error
 
 Use `current/notebooks/Experiment_Figures.ipynb` after the experiment results are complete. Mount Drive, load its helper definitions, export the saved gallery inputs, render the numerical figures, and run the cell labeled **Figure 3: separate LFWA and CelebA subfigures**. The earlier combined gallery output is retained for compatibility; the manuscript includes the two separate PDFs.
 
-Gallery export requires the source images and saved deployment data from the experiment runs. Those images, saved deployments, and current result tables are separate working inputs and are not distributed in the current public package. The notebook reconstructs the first ten distinct saved queries in deployment order, without selecting images by quality. Each column preserves its source face across methods; positive-noise scales increase across columns. Displayed linkage percentages cover all 1,000 saved ten-way lineups for the selected condition, rather than the individual tile or a five-seed average.
+Gallery export requires the source images and saved deployment data from the experiment runs. The source images and full saved deployments are separate working inputs; the compact public result tables alone do not contain the reconstruction tiles. The notebook reconstructs the first ten distinct saved queries in deployment order, without selecting images by quality. Each column preserves its source face across methods; positive-noise scales increase across columns. Displayed linkage percentages cover all 1,000 saved ten-way lineups for the selected condition, rather than the individual tile or a five-seed average.
 
 For an LFWA-only update, mount Drive and run the final **Refresh LFWA figures only** cell. It validates the full sweep and saved gallery provenance before writing the LFWA trade-off, LFWA attack comparison, and LFWA Figure 3 panel. This cell also writes a ZIP with its statistics and provenance manifest.

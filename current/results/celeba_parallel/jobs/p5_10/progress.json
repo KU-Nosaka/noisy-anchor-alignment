@@ -1,0 +1,13 @@
+{
+  "completed_fits": 630,
+  "completed_tasks": 630,
+  "current": null,
+  "error": null,
+  "job_id": "p5_10",
+  "reused_legacy_fits": 66,
+  "scheduled_fits": 630,
+  "scheduled_tasks": 630,
+  "session_seconds": 466.1174483239997,
+  "status": "utility_complete",
+  "updated_utc": "2026-09-07T07:00:17.444885+00:00"
+}

@@ -5,7 +5,7 @@ Copyright © 2026 Keiyu Nosaka, Yamato Suetake, Yuichi Takano, and Akiko Yoshise
 Except where stated otherwise in [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md), the following materials are licensed under the [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/):
 
 - documentation in `README.md`, `docs/`, `current/docs/`, and the directory-level README files;
-- generated numerical result records and provenance metadata in the historical `results/`;
+- generated numerical result records and provenance metadata in the historical `results/` and current `current/results/`;
 - `ARTIFACT_MANIFEST.json`; and
 - quantitative tables and plots generated from the result records.
 

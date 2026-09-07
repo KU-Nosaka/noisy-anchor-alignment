@@ -1,0 +1,37 @@
+{
+  "lfwa_full_sweep": {
+    "result_rows": 420,
+    "positive_noise_rows": 400,
+    "zero_noise_control_and_aggregate_rows": 20,
+    "unique_collaboration_fits": 415,
+    "unique_local_fits": 25,
+    "total_fits": 440,
+    "five_seeds_per_summary": true,
+    "four_draws_per_positive_seed_cell": true,
+    "saved_seed_means_and_summary_match_raw": true,
+    "linkage_missing_only_for_I_GDP_and_Local_only": true,
+    "saved_attack_summary_matches_raw": true,
+    "OP_linkage_matches_primary_results": true
+  },
+  "celeba_parallel/merged": {
+    "result_rows": 1300,
+    "positive_noise_rows": 1200,
+    "zero_noise_control_and_aggregate_rows": 100,
+    "unique_collaboration_fits": 1275,
+    "unique_local_fits": 250,
+    "total_fits": 1525,
+    "five_seeds_per_summary": true,
+    "four_draws_per_positive_seed_cell": true,
+    "saved_seed_means_and_summary_match_raw": true,
+    "linkage_missing_only_for_I_GDP_and_Local_only": true,
+    "saved_attack_summary_matches_raw": true,
+    "OP_linkage_matches_primary_results": true,
+    "all_200_detailed_GPM_records_match_raw": true
+  },
+  "equivalence": {
+    "paired_comparisons": 800,
+    "deployments": 160,
+    "all_numerical_tolerance_checks_passed": true,
+    "max_matrix_error": 3.7969213254457205e-14
+  }
+}
