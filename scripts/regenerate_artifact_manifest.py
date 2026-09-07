@@ -38,7 +38,7 @@ def main() -> None:
     files = included_files()
     payload = {
         "schema_version": 1,
-        "artifact": "Anchor-Side Perturbation reproducibility repository",
+        "artifact": "Noisy Anchor Alignment reproducibility repository",
         "file_count": len(files),
         "total_bytes": sum(path.stat().st_size for path in files),
         "files": [
@@ -59,3 +59,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

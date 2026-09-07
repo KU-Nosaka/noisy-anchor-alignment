@@ -1,3 +1,5 @@
+> **Historical package.** This file documents the earlier MNIST/CelebA experiments. For the current LFWA/CelebA manuscript, see [`current/`](../current/).
+
 # Provenance and source-snapshot status
 
 ## Authoritative artifacts
@@ -48,3 +50,4 @@ The identity-specific archive records the latter hash. Notebook 06 is sufficient
 ## Excluded artifacts
 
 The repository intentionally excludes complete source datasets, model-download caches, optimizer checkpoints, redundant CSV/JSON copies, rendered PNG/SVG previews, obsolete pilot designs, the superseded \(p=10,30,50\) participant-count analysis, the failed pre-correction \(p=5,10\) replay shard, removed digit-leakage plots, \(p=70,90\) experimental results, Overleaf snapshots, and local dependency directories. The compact qualitative archives retain only the selected source and recovered tiles needed for the published grids.
+

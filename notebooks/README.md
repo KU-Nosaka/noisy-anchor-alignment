@@ -1,3 +1,5 @@
+> **Historical package.** This file documents the earlier MNIST/CelebA experiments. For the current LFWA/CelebA manuscript, see [`current/`](../current/).
+
 # Experiment notebooks
 
 The notebooks are self-contained Colab workflows: the reviewed protocol and runner modules are written from notebook cells at runtime. Assign one new Google Drive result root for an independent reproduction and reuse it in every stage.
@@ -30,3 +32,4 @@ Every stage is resumable. Rerunning a notebook against the same Drive root inven
 For code review, `scripts/celeba_participant_replay_runner.py` is the exact replay overlay embedded in all three participant-count notebooks. `scripts/celeba_participant_replay_supplemental_runner.py` is the supplemental overlay embedded in Notebook 09, which imports the replay overlay and its base modules instead of copying them. The notebooks also embed its reviewed CelebA base and unit-isometric-anchor modules, so the notebooks—not the extracted overlay alone—are the executable Colab artifacts.
 
 The experiment environment is intentionally managed inside the notebooks because CUDA-enabled Colab packages are runtime-specific. See `docs/EXPERIMENTS.md` and the runtime locks under `results/`.
+

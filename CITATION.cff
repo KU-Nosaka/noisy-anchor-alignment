@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this reproducibility package, please cite it using the metadata below."
-title: "Anchor-Side Perturbation for Anchor-Aligned Independent Geometric Data Perturbation: Reproducibility Package"
+title: "Noisy Anchor Alignment"
 type: software
 authors:
   - family-names: "Nosaka"
@@ -15,10 +15,8 @@ authors:
   - family-names: "Yoshise"
     given-names: "Akiko"
     affiliation: "University of Tsukuba"
-version: 1.0.0
-date-released: 2026-07-30
-repository-code: "https://github.com/KU-Nosaka/anchor-side-perturbation-reproducibility"
-url: "https://github.com/KU-Nosaka/anchor-side-perturbation-reproducibility"
+repository-code: "https://github.com/KU-Nosaka/noisy-anchor-alignment"
+url: "https://github.com/KU-Nosaka/noisy-anchor-alignment"
 license: MIT
 keywords:
   - geometric data perturbation
@@ -26,3 +24,4 @@ keywords:
   - data collaboration
   - orthogonal Procrustes problem
   - reproducible research
+

@@ -1,3 +1,4 @@
+# Historical MNIST/CelebA package; see current/ for the current manuscript.
 """Regenerate every main-manuscript and supplementary PDF.
 
 The scientific renderers retain their original validation logic. This driver
@@ -214,3 +215,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

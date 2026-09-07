@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "artifact": "Anchor-Side Perturbation reproducibility repository",
-  "file_count": 83,
-  "total_bytes": 32042886,
+  "artifact": "Noisy Anchor Alignment code repository",
+  "file_count": 103,
+  "total_bytes": 32942506,
   "files": [
     {
       "path": ".gitattributes",
@@ -11,13 +11,13 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 241,
-      "sha256": "1dc7b064ec53c7191ce774147d808a02cf8ca36597ff22078f35fedb82630fe3"
+      "bytes": 343,
+      "sha256": "a59d75f91fb12a6f5d8ebb0c25d5e28eb21bc3dc4c9d16e8fb630b55cb0be3c4"
     },
     {
       "path": "CITATION.cff",
-      "bytes": 1015,
-      "sha256": "7d437b1fb338fc3da37a4a903f8b88ad12990ebf77d04a35926e9a616974d295"
+      "bytes": 853,
+      "sha256": "76c79c5649ab2232ed282a4ab59a5e13c21d06e03551bb6b578635499cad6212"
     },
     {
       "path": "LICENSE",
@@ -26,38 +26,138 @@
     },
     {
       "path": "LICENSE-DATA.md",
-      "bytes": 1130,
-      "sha256": "4c115ae20c4011e624741f4b5dd76c38e7a1d73f5dcf994e0ed05e1c56bf6520"
+      "bytes": 1163,
+      "sha256": "56fc8ffa421066eff25bf9551d4d5675bda712b0e77f0afd292c2bf9cb6d5a38"
     },
     {
       "path": "README.md",
-      "bytes": 7186,
-      "sha256": "877cddf8229d4df7eda60af0fbf34971e0c6ff9a2915d0cd0a15dd54619f1130"
+      "bytes": 4179,
+      "sha256": "7f599cacc5121dc9d2896e7f1603392b572f9b4d296fe35974c59c5296304894"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 1634,
-      "sha256": "7f4033ded752def754abd8ce03665f3359e36af05961875bdc8c77f266ce2bc5"
+      "bytes": 2045,
+      "sha256": "80e383325eb2760cd8272f3282d406a918c452b268c1076e93197d237fb78147"
+    },
+    {
+      "path": "current/README.md",
+      "bytes": 844,
+      "sha256": "2658b2f3de5a041ca2db276cdc1839bd6363f7b6d43696763a97b739c5548111"
+    },
+    {
+      "path": "current/archive/CelebA_Privacy_Utility_and_Scaling.ipynb",
+      "bytes": 98285,
+      "sha256": "38920974bcd6ceb7be7c08ee6cf5ae9638a769f5f58a3aecdadfa3a2a7261bfa"
+    },
+    {
+      "path": "current/archive/README.md",
+      "bytes": 877,
+      "sha256": "fe3a4786c36077cc3a03125d4cf8180030de3826cf56207273d39520770ac0c6"
+    },
+    {
+      "path": "current/docs/EXPERIMENTS.md",
+      "bytes": 8225,
+      "sha256": "4967d72ae40494e51bbd0c6bf44e8542dd11ce485e41f5c37ccb449fc2fa502f"
+    },
+    {
+      "path": "current/docs/FIGURES.md",
+      "bytes": 4581,
+      "sha256": "72b482fb2a6b4a2332056983ec899bdabeff87de9879c261c88f4eb75f81c4be"
+    },
+    {
+      "path": "current/docs/FRESH_START_SOURCE_MANIFEST.json",
+      "bytes": 15432,
+      "sha256": "61d0deb2e23b707617d9ef8babce32ba96c335b8a8fbeecabea081efb56da76f"
+    },
+    {
+      "path": "current/docs/PROVENANCE.md",
+      "bytes": 3542,
+      "sha256": "467b52230de348ea9f62ccc18cb6eb9af42245e0a0b79bb5c6d9b31e2c337f0c"
+    },
+    {
+      "path": "current/notebooks/C_GDP_AA_GDP_Equivalence.ipynb",
+      "bytes": 17346,
+      "sha256": "a7136f2e75133f9816bcf9caacbba21244de828642dca6be750e816f407c42a0"
+    },
+    {
+      "path": "current/notebooks/CelebA_P2_P20.ipynb",
+      "bytes": 129125,
+      "sha256": "e5afc550d1a6db7ec75a12cb4f93794839c8cd5c409ac31ed5faa86ee61b3326"
+    },
+    {
+      "path": "current/notebooks/CelebA_P50.ipynb",
+      "bytes": 136282,
+      "sha256": "b7d3ed6b0e6d535a06482154811bfeb805945c3066e38ea1073a5b1ea7018b95"
+    },
+    {
+      "path": "current/notebooks/CelebA_P5_P10.ipynb",
+      "bytes": 129906,
+      "sha256": "bdd947e4e0d3712de944444c41822485bf683730a86cc7da95c9cf541f81863a"
+    },
+    {
+      "path": "current/notebooks/Experiment_Figures.ipynb",
+      "bytes": 84919,
+      "sha256": "da5f3f0f29cf9698a6e0ec3765ebf6a3ce3aefe4da39468ed0280bf232f54880"
+    },
+    {
+      "path": "current/notebooks/LFWA_Privacy_Utility.ipynb",
+      "bytes": 104036,
+      "sha256": "020f99468c7b7f2281eb35ce2e2ccb60751659c3ba8525065d97c870273f26fd"
+    },
+    {
+      "path": "current/notebooks/README.md",
+      "bytes": 2448,
+      "sha256": "3d7b891b3b8058d64ce78bcb00a2dd0af21a9eeed8a130aa1325fe4e3a06d43f"
+    },
+    {
+      "path": "current/requirements-figures.txt",
+      "bytes": 40,
+      "sha256": "32d93c14aa754ae21ef8e00fd5ee39dd5d9c17b2c020cc0428618182309831f7"
+    },
+    {
+      "path": "current/scripts/prepare_celeba.py",
+      "bytes": 5379,
+      "sha256": "7868ec799c4d0829b41bf7f6fd521b9113ed596c9301b803501f1c8818b6ad9e"
+    },
+    {
+      "path": "current/scripts/reproduce_figures.py",
+      "bytes": 11153,
+      "sha256": "9df189be086004f62d833bb7173a095945b757ffa7d84c04fb7d7fa7c8114423"
+    },
+    {
+      "path": "current/scripts/validate_results.py",
+      "bytes": 12198,
+      "sha256": "da8956115d5c962b485b802e31b907b8cd7ed6e42e47544ab289485bf83bfd7a"
+    },
+    {
+      "path": "current/source_snapshots/CelebA_P50.ipynb",
+      "bytes": 129139,
+      "sha256": "1cd78d741b2dcea3effa10a643905dc753b8d87ab85c78f9918ada4362efeb5e"
     },
     {
       "path": "docs/EXPERIMENTS.md",
-      "bytes": 5032,
-      "sha256": "5af252deb80c9027a90566e610bb7a61fa1a7d47628270097fda1038b80a8ccd"
+      "bytes": 5189,
+      "sha256": "185b26ec1b339b1659b840b123577d1363c36438dcb9fec4eeb315af01d93054"
     },
     {
       "path": "docs/FIGURES.md",
-      "bytes": 3585,
-      "sha256": "8ff49c60e008a17ba78f711e3d530470318ed51e68e22224d8c21b3c78a42d84"
+      "bytes": 3742,
+      "sha256": "d91b029437b77cc94ff0a3a1fb334d255063ceb01840e1f9b0aafe72cc293777"
+    },
+    {
+      "path": "docs/HISTORICAL_PACKAGE.md",
+      "bytes": 7391,
+      "sha256": "3409caabd3b96f2762957ccc0ebaf6a5a5f633b1fb91513a2f187ae7b0eb8cdb"
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 3605,
-      "sha256": "f09374bf3efb2d1aeddae8dd8c5091fcc30a074876199a180fb94e41dd8bfd49"
+      "bytes": 3762,
+      "sha256": "ac9acfac6bbb3d36f1b7c13ce3dae3627f309545cd5b813aa89d3d9d469cfda3"
     },
     {
       "path": "figure_inputs/README.md",
-      "bytes": 831,
-      "sha256": "8aebebacdb394149800b3f45de742c63fd6083fdf4a6d3d401f0e64f58fd6bc6"
+      "bytes": 988,
+      "sha256": "bdb4f6380389ed944daadfde1654a2f8558646684ed79de2c49e4320f1f3054a"
     },
     {
       "path": "figure_inputs/celeba_identity_reconstructions.zip",
@@ -161,8 +261,8 @@
     },
     {
       "path": "notebooks/README.md",
-      "bytes": 4791,
-      "sha256": "0893c58a63df2581afa8a4cf73908f8a8f855a3e7a6f850f723b24137e207a10"
+      "bytes": 4948,
+      "sha256": "abf0ed9349fbd3117ce96cd3fd9c73e24c44c5d90c4b57c1d3b8630a81dd6b17"
     },
     {
       "path": "requirements-figures.txt",
@@ -171,8 +271,8 @@
     },
     {
       "path": "results/README.md",
-      "bytes": 1212,
-      "sha256": "b2f904e6da7f83bb1e7f9efd0971002212e252c1fdcb4b75e75877581632414a"
+      "bytes": 1369,
+      "sha256": "98eaa90b4127246fa3b5afcf5876086fb1feb1892b14c3576b31be0a43163c76"
     },
     {
       "path": "results/celeba/manifests/p010_main/completion_summary.json",
@@ -406,18 +506,18 @@
     },
     {
       "path": "scripts/regenerate_artifact_manifest.py",
-      "bytes": 1715,
-      "sha256": "8199264ded5fd7d2c0ffab3b3545b90d8490c82b9d1387d9fff963806070a756"
+      "bytes": 1714,
+      "sha256": "3ed3efdb936f47a3869a0a89b3039ba529c2f8f6c8541c09f9efe260ead70e74"
     },
     {
       "path": "scripts/reproduce_figures.py",
-      "bytes": 8126,
-      "sha256": "2c2915081367ef955a10a43ccb1b3c6e83336b855ff90ec421ad30b8885cde27"
+      "bytes": 8203,
+      "sha256": "3fe9d0bb4679a8d91b2406532ee0b74a3e54e1664b0923a6f5dad326a5d1796c"
     },
     {
       "path": "scripts/validate_repository.py",
-      "bytes": 14496,
-      "sha256": "bdffc465d843d073154c5e18b7d8820200eec79ea49265391526c71ea6e46a91"
+      "bytes": 14573,
+      "sha256": "725ceedc83717aeb67db11b8d23a25612eccf7ffcb3b3e1e5cadb59a6f5a9df9"
     }
   ]
 }

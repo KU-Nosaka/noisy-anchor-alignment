@@ -1,3 +1,5 @@
+> **Historical package.** This file documents the earlier MNIST/CelebA experiments. For the current LFWA/CelebA manuscript, see [`current/`](../current/).
+
 # Experiment reproduction
 
 ## Common principles
@@ -55,3 +57,4 @@ The reported long-running stages used Google Colab Pro+ high-memory A100 runtime
 ## Data persistence
 
 Use a Google Drive folder for both the dataset/model cache and stage outputs. Do not write the only copy of results to `/content`: Colab's local disk is erased when a runtime disconnects.
+

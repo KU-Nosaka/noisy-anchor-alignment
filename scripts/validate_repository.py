@@ -1,3 +1,4 @@
+# Historical MNIST/CelebA package; see current/ for the current manuscript.
 """Validate frozen artifacts before analysis or figure rendering."""
 
 from __future__ import annotations
@@ -339,3 +340,4 @@ if __name__ == "__main__":
     except Exception as exc:
         print(f"VALIDATION FAILED: {exc}", file=sys.stderr)
         raise
+
