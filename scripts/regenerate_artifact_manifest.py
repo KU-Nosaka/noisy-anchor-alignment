@@ -5,11 +5,11 @@ from __future__ import annotations
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 
 
 REPO = Path(__file__).resolve().parents[1]
 OUTPUT = REPO / "ARTIFACT_MANIFEST.json"
-EXCLUDED_TOP_LEVEL = {".git", "build"}
 
 
 def sha256(path: Path) -> str:
@@ -21,16 +21,14 @@ def sha256(path: Path) -> str:
 
 
 def included_files() -> list[Path]:
-    files = []
-    for path in REPO.rglob("*"):
-        if not path.is_file() or path == OUTPUT:
-            continue
-        relative = path.relative_to(REPO)
-        if relative.parts[0] in EXCLUDED_TOP_LEVEL:
-            continue
-        if "__pycache__" in relative.parts:
-            continue
-        files.append(path)
+    # Honor .gitignore: downloaded faces, generated features/model weights,
+    # local environments, and resume outputs must never enter the manifest.
+    listed = subprocess.check_output(
+        ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z"],
+        cwd=REPO,
+    ).decode("utf-8").split("\0")
+    files = [REPO / name for name in set(listed) if name]
+    files = [path for path in files if path.is_file() and path != OUTPUT]
     return sorted(files, key=lambda path: path.relative_to(REPO).as_posix())
 
 

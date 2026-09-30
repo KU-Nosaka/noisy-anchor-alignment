@@ -1,5 +1,7 @@
 # Experiment reproduction
 
+For the **current CelebA/VGGFace2 CASIA studies**, use [CURRENT_CASIA_EXPERIMENTS.md](CURRENT_CASIA_EXPERIMENTS.md) and notebooks 10–13. The sections below document the retained historical MNIST/CelebA workflow.
+
 ## Common principles
 
 All random noisy fits use a fixed deployment—data allocation, dimensional-reduction map, anchor, model architecture, and auditor—and vary the prescribed noise realization and its scale. Deterministic controls are retained separately. Training and attack seeds are recorded in every result record.

@@ -1,5 +1,13 @@
 # Experiment notebooks
 
+## Current CelebA/VGGFace2 CASIA notebooks
+
+Use notebooks **10–13 in [current/](current/)** for the current manuscript. They begin from downloaded raw datasets inside this repository and fit their own public SVD features. The two full studies cover all participant counts and both noise placements; the other two compare MP, AM, and OP using 500 uniform anchor-noise draws, without utility training.
+
+The [current experiment guide](../docs/CURRENT_CASIA_EXPERIMENTS.md) specifies raw-file layouts, preprocessing, seeds, quotas, resource requirements, and outputs. Each notebook contains numbered, readable stages and calls the checked-in modules under `reproduction/casia/`. A previous notebook run or private Drive cache is not a prerequisite.
+
+## Historical notebooks 01–09
+
 The notebooks are self-contained Colab workflows: the reviewed protocol and runner modules are written from notebook cells at runtime. Assign one new Google Drive result root for an independent reproduction and reuse it in every stage.
 
 | Notebook | Purpose | Expected completed records |

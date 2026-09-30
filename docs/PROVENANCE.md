@@ -1,5 +1,11 @@
 # Provenance and source-snapshot status
 
+## Current recipe notebooks
+
+Notebooks 10–13 in `notebooks/current/` provide the current CelebA/VGGFace2 CASIA recipes starting from downloaded raw datasets. They generate and fingerprint their own public SVD representations, fixed allocations, designs, and galleries. They preserve the scientific settings and named randomization schedules while replacing private Drive/cache prerequisites with raw-input preparation. Fresh tensors can differ across numerical-library versions; historical tensor-byte identity is not required. See [CURRENT_CASIA_EXPERIMENTS.md](CURRENT_CASIA_EXPERIMENTS.md).
+
+The current-notebook publication was checked with static notebook validation and small synthetic numerical/integrity tests. It is not a new full-data GPU rerun. The authoritative-artifact descriptions below concern the **historical frozen MNIST/CelebA tables** already distributed in this repository; those tables are not the September 2026 CASIA results.
+
 ## Authoritative artifacts
 
 The compressed result tables are the authoritative records of the completed quantitative experiments. The lossless qualitative-input archives are the authoritative inputs for the reconstruction grids. Before rendering, the repository validator checks the distributed files against `ARTIFACT_MANIFEST.json` and verifies result counts, schedule roles, participant counts, and reconstruction-archive structure.

@@ -1,6 +1,23 @@
 # Noisy Anchor Alignment
 
-This repository contains the original MNIST and CelebA experiment code, notebooks, and frozen artifacts for *Noisy Anchor Alignment*.
+This repository contains experiment code, notebooks, and frozen artifacts for *Noisy Anchor Alignment*. The current manuscript evaluates **CelebA and VGGFace2 with a frozen CASIA-WebFace auditor**. The original MNIST/CelebA package is retained as a historical workflow.
+
+## Current manuscript: four notebooks from downloaded datasets
+
+Start with the downloaded images and metadata inside `data/raw/` in a clone of this repository. Each notebook performs preprocessing, identity allocation, **public SVD feature extraction**, anchor/design construction, and evaluation. No prior Drive study, prepared features, or historical training checkpoints are needed. Model weights are downloaded and checksum-verified automatically.
+
+| Notebook | Open in Colab | Purpose |
+|---|---|---|
+| [10 — CelebA privacy–utility](notebooks/current/10_celeba_casia_privacy_utility.ipynb) | [Colab](https://colab.research.google.com/github/KU-Nosaka/noisy-anchor-alignment/blob/main/notebooks/current/10_celeba_casia_privacy_utility.ipynb) | All `p = 2, 5, 10, 20, 50`; both noise placements |
+| [11 — VGGFace2 privacy–utility](notebooks/current/11_vggface2_casia_privacy_utility.ipynb) | [Colab](https://colab.research.google.com/github/KU-Nosaka/noisy-anchor-alignment/blob/main/notebooks/current/11_vggface2_casia_privacy_utility.ipynb) | All five participant counts; both noise placements |
+| [12 — CelebA MP/AM/OP comparison](notebooks/current/12_celeba_casia_attack_comparison.ipynb) | [Colab](https://colab.research.google.com/github/KU-Nosaka/noisy-anchor-alignment/blob/main/notebooks/current/12_celeba_casia_attack_comparison.ipynb) | 500 uniform anchor-noise draws at `p=10`; no utility training |
+| [13 — VGGFace2 MP/AM/OP comparison](notebooks/current/13_vggface2_casia_attack_comparison.ipynb) | [Colab](https://colab.research.google.com/github/KU-Nosaka/noisy-anchor-alignment/blob/main/notebooks/current/13_vggface2_casia_attack_comparison.ipynb) | 500 uniform anchor-noise draws at `p=10`; no utility training |
+
+Use a T4 runtime for each dataset. The main studies use 400-dimensional representations, 100 identities per participant, the original CNN, and spectral alignment. They target 20 accepted realizations per noise placement in each linkage bin `[0,15)`, `[15,25)`, `[25,35)`, `[35,45)`, `[45,100]` percent, with a 1,500-proposal cap per placement and participant count. This is **linkage-calibrated sampling**. The supplementary notebooks instead use 500 unconditional uniform scales in `[0,0.08)` and compare all three attacks on the same uploads.
+
+See [the current input layouts, settings, execution steps, and resume rules](docs/CURRENT_CASIA_EXPERIMENTS.md). VGGFace2 requires its training archive, official metadata, and MAAD-Face Smiling labels. The notebooks explain each stage with readable cells; supporting code is in `reproduction/casia/`. Generated data, features, model weights, and checkpoints stay outside Git.
+
+## Historical package
 
 It supports two distinct workflows:
 
@@ -11,7 +28,7 @@ Raw datasets, downloaded model weights, training checkpoints, caches, and duplic
 
 The manuscript names the anchor-noise method *NAA-GDP* (noisy-anchor-aligned GDP) and the noiseless anchor-aligned variants *AA-GDP*; the code, notebooks, and frozen result tables keep the identifiers of the recorded runs (`pa_i_gdp`, `aa_i_gdp`, `aa_i_gdp_an`, `c_gdp_an`, and the attack names `PA-OP`, `PA-MP`, `PA-AM`), and the figure renderers map them to the manuscript's labels.
 
-## Quick figure reproduction
+## Historical figure reproduction
 
 Python 3.12 or newer is recommended. The recorded publication figures were rendered with Python 3.14.2, NumPy 2.5.1, Matplotlib 3.11.1, and Pillow 12.3.0.
 
@@ -33,7 +50,7 @@ build/paper_figures/supplement/
 
 The source observations, spline coordinates, and renderer metadata are retained under `build/analysis/`.
 
-## Full experiment reproduction
+## Historical experiment reproduction
 
 Upload the notebooks in `notebooks/` to Colab and follow the stage-specific controls in [notebooks/README.md](notebooks/README.md). The primary experiment order is:
 
@@ -59,7 +76,8 @@ See [docs/EXPERIMENTS.md](docs/EXPERIMENTS.md) for the exact stage composition, 
 ## Repository contents
 
 ```text
-notebooks/       Self-contained Colab experiment notebooks
+notebooks/       Colab notebooks; current/ contains the four current CASIA workflows
+reproduction/    Readable raw-input preparation, features, attacks, training, and figure code
 results/         Compressed complete result records and provenance manifests
 figure_inputs/   Compact lossless inputs for qualitative reconstruction grids
 figures/         Deterministic publication-figure renderers; latex/ holds the layered participant-count figure body
@@ -69,7 +87,7 @@ docs/            Experiment, figure, data, and provenance documentation
 
 The correspondence between paper figures and scripts is listed in [docs/FIGURES.md](docs/FIGURES.md). `ARTIFACT_MANIFEST.json` records the size and SHA-256 digest of every other distributed file.
 
-## Data and pretrained models
+## Historical data and pretrained models
 
 - MNIST is downloaded by `torchvision`.
 - CelebA images are obtained by the notebooks from the Kaggle CelebA mirror used in the recorded runs; official identity metadata are downloaded separately and verified by the recorded manifests.
@@ -79,7 +97,7 @@ The source datasets, model weights, and caches are not redistributed. The three 
 
 ## Scope and provenance
 
-The frozen tables are the authoritative source for the values and figures reported in the paper. They contain 609 MNIST records, 407 CelebA records for the primary \(p=10\) analysis, and 103 records for each of \(p\in\{2,5,10,20,50\}\) in the revised participant-count replay. Each replay condition consists of 100 anchor-noise observations and three deterministic controls. The paired low-noise stratum of Notebook 09 adds 100 anchor-noise observations per participant count; its compact per-draw tables are distributed under `results/celeba/participant_replay/supplemental/`, and the complete per-fit records will be added in the schema of the published tables.
+The frozen historical tables are the authoritative source for the earlier MNIST/CelebA figures. They contain 609 MNIST records, 407 CelebA records for the historical \(p=10\) analysis, and 103 records for each of \(p\in\{2,5,10,20,50\}\) in that participant-count replay. Each replay condition consists of 100 anchor-noise observations and three deterministic controls. The paired low-noise stratum of Notebook 09 adds 100 anchor-noise observations per participant count; its compact per-draw tables are distributed under `results/celeba/participant_replay/supplemental/`. The current CASIA notebooks generate new result records in their own output directories; they do not read these historical tables as experimental inputs.
 
 Source-snapshot limitations affecting one MNIST supplemental runner and the historical CelebA qualitative replay code are documented transparently in [docs/PROVENANCE.md](docs/PROVENANCE.md). They do not affect regeneration of the reported figures from the frozen records and frozen qualitative inputs.
 

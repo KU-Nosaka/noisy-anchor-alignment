@@ -1,0 +1,44 @@
+{
+  "assets": [
+    {
+      "path": "data/vggface2_train.tar.gz",
+      "url": "https://huggingface.co/datasets/ProgramComputer/VGGFace2/resolve/a557f7daf194ac7773e85f64a2243719e2ce2a9a/data/vggface2_train.tar.gz?download=true",
+      "size": 37909212476,
+      "sha256": "0e7ecc1bec3e8ae402b79db927510abaff386a91ea1b223d5c83e995bc4d28af",
+      "sha256_provenance": "Hugging Face published LFS SHA256",
+      "git_blob_oid": "9cb77e33e7181dbd6eb191360e81c0e32d35d3d1"
+    },
+    {
+      "path": "meta/bb_landmark.tar.gz",
+      "url": "https://huggingface.co/datasets/ProgramComputer/VGGFace2/resolve/a557f7daf194ac7773e85f64a2243719e2ce2a9a/meta/bb_landmark.tar.gz?download=true",
+      "size": 178409916,
+      "sha256": "7d5c68eaf56c6f7f93910fc88da7d2b0fd61e77848b9c9c4dba6b78cdad2db11",
+      "sha256_provenance": "Hugging Face published LFS SHA256",
+      "git_blob_oid": "f8e5d96f8c261ffae6fbd53fbff19bb0571d3b57"
+    },
+    {
+      "path": "meta/identity_meta.csv",
+      "url": "https://huggingface.co/datasets/ProgramComputer/VGGFace2/resolve/a557f7daf194ac7773e85f64a2243719e2ce2a9a/meta/identity_meta.csv?download=true",
+      "size": 335000,
+      "sha256": "3e0caaeb1cc30bf784edbfdf77e988cfedb56eaf3d2ba87d7724e4a8f7ff737f",
+      "sha256_provenance": "locally computed SHA256 after pinned Git blob SHA1 verification",
+      "git_blob_oid": "1749ee559367ed502c5e0c54aa9db82f2cac6461"
+    },
+    {
+      "path": "meta/train_list.txt",
+      "url": "https://huggingface.co/datasets/ProgramComputer/VGGFace2/resolve/a557f7daf194ac7773e85f64a2243719e2ce2a9a/meta/train_list.txt?download=true",
+      "size": 62837801,
+      "sha256": "f0adf062077543c894ca91a70324454ba6a151c4ac1aec8a2b453207add58004",
+      "sha256_provenance": "Hugging Face published LFS SHA256",
+      "git_blob_oid": "188520766e3ceb651ec00175c28891ebb005dcd6"
+    },
+    {
+      "path": "maad/MAAD_Face.csv",
+      "url": "https://github.com/pterhoer/MAAD-Face/releases/download/MAADFACE/MAAD_Face.csv",
+      "size": 481183742,
+      "sha256": "e4a98c260fd3923b9ff2a637671552241833e68f889b195e78c277139816c583",
+      "sha256_provenance": "locally computed SHA256 of official release asset; publisher digest unavailable",
+      "github_asset_id": 26360636
+    }
+  ]
+}

@@ -12,6 +12,8 @@ weights/
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
+.pytest_cache/
+*.egg-info/
 
 # Editors and operating systems
 .DS_Store

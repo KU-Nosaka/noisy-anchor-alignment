@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "artifact": "Noisy Anchor Alignment reproducibility repository",
-  "file_count": 83,
-  "total_bytes": 32042654,
+  "file_count": 118,
+  "total_bytes": 32594409,
   "files": [
     {
       "path": ".gitattributes",
@@ -11,8 +11,8 @@
     },
     {
       "path": ".gitignore",
-      "bytes": 241,
-      "sha256": "1dc7b064ec53c7191ce774147d808a02cf8ca36597ff22078f35fedb82630fe3"
+      "bytes": 268,
+      "sha256": "58d23ac1056b9eb4af596418c0e6b7b8944ff31c2d6a62f486fa1d20e477acbb"
     },
     {
       "path": "CITATION.cff",
@@ -31,28 +31,33 @@
     },
     {
       "path": "README.md",
-      "bytes": 7078,
-      "sha256": "c03437f20a27b53751dc541aa322f61b8be295023cd37bde267bc8c5abec99f3"
+      "bytes": 10113,
+      "sha256": "ea6498df2d9dcb99554def9d096dc3497d0ebc0c725a516f3572e9b662e55ffc"
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
-      "bytes": 1634,
-      "sha256": "7f4033ded752def754abd8ce03665f3359e36af05961875bdc8c77f266ce2bc5"
+      "bytes": 2250,
+      "sha256": "9cbcb9ec10982a905d0d84477247897b93f3fcface0a490ea6bd41595668d23e"
+    },
+    {
+      "path": "docs/CURRENT_CASIA_EXPERIMENTS.md",
+      "bytes": 10834,
+      "sha256": "fa75c8d27619068c09c57a6da0cc33df9463353fe10f8adf22d578068c55da84"
     },
     {
       "path": "docs/EXPERIMENTS.md",
-      "bytes": 5032,
-      "sha256": "5af252deb80c9027a90566e610bb7a61fa1a7d47628270097fda1038b80a8ccd"
+      "bytes": 5247,
+      "sha256": "638e552f07ede507cb83ed2b8f335c8fa63631b32a0dc35911781af29eff5e11"
     },
     {
       "path": "docs/FIGURES.md",
-      "bytes": 3585,
-      "sha256": "8ff49c60e008a17ba78f711e3d530470318ed51e68e22224d8c21b3c78a42d84"
+      "bytes": 3857,
+      "sha256": "57a0273bce43fd7ad90931838ce45630264e0f1833d82f5c300d36e03cf4cf62"
     },
     {
       "path": "docs/PROVENANCE.md",
-      "bytes": 3605,
-      "sha256": "f09374bf3efb2d1aeddae8dd8c5091fcc30a074876199a180fb94e41dd8bfd49"
+      "bytes": 4559,
+      "sha256": "612a24980f901c26ac2abbe8d185f389d5062728e851baaae1949b270dd33ff7"
     },
     {
       "path": "figure_inputs/README.md",
@@ -161,8 +166,173 @@
     },
     {
       "path": "notebooks/README.md",
-      "bytes": 4791,
-      "sha256": "0893c58a63df2581afa8a4cf73908f8a8f855a3e7a6f850f723b24137e207a10"
+      "bytes": 5572,
+      "sha256": "f26a5587adc71bacdfbadfcf97214532c8cf818e79167411b16b19090d6cce74"
+    },
+    {
+      "path": "notebooks/current/10_celeba_casia_privacy_utility.ipynb",
+      "bytes": 19194,
+      "sha256": "5187c67138446e826a6f9d53ebb1874d26d02679c98b574fef8f138f63f9fe87"
+    },
+    {
+      "path": "notebooks/current/11_vggface2_casia_privacy_utility.ipynb",
+      "bytes": 19290,
+      "sha256": "bc00a4afb74bd9c57ced007a95335fa0efb612fb90292f2a6b6ad24ec88ae593"
+    },
+    {
+      "path": "notebooks/current/12_celeba_casia_attack_comparison.ipynb",
+      "bytes": 18452,
+      "sha256": "09fe22160854a7ce7c15d936385908474cb1139363eb5b9bc6e799e8748839ca"
+    },
+    {
+      "path": "notebooks/current/13_vggface2_casia_attack_comparison.ipynb",
+      "bytes": 18548,
+      "sha256": "1b60325b611d5ff265a59868eed8a0ac8b1f6cf8ec0b58f065794296c2c8f46c"
+    },
+    {
+      "path": "reproduction/casia/attack_comparison.py",
+      "bytes": 33058,
+      "sha256": "d5d2b54625e622cc82a20388af3ee04b36f84dc11c864b04bfb4a11cc9abd984"
+    },
+    {
+      "path": "reproduction/casia/attack_plotting.py",
+      "bytes": 8151,
+      "sha256": "2cf3e73b31ca0212abecd454ba79756cad9e87f9b9b7165c1dff5f05c9c26f0f"
+    },
+    {
+      "path": "reproduction/casia/casia_linkage.py",
+      "bytes": 21394,
+      "sha256": "2690d1dd9b686b9e3d082cc4c5d7bf4c34074bee97ff76473db4f544a03bc5d6"
+    },
+    {
+      "path": "reproduction/casia/celeba_inputs.py",
+      "bytes": 12272,
+      "sha256": "2597676d7ab8789e7dfcdf0dc7b30948864ed51ea29483da1e475fd6955e5ace"
+    },
+    {
+      "path": "reproduction/casia/celeba_public_svd_identity100_runner.py",
+      "bytes": 28791,
+      "sha256": "1ba3316e401b9b4359cc1e980d12310b818b2b2e99d70a5101be9a904c0dcc43"
+    },
+    {
+      "path": "reproduction/casia/context_common.py",
+      "bytes": 10536,
+      "sha256": "5e60557a39e1a19daddeb4c51ca4373a77774bfeaad1f450fa5f64de96906fd2"
+    },
+    {
+      "path": "reproduction/casia/core_protocols.py",
+      "bytes": 38654,
+      "sha256": "31e5e47837fa8cc02d3263b9a5f3c1d345baff88e5ac7e2d2a8aeaf6f20aca28"
+    },
+    {
+      "path": "reproduction/casia/data_pipeline.py",
+      "bytes": 28860,
+      "sha256": "e59dfe565c7e7cba6ad7ffa878802f5ad7ccab591ed59a5fc416b573f6d0c6f1"
+    },
+    {
+      "path": "reproduction/casia/manuscript_plots.py",
+      "bytes": 8190,
+      "sha256": "38192eb4272da30941891313e6059c23fa71584e501c84489d2a3261a981440c"
+    },
+    {
+      "path": "reproduction/casia/notebook_api.py",
+      "bytes": 11501,
+      "sha256": "a621d697746f3c31c9cc4ea9140956d596bcfbb4725d7faea0295eddf2d58eea"
+    },
+    {
+      "path": "reproduction/casia/render_results.py",
+      "bytes": 8455,
+      "sha256": "8ddaa1765191d155669679a2aad00fe86c4c04ed462ad5e968af693c083733b1"
+    },
+    {
+      "path": "reproduction/casia/run_pipeline.py",
+      "bytes": 15095,
+      "sha256": "9329baa8d5d8bf932eb468f37b010057b0aae4b13e2d9c79499e9d7bf5373dba"
+    },
+    {
+      "path": "reproduction/casia/run_study.py",
+      "bytes": 22254,
+      "sha256": "c8f3881ceb45f4bf26d0fd7d498089b7641db63f3ded86addfc5411381e02763"
+    },
+    {
+      "path": "reproduction/casia/spectral.py",
+      "bytes": 7548,
+      "sha256": "483d268806ac3a2c86c42246eb6a3a6658b1f9462651bdd5b955c871e54f6bd5"
+    },
+    {
+      "path": "reproduction/casia/test_attack_comparison.py",
+      "bytes": 13226,
+      "sha256": "8e49d3b49727f1fde1b0049ffbec797f2f799f716b982fde0a23e46fdf7e8d6a"
+    },
+    {
+      "path": "reproduction/casia/test_attack_plotting.py",
+      "bytes": 1282,
+      "sha256": "948b1353dd0b839cd376751c85e94484d1d99d837c478bba000b9f13dd44f5c7"
+    },
+    {
+      "path": "reproduction/casia/test_casia_linkage.py",
+      "bytes": 7947,
+      "sha256": "dd201329dc89ade92ede82abd93713f4788963ac4671faf16e0002152b29491f"
+    },
+    {
+      "path": "reproduction/casia/test_context_common.py",
+      "bytes": 3341,
+      "sha256": "45f4c981eb182c56a70560fe1060b02a9d5d329ab725df89af9a8312bd3612ca"
+    },
+    {
+      "path": "reproduction/casia/test_data_pipeline.py",
+      "bytes": 9740,
+      "sha256": "2ffee44314ad0faa08676997546c470c037e8284df360ead1cd2b03d16ae4c5d"
+    },
+    {
+      "path": "reproduction/casia/test_manuscript_plots.py",
+      "bytes": 10480,
+      "sha256": "0effc6e7119c0f1599f9fe6a35fcf1572180d1d81739d57f3621d9d7837dad64"
+    },
+    {
+      "path": "reproduction/casia/test_raw_preparation.py",
+      "bytes": 13282,
+      "sha256": "057b3c1dc9f8abb27ece82e70f89ddfec264ca9c6cde968cb1318067ad0027b8"
+    },
+    {
+      "path": "reproduction/casia/test_run_pipeline.py",
+      "bytes": 13076,
+      "sha256": "c4ea6e0aa33d8424d337ff0a02774f5949ff795192b2d1330f93b9d0abacf495"
+    },
+    {
+      "path": "reproduction/casia/test_spectral.py",
+      "bytes": 6227,
+      "sha256": "7542eb74ff18ebd9541df2711c459f118280a3b5bd1e6c3b97cb75980a70811b"
+    },
+    {
+      "path": "reproduction/casia/test_training.py",
+      "bytes": 10727,
+      "sha256": "11437a2352de14abd12f3acd3c0cc5dcae335983b91fcab2f7c09bc78a210888"
+    },
+    {
+      "path": "reproduction/casia/training.py",
+      "bytes": 31482,
+      "sha256": "401fd4e0abc5506cb59e25a57b67103b907d3876cddc85639f257dbea8db9e1d"
+    },
+    {
+      "path": "reproduction/casia/vgg_asset_pins.json",
+      "bytes": 2250,
+      "sha256": "0564b217b14482732c9a59f0cec8711127029c084c861fab99405d7239256ee5"
+    },
+    {
+      "path": "reproduction/casia/vgg_context.py",
+      "bytes": 10642,
+      "sha256": "bc5aa26fc7fd2ef055854b7d9ebc0444b687f7a8d98274a544d148acff54ab9f"
+    },
+    {
+      "path": "reproduction/casia/vgg_io.py",
+      "bytes": 19361,
+      "sha256": "08bedddfd2ff2ea1fd311891756e3fdfb93f77a19754cfb5f825d85696050f4d"
+    },
+    {
+      "path": "reproduction/casia/vgg_master.py",
+      "bytes": 18517,
+      "sha256": "f1d236ac6140f266a46b7e9b91c59b66ab0f27625ad5150b17eb8f001fc83f0f"
     },
     {
       "path": "requirements-figures.txt",
@@ -395,6 +565,11 @@
       "sha256": "3ff21cb4d799696048ef1329794c06dc31c456628b57723dfbb15fe2af43fb54"
     },
     {
+      "path": "scripts/build_current_casia_notebooks.py",
+      "bytes": 32867,
+      "sha256": "f024562e39ae449b41e94e27c756150c5f6ba1a1ea05e7865342dca1a714969e"
+    },
+    {
       "path": "scripts/celeba_participant_replay_runner.py",
       "bytes": 35780,
       "sha256": "022c0d23e34312b9bb3313c3a9ea7beb3f4a66d2b7a28a11af9ec78c242b73cc"
@@ -406,8 +581,8 @@
     },
     {
       "path": "scripts/regenerate_artifact_manifest.py",
-      "bytes": 1713,
-      "sha256": "bc9cbc8d9ba085928b3adbb0e5c086d3616a1511f82b2a36ce07fa003ebb6424"
+      "bytes": 1822,
+      "sha256": "c0b01421472e2b9cdd596fd1722a7cfa6a0a6440a7675f0581a21da14da40064"
     },
     {
       "path": "scripts/reproduce_figures.py",
@@ -416,8 +591,8 @@
     },
     {
       "path": "scripts/validate_repository.py",
-      "bytes": 14496,
-      "sha256": "bdffc465d843d073154c5e18b7d8820200eec79ea49265391526c71ea6e46a91"
+      "bytes": 14718,
+      "sha256": "75b07d283800e0c99a8658f634ca891466b18cd702def2bcd5a0342886afdef3"
     }
   ]
 }

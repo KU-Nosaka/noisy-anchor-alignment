@@ -8,6 +8,7 @@ import gzip
 import hashlib
 import json
 from pathlib import Path
+import subprocess
 import sys
 import zipfile
 
@@ -330,7 +331,12 @@ def main() -> None:
     validate_results()
     validate_archives()
     validate_replay_notebooks()
-    print("Repository validation passed: hashes, schedules, counts, and archives.")
+    subprocess.run(
+        [sys.executable, str(REPO / "scripts" / "build_current_casia_notebooks.py"), "--check"],
+        cwd=REPO,
+        check=True,
+    )
+    print("Repository validation passed: hashes, historical schedules/counts/archives, and the four current CASIA notebooks.")
 
 
 if __name__ == "__main__":

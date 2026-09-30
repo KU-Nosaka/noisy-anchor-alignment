@@ -1,5 +1,7 @@
 # Paper figure map
 
+The mapping below belongs to the retained **historical MNIST/CelebA package**. For the current CelebA/VGGFace2 CASIA studies, notebooks 10–13 generate fresh numerical outputs and plots using the settings in [CURRENT_CASIA_EXPERIMENTS.md](CURRENT_CASIA_EXPERIMENTS.md).
+
 Running `python scripts/reproduce_figures.py` regenerates the following manuscript-ready PDFs.
 
 ## Main manuscript
